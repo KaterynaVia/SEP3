@@ -1,5 +1,12 @@
 {
-  "Teachers": [],
+  "Teachers": [
+    {
+      "Name": "123465",
+      "Id": "password",
+      "UserId": 1,
+      "Password": "meno"
+    }
+  ],
   "Classes": [],
   "Exams": [],
   "Students": [
