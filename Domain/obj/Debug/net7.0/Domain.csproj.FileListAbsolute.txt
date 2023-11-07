@@ -1,0 +1,11 @@
+/Users/dominikakrullova/Desktop/SEP3Real/Domain/bin/Debug/net7.0/Domain.deps.json
+/Users/dominikakrullova/Desktop/SEP3Real/Domain/bin/Debug/net7.0/Domain.dll
+/Users/dominikakrullova/Desktop/SEP3Real/Domain/bin/Debug/net7.0/Domain.pdb
+/Users/dominikakrullova/Desktop/SEP3Real/Domain/obj/Debug/net7.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dominikakrullova/Desktop/SEP3Real/Domain/obj/Debug/net7.0/Domain.AssemblyInfoInputs.cache
+/Users/dominikakrullova/Desktop/SEP3Real/Domain/obj/Debug/net7.0/Domain.AssemblyInfo.cs
+/Users/dominikakrullova/Desktop/SEP3Real/Domain/obj/Debug/net7.0/Domain.csproj.CoreCompileInputs.cache
+/Users/dominikakrullova/Desktop/SEP3Real/Domain/obj/Debug/net7.0/Domain.dll
+/Users/dominikakrullova/Desktop/SEP3Real/Domain/obj/Debug/net7.0/refint/Domain.dll
+/Users/dominikakrullova/Desktop/SEP3Real/Domain/obj/Debug/net7.0/Domain.pdb
+/Users/dominikakrullova/Desktop/SEP3Real/Domain/obj/Debug/net7.0/ref/Domain.dll

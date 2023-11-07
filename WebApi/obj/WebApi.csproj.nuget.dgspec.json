@@ -1,0 +1,308 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/dominikakrullova/Desktop/SEP3Real/WebApi/WebApi.csproj": {}
+  },
+  "projects": {
+    "/Users/dominikakrullova/Desktop/SEP3Real/Application/Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/dominikakrullova/Desktop/SEP3Real/Application/Application.csproj",
+        "projectName": "Application",
+        "projectPath": "/Users/dominikakrullova/Desktop/SEP3Real/Application/Application.csproj",
+        "packagesPath": "/Users/dominikakrullova/.nuget/packages/",
+        "outputPath": "/Users/dominikakrullova/Desktop/SEP3Real/Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/dominikakrullova/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/dominikakrullova/Desktop/SEP3Real/Domain/Domain.csproj": {
+                "projectPath": "/Users/dominikakrullova/Desktop/SEP3Real/Domain/Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/dominikakrullova/Desktop/SEP3Real/Domain/Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/dominikakrullova/Desktop/SEP3Real/Domain/Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "/Users/dominikakrullova/Desktop/SEP3Real/Domain/Domain.csproj",
+        "packagesPath": "/Users/dominikakrullova/.nuget/packages/",
+        "outputPath": "/Users/dominikakrullova/Desktop/SEP3Real/Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/dominikakrullova/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/dominikakrullova/Desktop/SEP3Real/FileData/FileData.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/dominikakrullova/Desktop/SEP3Real/FileData/FileData.csproj",
+        "projectName": "FileData",
+        "projectPath": "/Users/dominikakrullova/Desktop/SEP3Real/FileData/FileData.csproj",
+        "packagesPath": "/Users/dominikakrullova/.nuget/packages/",
+        "outputPath": "/Users/dominikakrullova/Desktop/SEP3Real/FileData/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/dominikakrullova/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/dominikakrullova/Desktop/SEP3Real/Application/Application.csproj": {
+                "projectPath": "/Users/dominikakrullova/Desktop/SEP3Real/Application/Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/dominikakrullova/Desktop/SEP3Real/HttpClients/HttpClients.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/dominikakrullova/Desktop/SEP3Real/HttpClients/HttpClients.csproj",
+        "projectName": "HttpClients",
+        "projectPath": "/Users/dominikakrullova/Desktop/SEP3Real/HttpClients/HttpClients.csproj",
+        "packagesPath": "/Users/dominikakrullova/.nuget/packages/",
+        "outputPath": "/Users/dominikakrullova/Desktop/SEP3Real/HttpClients/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/dominikakrullova/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/dominikakrullova/Desktop/SEP3Real/Domain/Domain.csproj": {
+                "projectPath": "/Users/dominikakrullova/Desktop/SEP3Real/Domain/Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/dominikakrullova/Desktop/SEP3Real/WebApi/WebApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/dominikakrullova/Desktop/SEP3Real/WebApi/WebApi.csproj",
+        "projectName": "WebApi",
+        "projectPath": "/Users/dominikakrullova/Desktop/SEP3Real/WebApi/WebApi.csproj",
+        "packagesPath": "/Users/dominikakrullova/.nuget/packages/",
+        "outputPath": "/Users/dominikakrullova/Desktop/SEP3Real/WebApi/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/dominikakrullova/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/dominikakrullova/Desktop/SEP3Real/Application/Application.csproj": {
+                "projectPath": "/Users/dominikakrullova/Desktop/SEP3Real/Application/Application.csproj"
+              },
+              "/Users/dominikakrullova/Desktop/SEP3Real/FileData/FileData.csproj": {
+                "projectPath": "/Users/dominikakrullova/Desktop/SEP3Real/FileData/FileData.csproj"
+              },
+              "/Users/dominikakrullova/Desktop/SEP3Real/HttpClients/HttpClients.csproj": {
+                "projectPath": "/Users/dominikakrullova/Desktop/SEP3Real/HttpClients/HttpClients.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+/Users/dominikakrullova/Desktop/SEP3Real/FileData/bin/Debug/net7.0/FileData.deps.json
+/Users/dominikakrullova/Desktop/SEP3Real/FileData/bin/Debug/net7.0/FileData.dll
+/Users/dominikakrullova/Desktop/SEP3Real/FileData/bin/Debug/net7.0/FileData.pdb
+/Users/dominikakrullova/Desktop/SEP3Real/FileData/bin/Debug/net7.0/Application.dll
+/Users/dominikakrullova/Desktop/SEP3Real/FileData/bin/Debug/net7.0/Domain.dll
+/Users/dominikakrullova/Desktop/SEP3Real/FileData/bin/Debug/net7.0/Application.pdb
+/Users/dominikakrullova/Desktop/SEP3Real/FileData/bin/Debug/net7.0/Domain.pdb
+/Users/dominikakrullova/Desktop/SEP3Real/FileData/obj/Debug/net7.0/FileData.csproj.AssemblyReference.cache
+/Users/dominikakrullova/Desktop/SEP3Real/FileData/obj/Debug/net7.0/FileData.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dominikakrullova/Desktop/SEP3Real/FileData/obj/Debug/net7.0/FileData.AssemblyInfoInputs.cache
+/Users/dominikakrullova/Desktop/SEP3Real/FileData/obj/Debug/net7.0/FileData.AssemblyInfo.cs
+/Users/dominikakrullova/Desktop/SEP3Real/FileData/obj/Debug/net7.0/FileData.csproj.CoreCompileInputs.cache
+/Users/dominikakrullova/Desktop/SEP3Real/FileData/obj/Debug/net7.0/FileData.csproj.CopyComplete
+/Users/dominikakrullova/Desktop/SEP3Real/FileData/obj/Debug/net7.0/FileData.dll
+/Users/dominikakrullova/Desktop/SEP3Real/FileData/obj/Debug/net7.0/refint/FileData.dll
+/Users/dominikakrullova/Desktop/SEP3Real/FileData/obj/Debug/net7.0/FileData.pdb
+/Users/dominikakrullova/Desktop/SEP3Real/FileData/obj/Debug/net7.0/ref/FileData.dll

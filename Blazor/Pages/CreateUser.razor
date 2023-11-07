@@ -1,0 +1,93 @@
+@page "/CreateUser"
+@using Domain.DTOs
+@using HttpClients.ClientInterfaces
+@inject IUserService userService;
+
+<div class="card">
+    <h3>Create Student</h3>
+    <div class="form-group field">
+        <label>Students via id:</label>
+        <input type="text" @bind="id" @bind:event="oninput"/>
+        @if (!string.IsNullOrEmpty(resultMsg))
+        {
+            <label style="color: @color">@resultMsg</label>
+        }
+        <label>Students name:</label>
+                    <input type="text" @bind="name" @bind:event="oninput"/>
+                    @if (!string.IsNullOrEmpty(resultMsg))
+                    {
+                        <label style="color: @color">@resultMsg</label>
+                    }
+    </div>
+    <div class="button-row">
+        <button @onclick="CreateStudent" disabled="@(string.IsNullOrEmpty(id))" class="acceptbtn">Create</button>
+    </div>
+</div>
+
+<div class="card">
+    <h3>Create Teacher</h3>
+    <div class="form-group field">
+        <label>Teachers via id:</label>
+        <input type="text" @bind="id" @bind:event="oninput"/>
+        @if (!string.IsNullOrEmpty(resultMsg))
+        {
+            <label style="color: @color">@resultMsg</label>
+        }
+        <label>Teachers name:</label>
+                <input type="text" @bind="name" @bind:event="oninput"/>
+                @if (!string.IsNullOrEmpty(resultMsg))
+                {
+                    <label style="color: @color">@resultMsg</label>
+                }
+    </div>
+    <div class="button-row">
+        <button @onclick="CreateTeacher" disabled="@(string.IsNullOrEmpty(id))" class="acceptbtn">Create</button>
+    </div>
+</div>
+
+@code {
+    private string id = "";
+    private string name = "";
+    private string resultMsg = "";
+    private string color = "";
+
+    private async Task CreateTeacher()
+    {
+        
+        resultMsg = "";
+
+        try
+        {
+            await userService.CreateTeacher(new UserCreationDto(id));
+            id = "";
+            resultMsg = "User successfully created";
+            color = "green";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            resultMsg = e.Message;
+            color = "red";
+        }
+    }
+    
+    private async Task CreateStudent()
+    {
+        
+        resultMsg = "";
+
+        try
+        {
+            await userService.CreateStudent(new UserCreationDto(id));
+            id = "";
+            resultMsg = "User successfully created";
+            color = "green";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            resultMsg = e.Message;
+            color = "red";
+        }
+    }
+}
