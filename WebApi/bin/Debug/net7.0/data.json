@@ -2,9 +2,9 @@
   "Teachers": [
     {
       "Name": "123465",
-      "Id": "password",
-      "UserId": 1,
-      "Password": "meno"
+      "Id": "meno",
+      "UserId": 0,
+      "Password": "password"
     }
   ],
   "Classes": [],
@@ -15,6 +15,12 @@
       "Id": "123456",
       "UserId": 1,
       "Password": "password"
+    },
+    {
+      "Name": "meno",
+      "Id": "123457",
+      "UserId": 2,
+      "Password": "heslo"
     }
   ],
   "Supervisors": []

@@ -35,3 +35,4 @@
 /Users/dominikakrullova/Desktop/SEP3Real/Blazor/obj/Debug/net7.0/Blazor.pdb
 /Users/dominikakrullova/Desktop/SEP3Real/Blazor/obj/Debug/net7.0/Blazor.genruntimeconfig.cache
 /Users/dominikakrullova/Desktop/SEP3Real/Blazor/obj/Debug/net7.0/ref/Blazor.dll
+/Users/dominikakrullova/Desktop/SEP3Real/Blazor/obj/Debug/net7.0/scopedcss/Pages/Login.razor.rz.scp.css

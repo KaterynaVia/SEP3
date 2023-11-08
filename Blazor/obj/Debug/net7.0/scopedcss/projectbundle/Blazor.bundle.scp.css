@@ -1,3 +1,15 @@
+/* _content/Blazor/Pages/Login.razor.rz.scp.css */
+button[b-ime1vh4onl]{
+    background-color: #C2F9D1;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border-color: #87D39C;
+}
+
+input[b-ime1vh4onl]{
+    border-bottom-color: grey;
+}
 /* _content/Blazor/Shared/MainLayout.razor.rz.scp.css */
 .page[b-qt6tgh2907] {
     position: relative;
@@ -10,10 +22,11 @@ main[b-qt6tgh2907] {
 }
 
 .sidebar[b-qt6tgh2907] {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    background-color: #D3F5D3;
 }
 
 .top-row[b-qt6tgh2907] {
+    opacity: 0;
     background-color: #f7f7f7;
     border-bottom: 1px solid #d6d5d5;
     justify-content: flex-end;
@@ -71,12 +84,12 @@ main[b-qt6tgh2907] {
 }
 /* _content/Blazor/Shared/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-32xpj7b96w] {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #D3F5D3;
 }
 
 .top-row[b-32xpj7b96w] {
     height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: #D3F5D3;
 }
 
 .navbar-brand[b-32xpj7b96w] {
@@ -104,7 +117,7 @@ main[b-qt6tgh2907] {
     }
 
     .nav-item[b-32xpj7b96w]  a {
-        color: #d7d7d7;
+        color: darkgreen;
         border-radius: 4px;
         height: 3rem;
         display: flex;
@@ -114,12 +127,12 @@ main[b-qt6tgh2907] {
 
 .nav-item[b-32xpj7b96w]  a.active {
     background-color: rgba(255,255,255,0.25);
-    color: white;
+    color: darkblue;
 }
 
 .nav-item[b-32xpj7b96w]  a:hover {
     background-color: rgba(255,255,255,0.1);
-    color: white;
+    color: darkblue;
 }
 
 @media (min-width: 641px) {

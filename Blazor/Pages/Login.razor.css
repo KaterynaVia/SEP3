@@ -1,0 +1,11 @@
+button{
+    background-color: #C2F9D1;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border-color: #87D39C;
+}
+
+input{
+    border-bottom-color: grey;
+}
