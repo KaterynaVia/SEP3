@@ -10,66 +10,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d62ca0f-707f-4d9d-8b7b-fd675187ea5d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Blazor/Pages/CreateClass.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/Pages/CreateExam.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/Pages/Login.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/Pages/Login.razor.css" afterDir="false" />
+    <list default="true" id="9d62ca0f-707f-4d9d-8b7b-fd675187ea5d" name="Changes" comment="Pages - supervisor">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/Pages/Counter.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/Pages/CreateUser.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Pages/CreateUser.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/Pages/FetchData.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/Pages/Index.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/Shared/MainLayout.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Shared/MainLayout.razor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blazor/Pages/Login.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Pages/Login.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blazor/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Shared/NavMenu.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blazor/Shared/NavMenu.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Shared/NavMenu.razor.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blazor/bin/Debug/net7.0/Blazor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/bin/Debug/net7.0/Blazor.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blazor/bin/Debug/net7.0/Blazor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/bin/Debug/net7.0/Blazor.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/bin/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/bin/Debug/net7.0/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/bin/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/bin/Debug/net7.0/Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/bin/Debug/net7.0/HttpClients.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/bin/Debug/net7.0/HttpClients.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/bin/Debug/net7.0/HttpClients.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/bin/Debug/net7.0/HttpClients.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/Blazor.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/Blazor.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/Blazor.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/Blazor.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/Blazor.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/Blazor.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/Blazor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/Blazor.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/Blazor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/Blazor.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/ref/Blazor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/ref/Blazor.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/refint/Blazor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/refint/Blazor.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/scopedcss/Shared/MainLayout.razor.rz.scp.css" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/scopedcss/Shared/MainLayout.razor.rz.scp.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/scopedcss/Shared/NavMenu.razor.rz.scp.css" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/scopedcss/Shared/NavMenu.razor.rz.scp.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/scopedcss/bundle/Blazor.styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/scopedcss/bundle/Blazor.styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/scopedcss/projectbundle/Blazor.bundle.scp.css" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net7.0/scopedcss/projectbundle/Blazor.bundle.scp.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/wwwroot/css/site.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net7.0/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net7.0/Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileData/bin/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FileData/bin/Debug/net7.0/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileData/bin/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FileData/bin/Debug/net7.0/Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileData/obj/Debug/net7.0/FileData.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FileData/obj/Debug/net7.0/FileData.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileData/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/FileData/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileData/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/FileData/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HttpClients/bin/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HttpClients/bin/Debug/net7.0/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HttpClients/bin/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/HttpClients/bin/Debug/net7.0/Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HttpClients/obj/Debug/net7.0/HttpClients.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HttpClients/obj/Debug/net7.0/HttpClients.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HttpClients/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/HttpClients/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HttpClients/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/HttpClients/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/bin/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/bin/Debug/net7.0/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/bin/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/bin/Debug/net7.0/Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/bin/Debug/net7.0/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/bin/Debug/net7.0/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/obj/Debug/net7.0/WebApi.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Debug/net7.0/WebApi.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +43,20 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "DominikaKrullova"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="f86b38a9-a854-4f1e-81b9-b4a3dc88d436" />
+        <option name="url" value="https://github.com/KaterynaVia/SEP3.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Blazor/Pages/CreateUser.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/dominikakrullova/Desktop/SEP3Real/Domain/obj/Debug/net7.0/Domain.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
@@ -101,6 +67,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="Toolset" />
   </component>
@@ -207,14 +174,26 @@
       <option name="presentableId" value="Default" />
       <updated>1699350967386</updated>
       <workItem from="1699350968691" duration="5588000" />
-      <workItem from="1699359040587" duration="5680000" />
+      <workItem from="1699359040587" duration="6828000" />
     </task>
+    <task id="LOCAL-00001" summary="Pages - supervisor">
+      <option name="closed" value="true" />
+      <created>1699436607488</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1699436607488</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Pages - supervisor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pages - supervisor" />
   </component>
 </project>
