@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\pind9\\.nuget\\packages\\": {}
+    "C:\\Users\\artur\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pind9\\OneDrive\\Desktop\\SEP3\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\artur\\RiderProjects\\SEP--3\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\pind9\\OneDrive\\Desktop\\SEP3\\Domain\\Domain.csproj",
-      "packagesPath": "C:\\Users\\pind9\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pind9\\OneDrive\\Desktop\\SEP3\\Domain\\obj\\",
+      "projectPath": "C:\\Users\\artur\\RiderProjects\\SEP--3\\Domain\\Domain.csproj",
+      "packagesPath": "C:\\Users\\artur\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\artur\\RiderProjects\\SEP--3\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\pind9\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\artur\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"

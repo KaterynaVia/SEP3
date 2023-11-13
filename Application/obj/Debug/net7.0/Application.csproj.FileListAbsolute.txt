@@ -1,0 +1,7 @@
+C:\Users\artur\RiderProjects\SEP--3\Application\obj\Debug\net7.0\Application.csproj.AssemblyReference.cache
+C:\Users\artur\RiderProjects\SEP--3\Application\obj\Debug\net7.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\artur\RiderProjects\SEP--3\Application\obj\Debug\net7.0\Application.AssemblyInfoInputs.cache
+C:\Users\artur\RiderProjects\SEP--3\Application\obj\Debug\net7.0\Application.AssemblyInfo.cs
+C:\Users\artur\RiderProjects\SEP--3\Application\obj\Debug\net7.0\Application.csproj.CoreCompileInputs.cache
+C:\Users\artur\RiderProjects\SEP--3\Application\obj\Debug\net7.0\Application.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\artur\RiderProjects\SEP--3\Application\obj\Debug\net7.0\Application.MvcApplicationPartsAssemblyInfo.cache

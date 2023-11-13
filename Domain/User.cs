@@ -2,13 +2,12 @@
 
 public class User
 {
-    
-    public  int Id { get; set; }
+    public int Id { get; set; }
     public string Password { get; set; }
 
-    public User(string password, int id)
-    {
-        Id = id;
-        Password = password;
-    }
+   public User(int id ,string password)
+   {
+      Id = id;
+      Password = password; 
+   }
 }
