@@ -1,9 +1,18 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using BlazorWasm.ILogic;
 using Domain;
+using Domain.Models.DTOs;
 namespace WebApi.Services;
+
 
 public class AuthService : IAuthService
 {
+        private readonly IUserLogic userLogic;
+    
+        public AuthService(IUserLogic userLogic)
+        {
+            this.userLogic = userLogic;
+        }
 
     private readonly IList<User> users = new List<User>
     {
@@ -25,6 +34,23 @@ public class AuthService : IAuthService
         }
 
         return Task.FromResult(existingUser);
+    }
+
+    public async Task<User> GetUser(int id, string password)
+    {
+        UserParametersDto parameters = new(id);
+        Console.WriteLine("a");
+        IEnumerable<User> users = await userLogic.GetAsync(parameters);
+        Console.WriteLine("b");
+        User? user = users.FirstOrDefault(u => u.Id == id);
+        if (user != null)
+        {
+            return user;
+        }
+        else
+        {
+            throw new Exception("List of users empty.");
+        }
     }
 
     public Task RegisterUser(User user)

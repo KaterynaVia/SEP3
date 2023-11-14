@@ -43,3 +43,5 @@ C:\Users\artur\RiderProjects\SEP--3\BlazorWasm\obj\Debug\net7.0\refint\BlazorWas
 C:\Users\artur\RiderProjects\SEP--3\BlazorWasm\obj\Debug\net7.0\BlazorWasm.pdb
 C:\Users\artur\RiderProjects\SEP--3\BlazorWasm\obj\Debug\net7.0\BlazorWasm.genruntimeconfig.cache
 C:\Users\artur\RiderProjects\SEP--3\BlazorWasm\obj\Debug\net7.0\ref\BlazorWasm.dll
+C:\Users\artur\RiderProjects\SEP--3\BlazorWasm\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Authorization.dll
+C:\Users\artur\RiderProjects\SEP--3\BlazorWasm\bin\Debug\net7.0\BlazorWasm.staticwebassets.runtime.json

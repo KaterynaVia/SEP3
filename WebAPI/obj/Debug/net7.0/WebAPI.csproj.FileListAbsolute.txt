@@ -58,3 +58,6 @@ C:\Users\artur\RiderProjects\SEP--3\WebAPI\obj\Debug\net7.0\refint\WebAPI.dll
 C:\Users\artur\RiderProjects\SEP--3\WebAPI\obj\Debug\net7.0\WebAPI.pdb
 C:\Users\artur\RiderProjects\SEP--3\WebAPI\obj\Debug\net7.0\WebAPI.genruntimeconfig.cache
 C:\Users\artur\RiderProjects\SEP--3\WebAPI\obj\Debug\net7.0\ref\WebAPI.dll
+C:\Users\artur\RiderProjects\SEP--3\WebAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Authorization.dll
+C:\Users\artur\RiderProjects\SEP--3\WebAPI\bin\Debug\net7.0\BlazorWasm.staticwebassets.runtime.json
+C:\Users\artur\RiderProjects\SEP--3\WebAPI\bin\Debug\net7.0\WebAPI.staticwebassets.runtime.json
