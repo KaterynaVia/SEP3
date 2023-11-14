@@ -1,10 +1,9 @@
 ﻿using System.Security.Claims;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
-
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
-using Application.DTOs;
+using Domain.Models.DTOs;
 using Microsoft.IdentityModel.Tokens;
 using WebApi.Services;
 

@@ -13,8 +13,38 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Application\Application.csproj" />
       <ProjectReference Include="..\Domain\Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\BlockPageWithPolicy.razor" />
+      <_ContentIncludedByDefault Remove="Pages\Counter.razor" />
+      <_ContentIncludedByDefault Remove="Pages\FetchData.razor" />
+      <_ContentIncludedByDefault Remove="Pages\Index.razor" />
+      <_ContentIncludedByDefault Remove="Pages\Layout\MainLayout.razor" />
+      <_ContentIncludedByDefault Remove="Pages\Layout\NavMenu.razor" />
+      <_ContentIncludedByDefault Remove="Pages\Layout\SurveyPrompt.razor" />
+      <_ContentIncludedByDefault Remove="Pages\Login.razor" />
+      <_ContentIncludedByDefault Remove="Pages\LoginButtons.razor" />
+      <_ContentIncludedByDefault Remove="Pages\MustBeLoggedInToView.razor" />
+      <_ContentIncludedByDefault Remove="Pages\PolicyExampleManual.razor" />
+      <_ContentIncludedByDefault Remove="Pages\PolicyExampleWithComponent.razor" />
+      <_ContentIncludedByDefault Remove="Pages\ShowCredentialsAuthState.razor" />
+      <_ContentIncludedByDefault Remove="Pages\ShowCredentialsContext.razor" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Pages\BlockPageWithPolicy.razor" />
+      <UpToDateCheckInput Remove="Pages\Counter.razor" />
+      <UpToDateCheckInput Remove="Pages\FetchData.razor" />
+      <UpToDateCheckInput Remove="Pages\Index.razor" />
+      <UpToDateCheckInput Remove="Pages\Login.razor" />
+      <UpToDateCheckInput Remove="Pages\LoginButtons.razor" />
+      <UpToDateCheckInput Remove="Pages\MustBeLoggedInToView.razor" />
+      <UpToDateCheckInput Remove="Pages\PolicyExampleManual.razor" />
+      <UpToDateCheckInput Remove="Pages\PolicyExampleWithComponent.razor" />
+      <UpToDateCheckInput Remove="Pages\ShowCredentialsAuthState.razor" />
+      <UpToDateCheckInput Remove="Pages\ShowCredentialsContext.razor" />
     </ItemGroup>
 
 </Project>

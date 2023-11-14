@@ -722,29 +722,10 @@
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
       },
-      "Application/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Domain": "1.0.0",
-          "Microsoft.AspNetCore.OpenApi": "7.0.10",
-          "Swashbuckle.AspNetCore": "6.5.0"
-        },
-        "compile": {
-          "bin/placeholder/Application.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Application.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
       "BlazorWasm/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Application": "1.0.0",
           "Domain": "1.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "7.0.13",
           "Microsoft.AspNetCore.OpenApi": "7.0.10",
@@ -763,6 +744,9 @@
       "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0-rc.2.23479.6"
+        },
         "compile": {
           "bin/placeholder/Domain.dll": {}
         },
@@ -2116,11 +2100,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Application/1.0.0": {
-      "type": "project",
-      "path": "../Application/Application.csproj",
-      "msbuildProject": "../Application/Application.csproj"
-    },
     "BlazorWasm/1.0.0": {
       "type": "project",
       "path": "../BlazorWasm/BlazorWasm.csproj",
@@ -2134,7 +2113,6 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Application >= 1.0.0",
       "BlazorWasm >= 1.0.0",
       "Domain >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 7.0.13",
@@ -2168,9 +2146,6 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\artur\\RiderProjects\\SEP--3\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\artur\\RiderProjects\\SEP--3\\Application\\Application.csproj"
-            },
             "C:\\Users\\artur\\RiderProjects\\SEP--3\\BlazorWasm\\BlazorWasm.csproj": {
               "projectPath": "C:\\Users\\artur\\RiderProjects\\SEP--3\\BlazorWasm\\BlazorWasm.csproj"
             },

@@ -3,7 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
 using Domain;
-using Application.DTOs;
+using Domain.Models.DTOs;
 
 namespace BlazorWasm.Services.Http;
 

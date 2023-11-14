@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "4oq16oGdqi6xCY/7thVYggF3MwAH15MaXdU1krlkhCY=",
+  "Source": "BlazorWasm",
+  "BasePath": "_content/BlazorWasm",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

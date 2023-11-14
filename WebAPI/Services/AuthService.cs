@@ -1,8 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using BlazorWasm.Services;
 using Domain;
-using Shared.Models;
-
 namespace WebApi.Services;
 
 public class AuthService : IAuthService
@@ -33,7 +30,8 @@ public class AuthService : IAuthService
     public Task RegisterUser(User user)
     {
 
-        if (user.Id == null || user.Id == 0)
+        if (// user.Id == null ||
+            user.Id == 0)
         {
             throw new ValidationException("ID cannot be null");
         }

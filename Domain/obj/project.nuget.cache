@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "T2ZVl6lcV7LQIrAFUUsQ/RIE6UUcGzgYD9uBjmvP/Rwt5k4PRTLDhEP1q7p/ER5ZvK/q9GwnJgsSSVerQcnyag==",
+  "dgSpecHash": "3Z8kF8tG/stIX3SSZh/NEYZZ0NYgP15nRhI0UbhbH7H6MpFxe3sv/NGMkuzb1WEtOW9b2MANouyIR5dblNNyLA==",
   "success": true,
   "projectFilePath": "C:\\Users\\artur\\RiderProjects\\SEP--3\\Domain\\Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\artur\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0-rc.2.23479.6\\microsoft.extensions.dependencyinjection.abstractions.8.0.0-rc.2.23479.6.nupkg.sha512"
+  ],
   "logs": []
 }
