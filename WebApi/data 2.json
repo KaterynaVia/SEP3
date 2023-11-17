@@ -1,0 +1,27 @@
+{
+  "Teachers": [
+    {
+      "Name": "123465",
+      "Id": "meno",
+      "UserId": 0,
+      "Password": "password"
+    }
+  ],
+  "Classes": [],
+  "Exams": [],
+  "Students": [
+    {
+      "Name": "meno",
+      "Id": "123456",
+      "UserId": 1,
+      "Password": "password"
+    },
+    {
+      "Name": "meno",
+      "Id": "123457",
+      "UserId": 2,
+      "Password": "heslo"
+    }
+  ],
+  "Supervisors": []
+}
