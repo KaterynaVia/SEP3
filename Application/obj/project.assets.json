@@ -123,19 +123,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\artur\\.nuget\\packages\\": {}
+    "/Users/dominikakrullova/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\artur\\Desktop\\SEP3\\Application\\Application.csproj",
+      "projectUniqueName": "/Users/dominikakrullova/Desktop/SEP3Real/Application/Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\Users\\artur\\Desktop\\SEP3\\Application\\Application.csproj",
-      "packagesPath": "C:\\Users\\artur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\artur\\Desktop\\SEP3\\Application\\obj\\",
+      "projectPath": "/Users/dominikakrullova/Desktop/SEP3Real/Application/Application.csproj",
+      "packagesPath": "/Users/dominikakrullova/.nuget/packages/",
+      "outputPath": "/Users/dominikakrullova/Desktop/SEP3Real/Application/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\artur\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/dominikakrullova/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -147,8 +147,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\artur\\Desktop\\SEP3\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\artur\\Desktop\\SEP3\\Domain\\Domain.csproj"
+            "/Users/dominikakrullova/Desktop/SEP3Real/Domain/Domain.csproj": {
+              "projectPath": "/Users/dominikakrullova/Desktop/SEP3Real/Domain/Domain.csproj"
             }
           }
         }
@@ -178,7 +178,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
       }
     }
   }

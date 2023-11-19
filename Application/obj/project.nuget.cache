@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "O6EYigyPa6SicBNQ2ze03C0d5tWzTROsLdjqBFQ1MzY7gOVgPScPRY5Kw2/k0QhvuKohzWjXSnc11VIsp9W6aw==",
+  "dgSpecHash": "1BlkC02+guAnDYPtwzEV9Tw/pJx2nCU13zbcGE1g3gh4BcqC1D4qLunjsKRRcMDTJyTeLwgRab8Xb8jgJJysdg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\artur\\Desktop\\SEP3\\Application\\Application.csproj",
+  "projectFilePath": "/Users/dominikakrullova/Desktop/SEP3Real/Application/Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\artur\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
-    "C:\\Users\\artur\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+    "/Users/dominikakrullova/.nuget/packages/microsoft.extensions.dependencyinjection/7.0.0/microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "/Users/dominikakrullova/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/7.0.0/microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }
