@@ -40,3 +40,6 @@
 /Users/dominikakrullova/Desktop/SEP3Real/WebApi/obj/Debug/net7.0/WebApi.genruntimeconfig.cache
 /Users/dominikakrullova/Desktop/SEP3Real/WebApi/obj/Debug/net7.0/ref/WebApi.dll
 /Users/dominikakrullova/Desktop/SEP3Real/WebApi/bin/Debug/net7.0/data.json
+/Users/dominikakrullova/Desktop/SEP3Real/WebApi/bin/Debug/net7.0/appsettings 2.json
+/Users/dominikakrullova/Desktop/SEP3Real/WebApi/bin/Debug/net7.0/appsettings.Development 2.json
+/Users/dominikakrullova/Desktop/SEP3Real/WebApi/bin/Debug/net7.0/data 2.json

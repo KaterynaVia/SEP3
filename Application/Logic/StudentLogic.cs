@@ -2,6 +2,7 @@ using Application.DaoInterfaces;
 using Application.LogicInterfaces;
 using Domain;
 using Domain.DTOs;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Application.Logic;
 
@@ -14,20 +15,22 @@ public class StudentLogic  : IStudentLogic
         this.userDao = userDao;
     }
 
-    public async Task<Student> CreateAsyncStudent(UserCreationDto dto)
+    public async Task<Student> CreateAsyncStudent(StudentCreationDto dto)
     {
-        User? existing = await userDao.GetByIdAsync(dto.Id);
+        Console.WriteLine("2");
+        Student? existing = await userDao.GetByIdAsync(dto.Id);
         if (existing != null)
+        {
             throw new Exception("Id already taken!");
+        }
+            
 
         ValidateData(dto);
         
         
-        Student toCreate = new Student(dto.Id, dto.Password, dto.Name);
-    
-        User created = await userDao.CreateAsyncStudent(toCreate);
-    
-        return (Student)created;
+        Student toCreate = new Student(dto.Id, dto.Password, dto.Name, dto.UserId, dto.AssignedClass);
+        await userDao.CreateAsyncStudent(toCreate);
+        return toCreate;
     }
 
     public Task<IEnumerable<Student>> GetAsyncStudent(SearchUserParametersDto searchParameters)
@@ -45,7 +48,7 @@ public class StudentLogic  : IStudentLogic
 
         string password = userToCreate.Password;
 
-        if (password.Length > 8) throw new Exception("Password must be at least 8 characters. ");
+        if (password.Length < 8) throw new Exception("Password must be at least 8 characters. ");
 
     }
 }

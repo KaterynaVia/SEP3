@@ -6,7 +6,7 @@ public class Class
     public Teacher Teacher { get; set; }
     public List<Student> Students = new List<Student>();
 
-    Class(Teacher teacher, List<Student> students, string name)
+    public Class(Teacher teacher, List<Student> students, string name)
     {
         Teacher = teacher;
         Students = students;

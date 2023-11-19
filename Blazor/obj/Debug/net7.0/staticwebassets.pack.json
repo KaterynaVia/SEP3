@@ -17,8 +17,20 @@
       "PackagePath": "staticwebassets/css/open-iconic"
     },
     {
+      "Id": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/css/open-iconic/FONT-LICENSE 2",
+      "PackagePath": "staticwebassets/css/open-iconic"
+    },
+    {
       "Id": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/css/open-iconic/ICON-LICENSE",
       "PackagePath": "staticwebassets/css/open-iconic"
+    },
+    {
+      "Id": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/css/open-iconic/ICON-LICENSE 2",
+      "PackagePath": "staticwebassets/css/open-iconic"
+    },
+    {
+      "Id": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/css/open-iconic/README 2.md",
+      "PackagePath": "staticwebassets/css/open-iconic/README 2.md"
     },
     {
       "Id": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/css/open-iconic/README.md",
@@ -49,8 +61,16 @@
       "PackagePath": "staticwebassets/css/open-iconic/font/fonts/open-iconic.woff"
     },
     {
+      "Id": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/css/site 2.css",
+      "PackagePath": "staticwebassets/css/site 2.css"
+    },
+    {
       "Id": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
+    },
+    {
+      "Id": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/favicon 2.png",
+      "PackagePath": "staticwebassets/favicon 2.png"
     },
     {
       "Id": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/favicon.png",

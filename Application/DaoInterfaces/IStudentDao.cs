@@ -6,7 +6,7 @@ namespace Application.DaoInterfaces;
 public interface IStudentDao
 {
     Task<Student?> GetByIdAsync(string id);
-    Task<Student> CreateAsyncStudent(Student student);
+    Task CreateAsyncStudent(Student student);
     public Task<IEnumerable<Student>> GetAsyncStudent(SearchUserParametersDto searchParameters);
 
 }

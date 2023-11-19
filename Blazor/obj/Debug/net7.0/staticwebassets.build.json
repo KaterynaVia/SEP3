@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XVhrM7xJf+wpAp4RPQtpNcJCcyh+tzWGeE+QPwlPR8A=",
+  "Hash": "RAteJpCXyIaTHW7B8fG9D0/FnzN/nFSHWuuBneDjhNQ=",
   "Source": "Blazor",
   "BasePath": "_content/Blazor",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/open-iconic/FONT-LICENSE"
+    },
+    {
+      "Identity": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/css/open-iconic/FONT-LICENSE 2",
+      "SourceId": "Blazor",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/",
+      "BasePath": "_content/Blazor",
+      "RelativePath": "css/open-iconic/FONT-LICENSE 2",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/open-iconic/FONT-LICENSE 2"
     },
     {
       "Identity": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css",
@@ -221,6 +238,40 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/ICON-LICENSE"
     },
     {
+      "Identity": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/css/open-iconic/ICON-LICENSE 2",
+      "SourceId": "Blazor",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/",
+      "BasePath": "_content/Blazor",
+      "RelativePath": "css/open-iconic/ICON-LICENSE 2",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/open-iconic/ICON-LICENSE 2"
+    },
+    {
+      "Identity": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/css/open-iconic/README 2.md",
+      "SourceId": "Blazor",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/",
+      "BasePath": "_content/Blazor",
+      "RelativePath": "css/open-iconic/README 2.md",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/open-iconic/README 2.md"
+    },
+    {
       "Identity": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/css/open-iconic/README.md",
       "SourceId": "Blazor",
       "SourceType": "Discovered",
@@ -238,6 +289,23 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/README.md"
     },
     {
+      "Identity": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/css/site 2.css",
+      "SourceId": "Blazor",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/",
+      "BasePath": "_content/Blazor",
+      "RelativePath": "css/site 2.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/site 2.css"
+    },
+    {
       "Identity": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/css/site.css",
       "SourceId": "Blazor",
       "SourceType": "Discovered",
@@ -253,6 +321,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
+    },
+    {
+      "Identity": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/favicon 2.png",
+      "SourceId": "Blazor",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/",
+      "BasePath": "_content/Blazor",
+      "RelativePath": "favicon 2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/favicon 2.png"
     },
     {
       "Identity": "/Users/dominikakrullova/Desktop/SEP3Real/Blazor/wwwroot/favicon.png",

@@ -12,7 +12,7 @@ public class UserFileDao : IStudentDao, ITeacherDao
     {
         this.context = context;
     }
-    
+
 
     public Task<Student?> GetByIdAsync(string userName)
     {
@@ -24,7 +24,7 @@ public class UserFileDao : IStudentDao, ITeacherDao
 
     public Task<Teacher> CreateAsyncTeacher(Teacher teacher)
     {
-        int userId =1;
+        int userId = 1;
         if (context.Teachers.Any())
         {
             userId = context.Teachers.Max(s => s.UserId);
@@ -39,9 +39,9 @@ public class UserFileDao : IStudentDao, ITeacherDao
         return Task.FromResult(teacher);
     }
 
-    public Task<Student> CreateAsyncStudent(Student student)
+    public Task CreateAsyncStudent(Student student)
     {
-        int userId =1;
+        int userId = 1;
         if (context.Students.Any())
         {
             userId = context.Students.Max(s => s.UserId);
@@ -52,8 +52,7 @@ public class UserFileDao : IStudentDao, ITeacherDao
 
         context.Students.Add(student);
         context.SaveChanges();
-
-        return Task.FromResult(student);
+        return Task.CompletedTask;
     }
 
     public Task<IEnumerable<Student>> GetAsyncStudent(SearchUserParametersDto searchParameters)
@@ -61,7 +60,8 @@ public class UserFileDao : IStudentDao, ITeacherDao
         IEnumerable<Student> students = context.Students.AsEnumerable();
         if (searchParameters.IdContains != null)
         {
-            students = context.Students.Where(u => u.Id.Contains(searchParameters.IdContains, StringComparison.OrdinalIgnoreCase));
+            students = context.Students.Where(u =>
+                u.Id.Contains(searchParameters.IdContains, StringComparison.OrdinalIgnoreCase));
         }
 
         return Task.FromResult(students);
@@ -74,17 +74,17 @@ public class UserFileDao : IStudentDao, ITeacherDao
         );
         return Task.FromResult(existing);
     }
-    
+
 
     public Task<IEnumerable<Teacher>> GetAsyncTeacher(SearchUserParametersDto searchParameters)
     {
         IEnumerable<Teacher> teachers = context.Teachers.AsEnumerable();
         if (searchParameters.IdContains != null)
         {
-            teachers = context.Teachers.Where(u => u.Id.Contains(searchParameters.IdContains, StringComparison.OrdinalIgnoreCase));
+            teachers = context.Teachers.Where(u =>
+                u.Id.Contains(searchParameters.IdContains, StringComparison.OrdinalIgnoreCase));
         }
 
         return Task.FromResult(teachers);
     }
-    
 }

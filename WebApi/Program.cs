@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Application.DaoInterfaces;
 using Application.Logic;
 using Application.LogicInterfaces;
@@ -18,6 +19,12 @@ builder.Services.AddScoped<IStudentDao, UserFileDao>();
 builder.Services.AddScoped<IStudentLogic, StudentLogic>();
 builder.Services.AddScoped<ITeacherDao, UserFileDao>();
 builder.Services.AddScoped<ITeacherLogic, TeacherLogic>();
+
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+    });
 
 var app = builder.Build();
 

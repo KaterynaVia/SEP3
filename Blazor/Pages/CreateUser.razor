@@ -59,7 +59,7 @@
 
         try
         {
-            await userService.CreateTeacher(new UserCreationDto(id));
+            //await userService.CreateTeacher(new UserCreationDto(id, userType:"Teacher"));
             id = "";
             resultMsg = "User successfully created";
             color = "green";
@@ -79,7 +79,7 @@
 
         try
         {
-            await userService.CreateStudent(new UserCreationDto(id));
+            //await userService.CreateStudent(new UserCreationDto(id, userType:"Student"));
             id = "";
             resultMsg = "User successfully created";
             color = "green";

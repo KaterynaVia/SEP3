@@ -2,7 +2,7 @@
 
 public class Supervisor : User
 {
-    public Supervisor(string password, string id, int userId) : base(password, id)
+    public Supervisor(string password, string id, int userId) : base(id, password)
     {
     }
 }

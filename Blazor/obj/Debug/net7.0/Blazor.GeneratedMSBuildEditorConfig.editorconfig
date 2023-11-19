@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/dominikakrullova/Desktop/SEP3Real/Blazor
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/dominikakrullova/Desktop/SEP3Real/Blazor/App 2.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwIDIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/dominikakrullova/Desktop/SEP3Real/Blazor/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -34,6 +38,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/dominikakrullova/Desktop/SEP3Real/Blazor/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1N1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/dominikakrullova/Desktop/SEP3Real/Blazor/_Imports 2.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMgMi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/dominikakrullova/Desktop/SEP3Real/Blazor/_Imports.razor]

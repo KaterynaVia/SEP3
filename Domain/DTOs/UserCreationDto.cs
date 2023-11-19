@@ -8,6 +8,8 @@ public class UserCreationDto
     public string Password { get; set; }
     public string Name { get; set; }
 
+    
+
     public UserCreationDto(string id, string password, string name)
     {
         Id = id;
@@ -20,4 +22,6 @@ public class UserCreationDto
     {
         Id = id;
     }
+    
+    public UserCreationDto(){}
 }

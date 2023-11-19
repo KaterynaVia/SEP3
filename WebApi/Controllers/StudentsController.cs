@@ -17,7 +17,7 @@ public class StudentsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<User>> CreateAsyncStudent(UserCreationDto dto)
+    public async Task<ActionResult<Student>> CreateAsyncStudent(StudentCreationDto dto)
     {
         try
         {

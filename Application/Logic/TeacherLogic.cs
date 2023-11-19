@@ -15,7 +15,7 @@ public class TeacherLogic : ITeacherLogic
         this.userDao = userDao;
     }
 
-    public async Task<Teacher> CreateAsyncTeacher(UserCreationDto dto)
+    public async Task<Teacher> CreateAsyncTeacher(TeacherCreationDto dto)
     {
         Teacher? existing = await userDao.GetByIdAsyncTeacher(dto.Id);
         if (existing != null)
@@ -24,11 +24,11 @@ public class TeacherLogic : ITeacherLogic
         ValidateData(dto);
         
         
-        Teacher toCreate = new Teacher(dto.Id, dto.Password, dto.Name);
+        Teacher toCreate = new Teacher(dto.Id, dto.Password, dto.Name, dto.UserId);
     
-        Teacher created = await userDao.CreateAsyncTeacher(toCreate);
+        await userDao.CreateAsyncTeacher(toCreate);
     
-        return created;
+        return toCreate;
     }
 
     public Task<IEnumerable<Teacher>> GetAsyncTeacher(SearchUserParametersDto searchParameters)
@@ -47,7 +47,7 @@ public class TeacherLogic : ITeacherLogic
 
         string password = userToCreate.Password;
 
-        if (password.Length > 8) throw new Exception("Password must be at least 8 characters. ");
+        if (password.Length < 8) throw new Exception("Password must be at least 8 characters. ");
 
     }
 }
