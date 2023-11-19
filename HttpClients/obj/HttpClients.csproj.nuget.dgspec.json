@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/dominikakrullova/Desktop/SEP3Real/HttpClients/HttpClients.csproj": {}
+    "C:\\Users\\artur\\Desktop\\SEP3\\HttpClients\\HttpClients.csproj": {}
   },
   "projects": {
-    "/Users/dominikakrullova/Desktop/SEP3Real/Domain/Domain.csproj": {
+    "C:\\Users\\artur\\Desktop\\SEP3\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/dominikakrullova/Desktop/SEP3Real/Domain/Domain.csproj",
+        "projectUniqueName": "C:\\Users\\artur\\Desktop\\SEP3\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/Users/dominikakrullova/Desktop/SEP3Real/Domain/Domain.csproj",
-        "packagesPath": "/Users/dominikakrullova/.nuget/packages/",
-        "outputPath": "/Users/dominikakrullova/Desktop/SEP3Real/Domain/obj/",
+        "projectPath": "C:\\Users\\artur\\Desktop\\SEP3\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\artur\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\artur\\Desktop\\SEP3\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/dominikakrullova/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\artur\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -37,6 +37,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -53,21 +59,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/dominikakrullova/Desktop/SEP3Real/HttpClients/HttpClients.csproj": {
+    "C:\\Users\\artur\\Desktop\\SEP3\\HttpClients\\HttpClients.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/dominikakrullova/Desktop/SEP3Real/HttpClients/HttpClients.csproj",
+        "projectUniqueName": "C:\\Users\\artur\\Desktop\\SEP3\\HttpClients\\HttpClients.csproj",
         "projectName": "HttpClients",
-        "projectPath": "/Users/dominikakrullova/Desktop/SEP3Real/HttpClients/HttpClients.csproj",
-        "packagesPath": "/Users/dominikakrullova/.nuget/packages/",
-        "outputPath": "/Users/dominikakrullova/Desktop/SEP3Real/HttpClients/obj/",
+        "projectPath": "C:\\Users\\artur\\Desktop\\SEP3\\HttpClients\\HttpClients.csproj",
+        "packagesPath": "C:\\Users\\artur\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\artur\\Desktop\\SEP3\\HttpClients\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/dominikakrullova/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\artur\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -79,8 +85,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/Users/dominikakrullova/Desktop/SEP3Real/Domain/Domain.csproj": {
-                "projectPath": "/Users/dominikakrullova/Desktop/SEP3Real/Domain/Domain.csproj"
+              "C:\\Users\\artur\\Desktop\\SEP3\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\artur\\Desktop\\SEP3\\Domain\\Domain.csproj"
               }
             }
           }
@@ -110,7 +116,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

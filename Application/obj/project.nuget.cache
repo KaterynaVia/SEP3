@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "AxZhz7P6NG9wPNMmiEgikjzmUjA60hqc4fzGXgX1M4VE6j467ggtbvL0RrDzzRGImywRIKNSLOzCv1SyL05z3A==",
+  "dgSpecHash": "O6EYigyPa6SicBNQ2ze03C0d5tWzTROsLdjqBFQ1MzY7gOVgPScPRY5Kw2/k0QhvuKohzWjXSnc11VIsp9W6aw==",
   "success": true,
-  "projectFilePath": "/Users/dominikakrullova/Desktop/SEP3Real/Application/Application.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\artur\\Desktop\\SEP3\\Application\\Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\artur\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\artur\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
