@@ -1,0 +1,17 @@
+/SEP3.sln
+
+Domain/obj/Debug/net7.0/
+Domain/obj/
+Application/obj/Debug/net7.0/
+Application/obj/
+Blazor/obj/Debug/net7.0/
+Blazor/obj/
+FileData/obj/Debug/net7.0/
+FileData/obj/
+HttpClients/obj/Debug/net7.0/
+HttpClients/obj/
+WebApi/obj/Debug/net7.0/
+WebApi/obj/
+rider.project.model.nuget.info
+
+.idea/
