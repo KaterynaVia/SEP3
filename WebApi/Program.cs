@@ -26,6 +26,9 @@ builder.Services.AddScoped<IStudentDao, UserFileDao>();
 builder.Services.AddScoped<IStudentLogic, StudentLogic>();
 builder.Services.AddScoped<ITeacherDao, UserFileDao>();
 builder.Services.AddScoped<ITeacherLogic, TeacherLogic>();
+builder.Services.AddScoped<IUserLogic, UserLogic>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IUserDao, UserDao>();
 
 
 builder.Services.AddControllers()
@@ -35,23 +38,25 @@ builder.Services.AddControllers()
     });
 
 
-builder.Services.AddScoped<IUserLogic, UserLogic>();
-builder.Services.AddScoped<IAuthService, AuthService>();
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
-{
-    options.RequireHttpsMetadata = false;
-    options.SaveToken = true;
-    options.TokenValidationParameters = new TokenValidationParameters()
-    {
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidAudience = builder.Configuration["Jwt:Audience"],
-        ValidIssuer = builder.Configuration["Jwt:Issuer"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
-    };
-});
-AuthorizationPolicies.AddPolicies(builder.Services);
+
+// builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+// {
+//     options.RequireHttpsMetadata = false;
+//     options.SaveToken = true;
+//     options.TokenValidationParameters = new TokenValidationParameters()
+//     {
+//         ValidateIssuer = true,
+//         ValidateAudience = true,
+//         ValidAudience = builder.Configuration["Jwt:Audience"],
+//         ValidIssuer = builder.Configuration["Jwt:Issuer"],
+//         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+//     };
+// });
+//
+// AuthorizationPolicies.AddPolicies(builder.Services);
+
+
 var app = builder.Build();
 
 
