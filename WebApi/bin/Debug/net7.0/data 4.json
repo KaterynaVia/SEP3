@@ -1,0 +1,29 @@
+{
+  "Teachers": [
+    {
+      "Name": "dkjbfhsb",
+      "UserId": 1,
+      "Id": "ndshdvhs",
+      "Password": "sdvjhasvdds f"
+    }
+  ],
+  "Classes": [],
+  "Exams": [],
+  "Students": [
+    {
+      "UserId": 1,
+      "Name": "string",
+      "Class": "string",
+      "Id": "string",
+      "Password": "string"
+    },
+    {
+      "UserId": 2,
+      "Name": "dfdsfs",
+      "Class": "dsdfbsjdhbf",
+      "Id": "jhnghg",
+      "Password": "fgbfrgvf"
+    }
+  ],
+  "Supervisors": []
+}
