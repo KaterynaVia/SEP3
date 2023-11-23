@@ -12,6 +12,12 @@
 /dataSources/
 /dataSources.local.xml
 
+*.cache
+*.dll
+*.pdb
+/cache/
+/obj/
+/bin/
 /SEP3.sln
 
 Domain/obj/Debug/net7.0/
