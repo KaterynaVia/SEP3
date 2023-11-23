@@ -5,8 +5,7 @@ namespace Domain.DTOs;
 public class StudentCreationDto : UserCreationDto
 {
     
-    //[JsonPropertyName("UserId")]
-    public int UserId { get; set; }
+    //[JsonPropertyName("UserId")]\\
     [JsonPropertyName("Class")]
     public string AssignedClass { get; set; }
 

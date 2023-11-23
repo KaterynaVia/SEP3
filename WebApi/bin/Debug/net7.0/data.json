@@ -1,54 +1,73 @@
 {
   "Teachers": [
     {
-      "Name": "dkjbfhsb",
       "UserId": 1,
-      "Id": "ndshdvhs",
-      "Password": "sdvjhasvdds f"
+      "Name": "dkjbfhsb",
+      "Id": "sdvjhasvdds f",
+      "Password": "ndshdvhs"
     },
     {
-      "Name": "viaid2",
       "UserId": 2,
-      "Id": "jan",
-      "Password": "heslo123"
+      "Name": "viaid2",
+      "Id": "heslo123",
+      "Password": "jan"
     },
     {
-      "Name": "viaid9",
       "UserId": 3,
-      "Id": "alhe",
-      "Password": "heslo123"
+      "Name": "viaid9",
+      "Id": "heslo123",
+      "Password": "alhe"
+    },
+    {
+      "UserId": 4,
+      "Name": "mika",
+      "Id": "heslo123",
+      "Password": "viaid8"
+    },
+    {
+      "UserId": 5,
+      "Name": "mama",
+      "Id": "heslo123",
+      "Password": "555555"
     }
   ],
   "Classes": [],
   "Exams": [],
   "Students": [
     {
-      "UserId": 1,
       "Name": "string",
+      "UserId": 1,
       "Class": "string",
       "Id": "string",
       "Password": "string"
     },
     {
-      "UserId": 2,
       "Name": "dfdsfs",
+      "UserId": 2,
       "Class": "dsdfbsjdhbf",
       "Id": "jhnghg",
       "Password": "fgbfrgvf"
     },
     {
-      "UserId": 3,
       "Name": "Dominika",
+      "UserId": 3,
       "Class": "CAO1",
       "Id": "VIAID1",
       "Password": "abcdefgh"
     },
     {
-      "UserId": 4,
       "Name": "katya",
+      "UserId": 4,
       "Class": "sdj3",
       "Id": "viaid4",
       "Password": "sdfgjkgd"
+    },
+    {
+      "Name": "mika",
+      "UserId": 5,
+      "Class": "ser4",
+      "Id": "777777",
+      "Password": "heslo123"
     }
   ],
   "Supervisors": []

@@ -6,8 +6,7 @@ public class User
 {
     [JsonPropertyName("Id")]
     public  string Id { get; set; }
-    [JsonPropertyName("UserId")]
-    public int UserId { get; set; }
+
     [JsonPropertyName("Password")]
     public string Password { get; set; }
     

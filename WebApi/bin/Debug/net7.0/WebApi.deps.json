@@ -13,6 +13,7 @@
           "HttpClients": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.14",
           "Microsoft.AspNetCore.OpenApi": "7.0.10",
+          "Microsoft.IdentityModel.Tokens": "7.0.3",
           "Swashbuckle.AspNetCore": "6.5.0",
           "System.IdentityModel.Tokens.Jwt": "7.0.3"
         },

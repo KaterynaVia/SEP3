@@ -24,7 +24,7 @@ public class TeacherLogic : ITeacherLogic
         ValidateData(dto);
         
         
-        Teacher toCreate = new Teacher(dto.Id, dto.Password, dto.Name, dto.UserId);
+        Teacher toCreate = new Teacher( dto.Id, dto.Password, dto.Name);
     
         await userDao.CreateAsyncTeacher(toCreate);
     

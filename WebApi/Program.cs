@@ -1,15 +1,10 @@
 
 using System.Text.Json;
-using System.Text;
-
 using Application.DaoInterfaces;
 using Application.Logic;
 using Application.LogicInterfaces;
-using Domain.Auth;
 using FileData;
 using FileData.DAOs;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
 using WebApi.Services;
 
 
