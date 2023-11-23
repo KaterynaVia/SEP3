@@ -70,12 +70,9 @@ public class UserFileDao : IStudentDao, ITeacherDao
     public Task<Teacher?> GetByIdAsyncTeacher(string viaID)
     {
         Teacher? existing = context.Teachers.FirstOrDefault(u =>
-            u.Id.Contains(viaID, StringComparison.OrdinalIgnoreCase));
+            u.Id.Equals(viaID, StringComparison.OrdinalIgnoreCase));
         return Task.FromResult(existing);
-        
-        
     }
-
 
     public Task<IEnumerable<Teacher>> GetAsyncTeacher(SearchUserParametersDto searchParameters)
     {
@@ -88,4 +85,5 @@ public class UserFileDao : IStudentDao, ITeacherDao
 
         return Task.FromResult(teachers);
     }
+    
 }

@@ -17,7 +17,6 @@ public class StudentLogic  : IStudentLogic
 
     public async Task<Student> CreateAsyncStudent(StudentCreationDto dto)
     {
-        Console.WriteLine("2");
         Student? existing = await userDao.GetByIdAsync(dto.Id);
         if (existing != null)
         {

@@ -11,6 +11,12 @@
       "UserId": 2,
       "Id": "jan",
       "Password": "heslo123"
+    },
+    {
+      "Name": "viaid9",
+      "UserId": 3,
+      "Id": "alhe",
+      "Password": "heslo123"
     }
   ],
   "Classes": [],
@@ -36,6 +42,13 @@
       "Class": "CAO1",
       "Id": "VIAID1",
       "Password": "abcdefgh"
+    },
+    {
+      "UserId": 4,
+      "Name": "katya",
+      "Class": "sdj3",
+      "Id": "viaid4",
+      "Password": "sdfgjkgd"
     }
   ],
   "Supervisors": []

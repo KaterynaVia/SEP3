@@ -21,11 +21,12 @@ public class ClassLogic : IClassLogic
     }
     public async Task<Class> CreateAsyncClass(ClassCreationDto dto)
     {
-        Teacher? teacher = await teacherDao.GetByIdAsyncTeacher(dto.TeacherID.Id);
+        /*Teacher? teacher = await teacherDao.GetByIdAsyncTeacher(dto.TeacherID.Id);
         if (teacher == null)
         {
             throw new Exception($"Teacher with id {dto.TeacherID.Id} was not found.");
         }
+        */
 
         List<Student> students = dto.Students;
         if (students == null)
@@ -39,7 +40,7 @@ public class ClassLogic : IClassLogic
             studentIdList.Add(student.Id);
         }
         
-        Class class_ = new Class(teacher, students, "TestClass");
+        Class class_ = new Class(students, "TestClass");
         Console.WriteLine($"Student IDs for this class: {studentIdList}");
 
         return class_;

@@ -21,4 +21,10 @@ public class Class
         Students = students;
         Name = name;
     }
+    
+    public Class(List<Student> students, string name)
+    {
+        Students = students;
+        Name = name;
+    }
 }
