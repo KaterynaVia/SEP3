@@ -34,7 +34,6 @@ public class TeacherLogic : ITeacherLogic
     public Task<IEnumerable<Teacher>> GetAsyncTeacher(SearchUserParametersDto searchParameters)
     {
         return userDao.GetAsyncTeacher(searchParameters);
-
     }
     
 

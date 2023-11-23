@@ -67,12 +67,13 @@ public class UserFileDao : IStudentDao, ITeacherDao
         return Task.FromResult(students);
     }
 
-    public Task<Teacher?> GetByIdAsyncTeacher(string id)
+    public Task<Teacher?> GetByIdAsyncTeacher(string viaID)
     {
         Teacher? existing = context.Teachers.FirstOrDefault(u =>
-            u.Id.Equals(id, StringComparison.OrdinalIgnoreCase)
-        );
+            u.Id.Contains(viaID, StringComparison.OrdinalIgnoreCase));
         return Task.FromResult(existing);
+        
+        
     }
 
 

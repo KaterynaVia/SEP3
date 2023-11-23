@@ -21,10 +21,10 @@ public class ClassLogic : IClassLogic
     }
     public async Task<Class> CreateAsyncClass(ClassCreationDto dto)
     {
-        Teacher? teacher = await teacherDao.GetByIdAsyncTeacher(dto.Teacher.Id);
+        Teacher? teacher = await teacherDao.GetByIdAsyncTeacher(dto.TeacherID.Id);
         if (teacher == null)
         {
-            throw new Exception($"Teacher with id {dto.Teacher.Id} was not found.");
+            throw new Exception($"Teacher with id {dto.TeacherID.Id} was not found.");
         }
 
         List<Student> students = dto.Students;
@@ -44,5 +44,10 @@ public class ClassLogic : IClassLogic
 
         return class_;
 
+    }
+
+    public Task<IEnumerable<Class>> GetAsyncClass(SearchClassParametersDto searchClassParameters)
+    {
+        return classDao.GetAsyncClass(searchClassParameters);
     }
 }

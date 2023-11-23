@@ -1,5 +1,6 @@
 using Application.DaoInterfaces;
 using Domain;
+using Domain.DTOs;
 
 namespace FileData.DAOs;
 
@@ -26,5 +27,12 @@ public class ClassFileDao : IClassDao
         context.SaveChanges();
 
         return Task.FromResult(class_);
+    }
+
+    public Task<IEnumerable<Class>> GetAsyncClass(SearchClassParametersDto searchClassParameters)
+    {
+        IEnumerable<Class> classes = context.Classes.AsEnumerable();
+
+        return Task.FromResult(classes);
     }
 }

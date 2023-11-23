@@ -31,11 +31,11 @@ public class TeachersController : ControllerBase
     }
     
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Teacher>>> GetAsyncTeacher([FromQuery] string? id)
+    public async Task<ActionResult<IEnumerable<Teacher>>> GetAsyncTeacher([FromQuery] string? viaID)
     {
         try
         {
-            SearchUserParametersDto parameters = new(id);
+            SearchUserParametersDto parameters = new(viaID);
             IEnumerable<Teacher> teachers = await teacherLogic.GetAsyncTeacher(parameters);
             return Ok(teachers);
         }

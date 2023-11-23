@@ -3,13 +3,15 @@ namespace Domain.DTOs;
 public class ClassCreationDto
 {
     public string Name { get; }
-    public Teacher Teacher { get; }
+    public int Id { get; }
+    public string TeacherID { get; }
     public List<Student> Students { get; }
-
-    public ClassCreationDto(string name, Teacher teacher, List<Student> students)
+    
+    public ClassCreationDto(string name, string teacherID, List<Student> students, int id)
     {
+        Id = id;
         Name = name;
-        Teacher = teacher;
+        TeacherID = teacherID;
         Students = students;
     }
 }

@@ -30,5 +30,22 @@ public class ClassController : ControllerBase
             return StatusCode(500, e.Message);
         }
     }
+    
+    
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Class>>> GetAsync([FromQuery] string? className)
+    {
+        try
+        {
+            SearchClassParametersDto parameters = new(className);
+            var classes = await classLogic.GetAsyncClass(parameters);
+            return Ok(classes);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
 
 }

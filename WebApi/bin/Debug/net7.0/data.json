@@ -5,6 +5,12 @@
       "UserId": 1,
       "Id": "ndshdvhs",
       "Password": "sdvjhasvdds f"
+    },
+    {
+      "Name": "viaid2",
+      "UserId": 2,
+      "Id": "jan",
+      "Password": "heslo123"
     }
   ],
   "Classes": [],
@@ -23,6 +29,13 @@
       "Class": "dsdfbsjdhbf",
       "Id": "jhnghg",
       "Password": "fgbfrgvf"
+    },
+    {
+      "UserId": 3,
+      "Name": "Dominika",
+      "Class": "CAO1",
+      "Id": "VIAID1",
+      "Password": "abcdefgh"
     }
   ],
   "Supervisors": []
