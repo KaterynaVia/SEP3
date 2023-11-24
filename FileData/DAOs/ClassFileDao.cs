@@ -35,4 +35,9 @@ public class ClassFileDao : IClassDao
 
         return Task.FromResult(classes);
     }
+
+    public Task<Class?> GetByIdClassAsync(int id)
+    {
+        throw new NotImplementedException();
+    }
 }

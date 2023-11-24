@@ -1,15 +1,17 @@
+using System.Text.Json.Serialization;
+
 namespace Domain.DTOs;
 
 public class ClassCreationDto
 {
     public string Name { get; }
-    public int Id { get; }
+    public int Id { get;}
     public string TeacherID { get; }
-    public List<Student> Students { get; }
+    public List<string> Students { get; }
     
-    public ClassCreationDto(string name, string teacherID, List<Student> students, int id)
+    [JsonConstructor]
+    public ClassCreationDto(string name, string teacherID, List<string> students)
     {
-        Id = id;
         Name = name;
         TeacherID = teacherID;
         Students = students;

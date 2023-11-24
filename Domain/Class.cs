@@ -3,28 +3,33 @@ namespace Domain;
 public class Class
 {
     public string Name { get; set; }
-    public Teacher Teacher { get; set; }
-    public List<Student> Students = new List<Student>();
+    public string TeacherId { get; set; }
+    public List<string> Students = new List<string>();
     public int Id { get; set; }
 
-    public Class(Teacher teacher, List<Student> students, string name, int id)
+    public Class(string name, string teacherId, List<string> students, int id)
     {
-        Teacher = teacher;
+        TeacherId = teacherId;
         Students = students;
         Name = name;
         Id = id;
     }
     
-    public Class(Teacher teacher, List<Student> students, string name)
+    public Class(string teacherId, List<string> students, string name)
     {
-        Teacher = teacher;
+        TeacherId = teacherId;
         Students = students;
         Name = name;
     }
     
-    public Class(List<Student> students, string name)
+    public Class(List<string> students, string name)
     {
         Students = students;
+        Name = name;
+    }
+    
+    public Class(string name)
+    {
         Name = name;
     }
 }

@@ -8,43 +8,32 @@ namespace Application.Logic;
 
 public class ClassLogic : IClassLogic
 {
-    private readonly IClassLogic classDao;
+    private readonly IClassDao classDao;
     private readonly ITeacherDao teacherDao;
     private readonly IStudentDao studentDao;
     private List<string> studentIdList;
 
-    public ClassLogic(IClassLogic classDao, IStudentDao studentDao, ITeacherDao teacherDao)
+    public ClassLogic(IClassDao classDao, IStudentDao studentDao, ITeacherDao teacherDao)
     {
         this.classDao = classDao;
         this.teacherDao = teacherDao;
         this.studentDao = studentDao;
     }
+
     public async Task<Class> CreateAsyncClass(ClassCreationDto dto)
     {
-        /*Teacher? teacher = await teacherDao.GetByIdAsyncTeacher(dto.TeacherID.Id);
-        if (teacher == null)
+        Class? existing = await classDao.GetByIdClassAsync(dto.Id);
+        if (existing != null)
         {
-            throw new Exception($"Teacher with id {dto.TeacherID.Id} was not found.");
-        }
-        */
-
-        List<Student> students = dto.Students;
-        if (students == null)
-        {
-            throw new Exception("No students in the list.");
-        }
-
-        
-        foreach (var student in students)
-        {
-            studentIdList.Add(student.Id);
+            throw new Exception("Id already taken!");
         }
         
-        Class class_ = new Class(students, "TestClass");
+        
+        Class toCreate = new Class(dto.Name, dto.TeacherID, dto.Students, dto.Id);
         Console.WriteLine($"Student IDs for this class: {studentIdList}");
+        //await classDao.GetAsyncClass(toCreate);
 
-        return class_;
-
+        return toCreate;
     }
 
     public Task<IEnumerable<Class>> GetAsyncClass(SearchClassParametersDto searchClassParameters)

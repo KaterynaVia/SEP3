@@ -1,0 +1,74 @@
+{
+  "Teachers": [
+    {
+      "UserId": 1,
+      "Name": "dkjbfhsb",
+      "Id": "sdvjhasvdds f",
+      "Password": "ndshdvhs"
+    },
+    {
+      "UserId": 2,
+      "Name": "viaid2",
+      "Id": "heslo123",
+      "Password": "jan"
+    },
+    {
+      "UserId": 3,
+      "Name": "viaid9",
+      "Id": "heslo123",
+      "Password": "alhe"
+    },
+    {
+      "UserId": 4,
+      "Name": "mika",
+      "Id": "heslo123",
+      "Password": "viaid8"
+    },
+    {
+      "UserId": 5,
+      "Name": "mama",
+      "Id": "heslo123",
+      "Password": "555555"
+    }
+  ],
+  "Classes": [],
+  "Exams": [],
+  "Students": [
+    {
+      "Name": "string",
+      "UserId": 1,
+      "Class": "string",
+      "Id": "string",
+      "Password": "string"
+    },
+    {
+      "Name": "dfdsfs",
+      "UserId": 2,
+      "Class": "dsdfbsjdhbf",
+      "Id": "jhnghg",
+      "Password": "fgbfrgvf"
+    },
+    {
+      "Name": "Dominika",
+      "UserId": 3,
+      "Class": "CAO1",
+      "Id": "VIAID1",
+      "Password": "abcdefgh"
+    },
+    {
+      "Name": "katya",
+      "UserId": 4,
+      "Class": "sdj3",
+      "Id": "viaid4",
+      "Password": "sdfgjkgd"
+    },
+    {
+      "Name": "mika",
+      "UserId": 5,
+      "Class": "ser4",
+      "Id": "777777",
+      "Password": "heslo123"
+    }
+  ],
+  "Supervisors": []
+}

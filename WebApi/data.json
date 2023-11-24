@@ -35,6 +35,12 @@
       "Name": "mamik",
       "Id": "333333",
       "Password": "heslo123"
+    },
+    {
+      "UserId": 7,
+      "Name": "niki",
+      "Id": "987654",
+      "Password": "heslohes"
     }
   ],
   "Classes": [],

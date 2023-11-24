@@ -24,6 +24,9 @@ builder.Services.AddScoped<ITeacherLogic, TeacherLogic>();
 builder.Services.AddScoped<IUserLogic, UserLogic>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserDao, UserDao>();
+builder.Services.AddScoped<IClassLogic, ClassLogic>();
+builder.Services.AddScoped<IClassDao, ClassFileDao>();
+
 
 
 builder.Services.AddControllers()
