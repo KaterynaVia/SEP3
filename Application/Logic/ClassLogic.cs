@@ -29,9 +29,9 @@ public class ClassLogic : IClassLogic
         }
         
         
-        Class toCreate = new Class(dto.Name, dto.TeacherID, dto.Students, dto.Id);
+        Class toCreate = new Class(dto.Name, dto.TeacherID, dto.Id);
         Console.WriteLine($"Student IDs for this class: {studentIdList}");
-        //await classDao.GetAsyncClass(toCreate);
+        await classDao.CreateAsyncClass(toCreate);
 
         return toCreate;
     }

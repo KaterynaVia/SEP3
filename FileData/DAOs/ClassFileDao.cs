@@ -32,12 +32,18 @@ public class ClassFileDao : IClassDao
     public Task<IEnumerable<Class>> GetAsyncClass(SearchClassParametersDto searchClassParameters)
     {
         IEnumerable<Class> classes = context.Classes.AsEnumerable();
+        if (searchClassParameters.ClassName != null)
+        {
+            classes = context.Classes.Where(c =>
+                c.Name.Contains(searchClassParameters.ClassName, StringComparison.OrdinalIgnoreCase));
+        }
 
         return Task.FromResult(classes);
     }
 
     public Task<Class?> GetByIdClassAsync(int id)
     {
-        throw new NotImplementedException();
+        Class? existing = context.Classes.FirstOrDefault(c => c.Id == id);
+        return Task.FromResult(existing);
     }
 }

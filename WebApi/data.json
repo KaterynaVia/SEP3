@@ -43,7 +43,18 @@
       "Password": "heslohes"
     }
   ],
-  "Classes": [],
+  "Classes": [
+    {
+      "Name": "sep",
+      "TeacherId": "34567",
+      "Id": 1
+    },
+    {
+      "Name": "mnm",
+      "TeacherId": "dfghj",
+      "Id": 2
+    }
+  ],
   "Exams": [],
   "Students": [
     {

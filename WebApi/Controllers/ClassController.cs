@@ -38,7 +38,7 @@ public class ClassController : ControllerBase
         try
         {
             SearchClassParametersDto parameters = new(className);
-            var classes = await classLogic.GetAsyncClass(parameters);
+            IEnumerable<Class> classes = await classLogic.GetAsyncClass(parameters);
             return Ok(classes);
         }
         catch (Exception e)
