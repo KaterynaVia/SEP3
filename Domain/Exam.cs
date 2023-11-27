@@ -1,4 +1,4 @@
-namespace Domain;
+﻿namespace Domain;
 
 public class Exam
 {
@@ -6,9 +6,11 @@ public class Exam
     public int Grade { get; set; }
     public DateTime Dt = new DateTime();
     public Class Class { get; set; }
+    public int IdOfExam { get; set; }
 
-    Exam(string nameOfExam, int grade, DateTime dt, Class class1)
+    public Exam(int idOfExam, string nameOfExam, int grade, DateTime dt, Class class1)
     {
+        IdOfExam = idOfExam;
         NameOfExam = nameOfExam;
         Grade = grade;
         Dt = dt;
