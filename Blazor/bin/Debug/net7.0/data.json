@@ -53,9 +53,25 @@
       "Name": "mnm",
       "TeacherId": "dfghj",
       "Id": 2
+    },
+    {
+      "Name": "sep3",
+      "TeacherId": "jojo",
+      "Id": 3
     }
   ],
-  "Exams": [],
+  "Exams": [
+    {
+      "NameOfExam": "sep3",
+      "Grade": 0,
+      "Class": {
+        "Name": "sep3",
+        "TeacherId": "jojo",
+        "Id": 3
+      },
+      "IdOfExam": 4
+    }
+  ],
   "Students": [
     {
       "Name": "string",

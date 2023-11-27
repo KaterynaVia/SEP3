@@ -53,9 +53,43 @@
       "Name": "mnm",
       "TeacherId": "dfghj",
       "Id": 2
+    },
+    {
+      "Name": "sep3",
+      "TeacherId": "jojo",
+      "Id": 3
     }
   ],
-  "Exams": [],
+  "Exams": [
+    {
+      "NameOfExam": "sep3",
+      "Grade": 0,
+      "Class": {
+        "Name": "sep3",
+        "TeacherId": "jojo",
+        "Id": 3
+      },
+      "IdOfExam": 4
+    },
+    {
+      "NameOfExam": "jjj",
+      "Grade": 0,
+      "Class": null,
+      "IdOfExam": 4
+    },
+    {
+      "NameOfExam": "exam1",
+      "Grade": 10,
+      "Class": null,
+      "IdOfExam": 4
+    },
+    {
+      "NameOfExam": "exam6",
+      "Grade": 12,
+      "Class": null,
+      "IdOfExam": 5
+    }
+  ],
   "Students": [
     {
       "Name": "string",

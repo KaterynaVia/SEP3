@@ -6,6 +6,6 @@ namespace Application.DaoInterfaces;
 public interface IExamDao
 {
     Task<Exam> CreateAsyncExam(Exam exam);
-    Task<Exam> GetAsyncExam(SearchExamParametersDto searchExamParameters);
+    Task<IEnumerable<Exam>> GetAsyncExam(SearchExamParametersDto searchExamParameters);
     Task<Exam?> GetByNameAsyncExam(string name);
 }

@@ -1,4 +1,6 @@
-﻿namespace Domain;
+﻿using System.Text.Json.Serialization;
+
+namespace Domain;
 
 public class Exam
 {
@@ -8,12 +10,20 @@ public class Exam
     public Class Class { get; set; }
     public int IdOfExam { get; set; }
 
-    public Exam(int idOfExam, string nameOfExam, int grade, DateTime dt, Class class1)
+    [JsonConstructor]
+    /*public Exam(int idOfExam, string nameOfExam, int grade, DateTime dt, Class class1)
     {
         IdOfExam = idOfExam;
         NameOfExam = nameOfExam;
         Grade = grade;
         Dt = dt;
         Class = class1;
+    }
+     */
+    public Exam(int idOfExam, string nameOfExam, int grade)
+    {
+        IdOfExam = idOfExam;
+        NameOfExam = nameOfExam;
+        Grade = grade;
     }
 }

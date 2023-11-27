@@ -34,12 +34,12 @@ public class ExamController : ControllerBase
     
     
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Exam>>> GetAsyncExam([FromQuery] string? className)
+    public async Task<ActionResult<IEnumerable<Exam>>> GetAsyncExam([FromQuery] string? examName)
     {
         try
         {
-            SearchExamParametersDto parameters = new(className);
-            Exam exams = await examLogic.GetAsyncExam(parameters);
+            SearchExamParametersDto parameters = new(examName);
+            IEnumerable<Exam> exams = await examLogic.GetAsyncExam(parameters);
             return Ok(exams);
         }
         catch (Exception e)

@@ -3,18 +3,19 @@ namespace Domain.DTOs;
 public class ExamCreationDto
 {
     public string NameOfExam { get; }
-    public DateTime DateTime { get; }
+    //public DateTime DateTime { get; }
     public int IdOfExam { get; }
-    public Class Class_ { get; }
+   // public Class Class_ { get; }
     public int Grade { get; }
 
-    public ExamCreationDto(int idOfExam, string nameOfExam, int grade, DateTime dateTime, Class class_)
+    public ExamCreationDto(string nameOfExam, int grade)
     {
         NameOfExam = nameOfExam;
-        DateTime = dateTime;
+        Grade = grade;
+        //DateTime = dateTime;
 
-        IdOfExam = idOfExam;
-        Class_ = class_;
+        //IdOfExam = idOfExam;
+        //Class_ = class_;
     }
     
     

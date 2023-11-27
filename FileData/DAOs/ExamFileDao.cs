@@ -16,9 +16,9 @@ public class ExamFileDao : IExamDao
     public Task<Exam> CreateAsyncExam(Exam exam)
     {
         int id = 1;
-        if (context.Classes.Any())
+        if (context.Exams.Any())
         {
-            id = context.Classes.Max(c => c.Id);
+            id = context.Exams.Max(e=>e.IdOfExam);
             id++;
         }
 
@@ -30,7 +30,7 @@ public class ExamFileDao : IExamDao
         return Task.FromResult(exam);
     }
 
-    public Task<Exam> GetAsyncExam(SearchExamParametersDto searchExamParameters)
+    public Task<IEnumerable<Exam>> GetAsyncExam(SearchExamParametersDto searchExamParameters)
     {
         IEnumerable<Exam> exams = context.Exams.AsEnumerable();
         if (searchExamParameters.ExamName != null)

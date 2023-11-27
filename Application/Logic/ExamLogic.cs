@@ -17,20 +17,23 @@ public class ExamLogic : IExamLogic
     }
 
     public async Task<Exam> CreateAsyncExam(ExamCreationDto dto)
-    { /*Exam? class_ = await classDao.GetByIdClassAsync(dto.Class_.Id);
-        if (class_ == null)
+    { 
+        /*Exam? exam = await examDao.GetByNameAsyncExam(dto.NameOfExam);
+        if (exam == null)
         {
             throw new Exception($"There is no such a class");
         }*/
-        Exam exam = new Exam(dto.IdOfExam, dto.NameOfExam, dto.Grade, dto.DateTime, dto.Class_);
-        Exam created = await examDao.CreateAsyncExam(exam);
-        return created;
+        
+        
+        Exam create = new Exam(dto.IdOfExam, dto.NameOfExam, dto.Grade);
+        
+        await examDao.CreateAsyncExam(create);
+        return create;
 
     }
 
     public Task<IEnumerable<Exam>> GetAsyncExam(SearchExamParametersDto searchExamParametersDto)
     {
-        //return examDao.GetAsyncExam(searchExamParametersDto);
-
+        return examDao.GetAsyncExam(searchExamParametersDto);
     }
 }
