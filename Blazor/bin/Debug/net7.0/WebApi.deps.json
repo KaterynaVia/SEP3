@@ -9,10 +9,12 @@
       "WebApi/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "Domain": "1.0.0",
           "FileData": "1.0.0",
           "HttpClients": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.14",
           "Microsoft.AspNetCore.OpenApi": "7.0.10",
+          "Microsoft.IdentityModel.Tokens": "7.0.3",
           "Swashbuckle.AspNetCore": "6.5.0",
           "System.IdentityModel.Tokens.Jwt": "7.0.3"
         },

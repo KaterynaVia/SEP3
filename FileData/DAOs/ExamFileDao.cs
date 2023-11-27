@@ -1,5 +1,6 @@
 using Application.DaoInterfaces;
 using Domain;
+using Domain.DTOs;
 
 namespace FileData.DAOs;
 
@@ -27,6 +28,18 @@ public class ExamFileDao : IExamDao
         context.SaveChanges();
 
         return Task.FromResult(exam);
+    }
+
+    public Task<Exam> GetAsyncExam(SearchExamParametersDto searchExamParameters)
+    {
+        IEnumerable<Exam> exams = context.Exams.AsEnumerable();
+        if (searchExamParameters.ExamName != null)
+        {
+            exams = context.Exams.Where(e =>
+                e.NameOfExam.Contains(searchExamParameters.ExamName, StringComparison.OrdinalIgnoreCase));
+        }
+
+        return Task.FromResult(exams);
     }
 
     public Task<Exam?> GetByNameAsyncExam(string name)
