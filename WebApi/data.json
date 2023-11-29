@@ -41,6 +41,12 @@
       "Name": "niki",
       "Id": "987654",
       "Password": "heslohes"
+    },
+    {
+      "UserId": 8,
+      "Name": "ajsbdjhabd",
+      "Id": "qwerty",
+      "Password": "asdbasdj"
     }
   ],
   "Classes": [
@@ -124,6 +130,27 @@
       "UserId": 5,
       "Class": "ser4",
       "Id": "777777",
+      "Password": "heslo123"
+    },
+    {
+      "Name": "chrumka",
+      "UserId": 6,
+      "Class": "1X",
+      "Id": "331956",
+      "Password": "heslo123"
+    },
+    {
+      "Name": "ghccgh",
+      "UserId": 7,
+      "Class": "sep",
+      "Id": "jhghhh",
+      "Password": "bchcfcfgcfc"
+    },
+    {
+      "Name": "dominikak",
+      "UserId": 8,
+      "Class": "sep",
+      "Id": "747273",
       "Password": "heslo123"
     }
   ],

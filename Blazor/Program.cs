@@ -11,7 +11,7 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped(
     sp => 
         new HttpClient { 
-            BaseAddress = new Uri("https://localhost:7072") 
+            BaseAddress = new Uri("https://localhost:7097") 
         }
 );
 builder.Services.AddScoped<IUserService, UserHttpClient>();

@@ -41,6 +41,12 @@
       "Name": "niki",
       "Id": "987654",
       "Password": "heslohes"
+    },
+    {
+      "UserId": 8,
+      "Name": "ajsbdjhabd",
+      "Id": "qwerty",
+      "Password": "asdbasdj"
     }
   ],
   "Classes": [
@@ -70,6 +76,24 @@
         "Id": 3
       },
       "IdOfExam": 4
+    },
+    {
+      "NameOfExam": "jjj",
+      "Grade": 0,
+      "Class": null,
+      "IdOfExam": 4
+    },
+    {
+      "NameOfExam": "exam1",
+      "Grade": 10,
+      "Class": null,
+      "IdOfExam": 4
+    },
+    {
+      "NameOfExam": "exam6",
+      "Grade": 12,
+      "Class": null,
+      "IdOfExam": 5
     }
   ],
   "Students": [
@@ -107,6 +131,20 @@
       "Class": "ser4",
       "Id": "777777",
       "Password": "heslo123"
+    },
+    {
+      "Name": "chrumka",
+      "UserId": 6,
+      "Class": "1X",
+      "Id": "331956",
+      "Password": "heslo123"
+    },
+    {
+      "Name": "ghccgh",
+      "UserId": 7,
+      "Class": "sep",
+      "Id": "jhghhh",
+      "Password": "bchcfcfgcfc"
     }
   ],
   "Supervisors": []

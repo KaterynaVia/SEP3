@@ -5,6 +5,6 @@ namespace HttpClients.ClientInterfaces;
 
 public interface IUserService
 {
-    Task<Student> CreateStudent(UserCreationDto dto);
-    Task<Teacher> CreateTeacher(UserCreationDto dto);
+    Task<Student> CreateStudent(StudentCreationDto dto);
+    Task<Teacher> CreateTeacher(TeacherCreationDto dto);
 }
