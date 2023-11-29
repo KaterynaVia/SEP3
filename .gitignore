@@ -63,3 +63,4 @@ WebApi/obj/WebApi.csproj.nuget.g.targets
 
 
 
+*.pdb
