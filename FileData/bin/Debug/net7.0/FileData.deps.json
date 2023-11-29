@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v7.0": {
       "FileData/1.0.0": {
         "dependencies": {
-          "Application": "1.0.0"
+          "Application": "1.0.0",
+          "Domain": "1.0.0"
         },
         "runtime": {
           "FileData.dll": {}
