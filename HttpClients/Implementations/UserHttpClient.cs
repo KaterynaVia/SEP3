@@ -15,12 +15,14 @@ public class UserHttpClient : IUserService
         this.client = client;
     }
 
-    public async Task<Student> CreateStudent(UserCreationDto dto)
+    public async Task<Student> CreateStudent(StudentCreationDto dto)
     {
         HttpResponseMessage response = await client.PostAsJsonAsync("/students", dto);
         string result = await response.Content.ReadAsStringAsync();
         if (!response.IsSuccessStatusCode)
         {
+            var statusCode = response.StatusCode;
+            Console.WriteLine(statusCode);
             throw new Exception(result);
         }
 
@@ -31,10 +33,13 @@ public class UserHttpClient : IUserService
         return student;
     }
 
-    public async Task<Teacher> CreateTeacher(UserCreationDto dto)
+    public async Task<Teacher> CreateTeacher(TeacherCreationDto dto)
     {
+        Console.WriteLine("1");
         HttpResponseMessage response = await client.PostAsJsonAsync("/teachers", dto);
+        Console.WriteLine("2");
         string result = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(result);
         if (!response.IsSuccessStatusCode)
         {
             throw new Exception(result);
@@ -45,6 +50,7 @@ public class UserHttpClient : IUserService
         {
             PropertyNameCaseInsensitive = true
         })!;
+        Console.WriteLine($"{teacher.UserId}, {teacher.Password}, {teacher.Password}");
         return teacher;
     }
 

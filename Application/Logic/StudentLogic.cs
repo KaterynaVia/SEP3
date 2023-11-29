@@ -47,7 +47,7 @@ public class StudentLogic  : IStudentLogic
 
         string password = userToCreate.Password;
 
-        if (password.Length < 8) throw new Exception("Password must be at least 8 characters. ");
+        if (password.Length < 7) throw new Exception("Password must be at least 8 characters. ");
 
     }
 }

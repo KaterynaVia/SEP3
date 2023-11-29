@@ -1,18 +1,25 @@
 @page "/"
-<div>
-    <h1 class="text-center mt-5">LOGIN</h1>
-</div>
-<div class="text-center mt-5">
-    <div class="mb-4">
-        <label class="mr-2">VIA ID: </label>
-        <input style="margin-left: 27px"/>
+<div class="container mt-5">
+    <h1 class="text-center">LOGIN</h1>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <form>
+                <div class="mb-4">
+                    <label for="viaId" class="form-label">VIA ID:</label>
+                    <input type="text" class="form-control" id="viaId">
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" class="form-control" id="password">
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-lg fw-bold">LOGIN</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="mb-5">
-        <label>Password: </label>
-        <input type="password"/>
-    </div>
-    <button class="fw-bold" >LOGIN</button>
 </div>
+
 
 @code {
     

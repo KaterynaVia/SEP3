@@ -3,52 +3,107 @@
 @using HttpClients.ClientInterfaces
 @inject IUserService userService;
 
-<h1>Create User</h1>
-<div class="card">
-    <h3>Create Student</h3>
-    <div class="form-group field">
-        <label>Students via id:</label>
-        <input type="text" @bind="id" @bind:event="oninput"/>
-        @if (!string.IsNullOrEmpty(resultMsg))
-        {
-            <label style="color: @color">@resultMsg</label>
-        }
-        <label>Students name:</label>
-                    <input type="text" @bind="name" @bind:event="oninput"/>
-                    @if (!string.IsNullOrEmpty(resultMsg))
-                    {
-                        <label style="color: @color">@resultMsg</label>
-                    }
-    </div>
-    <div class="button-row">
-        <button @onclick="CreateStudent" disabled="@(string.IsNullOrEmpty(id))" class="acceptbtn">Create</button>
+<h1 class="mb-5">Create User</h1>
+<div class="body">
+    <div class="d-flex text-center justify-content-center">
+        
+        <div class="card mr-2">
+            <div class="card-body">
+                <h3 class="card-title text-center">STUDENT</h3>
+                <div class="form-group field">
+                    <!-- VIA ID -->
+                    <div class="mb-3">
+                        <label for="studentId" class="form-label">VIA ID:</label>
+                        <input type="text" id="studentId" class="form-control" @bind="studentId" @bind:event="oninput">
+                        @if (!string.IsNullOrEmpty(resultMsg))
+                        {
+                            <label style="color: @color">@resultMsg</label>
+                        }
+                    </div>
+        
+                    <!-- NAME -->
+                    <div class="mb-3">
+                        <label for="studentName" class="form-label">NAME:</label>
+                        <input type="text" id="studentName" class="form-control" @bind="studentName" @bind:event="oninput">
+                        @if (!string.IsNullOrEmpty(resultMsg))
+                        {
+                            <label style="color: @color">@resultMsg</label>
+                        }
+                    </div>
+        
+                    <!-- PASSWORD -->
+                    <div class="mb-3">
+                        <label for="studentPassword" class="form-label">PASSWORD:</label>
+                        <input type="password" id="studentPassword" class="form-control" @bind="studentPassword" @bind:event="oninput">
+                        @if (!string.IsNullOrEmpty(resultMsg))
+                        {
+                            <label style="color: @color">@resultMsg</label>
+                        }
+                    </div>
+                </div>
+        
+                <!-- Button Row -->
+                <div class="d-grid">
+                    <button @onclick="CreateStudent" disabled="@(string.IsNullOrEmpty(studentId))" class="btn btn-primary">Create</button>
+                </div>
+            </div>
+
+        </div>
+    
+        <div class="card ml-2">
+            <div class="card-body">
+                <h3 class="card-title text-center">TEACHER</h3>
+                <div class="form-group field">
+                    <!-- VIA ID -->
+                    <div class="mt-3">
+                        <label for="teacherId" class="form-label">VIA ID:</label>
+                        <input type="text" id="teacherId" class="form-control" @bind="teacherId" @bind:event="oninput">
+                        @if (!string.IsNullOrEmpty(resultMsg))
+                        {
+                            <label style="color: @color">@resultMsg</label>
+                        }
+                    </div>
+        
+                    <!-- NAME -->
+                    <div class="mt-3">
+                        <label for="teacherName" class="form-label">NAME:</label>
+                        <input type="text" id="teacherName" class="form-control" @bind="teacherName" @bind:event="oninput">
+                        @if (!string.IsNullOrEmpty(resultMsg))
+                        {
+                            <label style="color: @color">@resultMsg</label>
+                        }
+                    </div>
+        
+                    <!-- PASSWORD -->
+                    <div class="mt-3">
+                        <label for="teacherPassword" class="form-label">PASSWORD:</label>
+                        <input type="text" id="teacherPassword" class="form-control" @bind="teacherPassword" @bind:event="oninput">
+                        @if (!string.IsNullOrEmpty(resultMsg))
+                        {
+                            <label style="color: @color">@resultMsg</label>
+                        }
+                    </div>
+                </div>
+        
+                <!-- Button Row -->
+                <div class="d-grid mt-3">
+                    <button @onclick="CreateTeacher" disabled="@(string.IsNullOrEmpty(teacherId))" class="btn btn-primary">Create</button>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
-<div class="card">
-    <h3>Create Teacher</h3>
-    <div class="form-group field">
-        <label>Teachers via id:</label>
-        <input type="text" @bind="id" @bind:event="oninput"/>
-        @if (!string.IsNullOrEmpty(resultMsg))
-        {
-            <label style="color: @color">@resultMsg</label>
-        }
-        <label>Teachers name:</label>
-                <input type="text" @bind="name" @bind:event="oninput"/>
-                @if (!string.IsNullOrEmpty(resultMsg))
-                {
-                    <label style="color: @color">@resultMsg</label>
-                }
-    </div>
-    <div class="button-row">
-        <button @onclick="CreateTeacher" disabled="@(string.IsNullOrEmpty(id))" class="acceptbtn">Create</button>
-    </div>
-</div>
+
 
 @code {
-    private string id = "";
-    private string name = "";
+    private string studentId = "";
+    private string teacherId = "";
+    private string studentName = "";
+    private string teacherName = "";
+    private string studentPassword = "";
+    private string teacherPassword = "";
     private string resultMsg = "";
     private string color = "";
 
@@ -59,14 +114,17 @@
 
         try
         {
-            //await userService.CreateTeacher(new UserCreationDto(id, userType:"Teacher"));
-            id = "";
+            TeacherCreationDto dto = new TeacherCreationDto(teacherId, teacherPassword, teacherName);
+            await userService.CreateTeacher(dto);
+            teacherId = "";
+            teacherName = "";
+            teacherPassword = "";
             resultMsg = "User successfully created";
             color = "green";
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
+            Console.WriteLine(e.ToString());
             resultMsg = e.Message;
             color = "red";
         }
@@ -79,8 +137,11 @@
 
         try
         {
-            //await userService.CreateStudent(new UserCreationDto(id, userType:"Student"));
-            id = "";
+            //The Class parameter is required, therefore must be added to the dto and form for student creation. Right now, it is hardcoded to "sep".
+            await userService.CreateStudent(new (studentId, studentPassword, studentName, "sep"));
+            studentId = "";
+            studentName = "";
+            studentPassword = "";
             resultMsg = "User successfully created";
             color = "green";
         }
