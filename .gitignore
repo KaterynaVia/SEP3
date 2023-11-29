@@ -57,3 +57,4 @@ WebApi/obj/project.packagespec.json
 WebApi/obj/WebApi.csproj.nuget.dgspec.json
 WebApi/obj/WebApi.csproj.nuget.g.props
 WebApi/obj/WebApi.csproj.nuget.g.targets
+*.dll
