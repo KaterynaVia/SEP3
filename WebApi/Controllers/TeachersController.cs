@@ -4,6 +4,7 @@ using Domain.DTOs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers;
+
 [ApiController]
 [Route("[controller]")]
 public class TeachersController : ControllerBase
@@ -20,7 +21,7 @@ public class TeachersController : ControllerBase
     {
         try
         {
-            Teacher teacher = await teacherLogic.CreateAsyncTeacher(dto);
+            var teacher = await teacherLogic.CreateAsyncTeacher(dto);
             return Created($"/teachers/{teacher.UserId}", teacher);
         }
         catch (Exception e)
@@ -29,14 +30,14 @@ public class TeachersController : ControllerBase
             return StatusCode(500, e.Message);
         }
     }
-    
+
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Teacher>>> GetAsyncTeacher([FromQuery] string? viaID)
     {
         try
         {
             SearchUserParametersDto parameters = new(viaID);
-            IEnumerable<Teacher> teachers = await teacherLogic.GetAsyncTeacher(parameters);
+            var teachers = await teacherLogic.GetAsyncTeacher(parameters);
             return Ok(teachers);
         }
         catch (Exception e)
@@ -45,5 +46,4 @@ public class TeachersController : ControllerBase
             return StatusCode(500, e.Message);
         }
     }
-
 }

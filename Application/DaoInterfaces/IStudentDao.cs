@@ -8,5 +8,4 @@ public interface IStudentDao
     Task<Student?> GetByIdAsync(string id);
     Task CreateAsyncStudent(Student student);
     public Task<IEnumerable<Student>> GetAsyncStudent(SearchUserParametersDto searchParameters);
-
 }

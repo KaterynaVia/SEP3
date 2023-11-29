@@ -17,17 +17,17 @@ public class TeacherLogic : ITeacherLogic
 
     public async Task<Teacher> CreateAsyncTeacher(TeacherCreationDto dto)
     {
-        Teacher? existing = await userDao.GetByIdAsyncTeacher(dto.Id);
+        var existing = await userDao.GetByIdAsyncTeacher(dto.Id);
         if (existing != null)
             throw new Exception("Id already taken!");
 
         ValidateData(dto);
-        
-        
-        Teacher toCreate = new Teacher( dto.Id, dto.Password, dto.Name);
-    
+
+
+        var toCreate = new Teacher(dto.Id, dto.Password, dto.Name);
+
         await userDao.CreateAsyncTeacher(toCreate);
-    
+
         return toCreate;
     }
 
@@ -35,18 +35,17 @@ public class TeacherLogic : ITeacherLogic
     {
         return userDao.GetAsyncTeacher(searchParameters);
     }
-    
+
 
     private static void ValidateData(UserCreationDto userToCreate)
     {
-        string id = userToCreate.Id;
+        var id = userToCreate.Id;
 
         if (id.Length != 6)
             throw new Exception("VIA ID must be 6 characters!");
 
-        string password = userToCreate.Password;
+        var password = userToCreate.Password;
 
         if (password.Length < 7) throw new Exception("Password must be at least 8 characters. ");
-
     }
 }

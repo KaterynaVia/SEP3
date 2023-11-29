@@ -7,7 +7,6 @@ namespace WebApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-
 public class ExamController : ControllerBase
 {
     private readonly IExamLogic examLogic;
@@ -16,13 +15,13 @@ public class ExamController : ControllerBase
     {
         this.examLogic = examLogic;
     }
-    
+
     [HttpPost]
-    public async Task<ActionResult<Exam>> CreateAsyncExam([FromBody]ExamCreationDto dto)
+    public async Task<ActionResult<Exam>> CreateAsyncExam([FromBody] ExamCreationDto dto)
     {
         try
         {
-            Exam created = await examLogic.CreateAsyncExam(dto);
+            var created = await examLogic.CreateAsyncExam(dto);
             return Created($"/classes/{created.IdOfExam}", created);
         }
         catch (Exception e)
@@ -31,15 +30,15 @@ public class ExamController : ControllerBase
             return StatusCode(500, e.Message);
         }
     }
-    
-    
+
+
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Exam>>> GetAsyncExam([FromQuery] string? examName)
     {
         try
         {
             SearchExamParametersDto parameters = new(examName);
-            IEnumerable<Exam> exams = await examLogic.GetAsyncExam(parameters);
+            var exams = await examLogic.GetAsyncExam(parameters);
             return Ok(exams);
         }
         catch (Exception e)

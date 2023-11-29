@@ -4,12 +4,6 @@ namespace Domain.DTOs;
 
 public class UserCreationDto
 {
-    public string Id { get; set; }
-    public string Password { get; set; }
-    public string Name { get; set; }
-
-    
-
     public UserCreationDto(string id, string password, string name)
     {
         Id = id;
@@ -22,6 +16,12 @@ public class UserCreationDto
     {
         Id = id;
     }
-    
-    public UserCreationDto(){}
+
+    public UserCreationDto()
+    {
+    }
+
+    public string Id { get; set; }
+    public string Password { get; set; }
+    public string Name { get; set; }
 }

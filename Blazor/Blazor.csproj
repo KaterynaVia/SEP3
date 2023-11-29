@@ -7,8 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\HttpClients\HttpClients.csproj" />
-      <ProjectReference Include="..\WebApi\WebApi.csproj" />
+        <ProjectReference Include="..\HttpClients\HttpClients.csproj"/>
+        <ProjectReference Include="..\WebApi\WebApi.csproj"/>
     </ItemGroup>
 
 </Project>

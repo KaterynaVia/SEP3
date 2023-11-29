@@ -2,10 +2,10 @@
 
 public class UserParametersDto
 {
-    public string IdContains { get;  }
-
     public UserParametersDto(string idContains)
     {
         IdContains = idContains;
     }
+
+    public string IdContains { get; }
 }

@@ -21,7 +21,7 @@ public class StudentsController : ControllerBase
     {
         try
         {
-            Student student = await studentLogic.CreateAsyncStudent(dto);
+            var student = await studentLogic.CreateAsyncStudent(dto);
             return Created($"/students/{student.UserId}", student);
         }
         catch (Exception e)
@@ -30,15 +30,15 @@ public class StudentsController : ControllerBase
             return StatusCode(500, e.Message);
         }
     }
-    
-    
+
+
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Student>>> GetAsyncStudent([FromQuery] string? viaID)
     {
         try
         {
             SearchUserParametersDto parameters = new(viaID);
-            IEnumerable<Student> students = await studentLogic.GetAsyncStudent(parameters);
+            var students = await studentLogic.GetAsyncStudent(parameters);
             return Ok(students);
         }
         catch (Exception e)

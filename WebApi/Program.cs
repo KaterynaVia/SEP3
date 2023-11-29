@@ -1,4 +1,3 @@
-
 using System.Text.Json;
 using Application.DaoInterfaces;
 using Application.Logic;
@@ -6,7 +5,6 @@ using Application.LogicInterfaces;
 using FileData;
 using FileData.DAOs;
 using WebApi.Services;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,14 +28,8 @@ builder.Services.AddScoped<IExamLogic, ExamLogic>();
 builder.Services.AddScoped<IExamDao, ExamFileDao>();
 
 
-
 builder.Services.AddControllers()
-    .AddJsonOptions(options =>
-    {
-        options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
-    });
-
-
+    .AddJsonOptions(options => { options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase; });
 
 
 // builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>

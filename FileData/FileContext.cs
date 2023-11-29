@@ -5,7 +5,6 @@ namespace FileData;
 
 public class FileContext
 {
-
     private const string filePath = "data.json";
     private DataContainer? dataContainer;
 
@@ -26,6 +25,7 @@ public class FileContext
             return dataContainer!.Students;
         }
     }
+
     public ICollection<Supervisor> Supervisors
     {
         get
@@ -34,6 +34,7 @@ public class FileContext
             return dataContainer!.Supervisors;
         }
     }
+
     public ICollection<Class> Classes
     {
         get
@@ -42,6 +43,7 @@ public class FileContext
             return dataContainer!.Classes;
         }
     }
+
     public ICollection<Exam> Exams
     {
         get
@@ -57,7 +59,7 @@ public class FileContext
 
         if (!File.Exists(filePath))
         {
-            dataContainer = new ()
+            dataContainer = new DataContainer
             {
                 Teachers = new List<Teacher>(),
                 Students = new List<Student>(),
@@ -67,14 +69,15 @@ public class FileContext
             };
             return;
         }
-        string content = File.ReadAllText(filePath);
+
+        var content = File.ReadAllText(filePath);
         dataContainer = JsonSerializer.Deserialize<DataContainer>(content);
     }
 
 
     public void SaveChanges()
     {
-        string serialized = JsonSerializer.Serialize(dataContainer, new JsonSerializerOptions
+        var serialized = JsonSerializer.Serialize(dataContainer, new JsonSerializerOptions
         {
             WriteIndented = true
         });

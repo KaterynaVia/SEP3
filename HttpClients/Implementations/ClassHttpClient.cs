@@ -12,13 +12,14 @@ public class ClassHttpClient : IClassService
     {
         this.client = client;
     }
+
     public async Task CreateAsyncClass(ClassCreationDto dto)
     {
-        HttpResponseMessage response = await client.PostAsJsonAsync("/classes", dto);
+        var response = await client.PostAsJsonAsync("/classes", dto);
 
         if (!response.IsSuccessStatusCode)
         {
-            string content = await response.Content.ReadAsStringAsync();
+            var content = await response.Content.ReadAsStringAsync();
             throw new Exception(content);
         }
     }

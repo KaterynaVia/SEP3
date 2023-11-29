@@ -17,8 +17,8 @@ public class UserHttpClient : IUserService
 
     public async Task<Student> CreateStudent(StudentCreationDto dto)
     {
-        HttpResponseMessage response = await client.PostAsJsonAsync("/students", dto);
-        string result = await response.Content.ReadAsStringAsync();
+        var response = await client.PostAsJsonAsync("/students", dto);
+        var result = await response.Content.ReadAsStringAsync();
         if (!response.IsSuccessStatusCode)
         {
             var statusCode = response.StatusCode;
@@ -26,7 +26,7 @@ public class UserHttpClient : IUserService
             throw new Exception(result);
         }
 
-        Student student = JsonSerializer.Deserialize<Student>(result, new JsonSerializerOptions
+        var student = JsonSerializer.Deserialize<Student>(result, new JsonSerializerOptions
         {
             PropertyNameCaseInsensitive = true
         })!;
@@ -36,23 +36,18 @@ public class UserHttpClient : IUserService
     public async Task<Teacher> CreateTeacher(TeacherCreationDto dto)
     {
         Console.WriteLine("1");
-        HttpResponseMessage response = await client.PostAsJsonAsync("/teachers", dto);
+        var response = await client.PostAsJsonAsync("/teachers", dto);
         Console.WriteLine("2");
-        string result = await response.Content.ReadAsStringAsync();
+        var result = await response.Content.ReadAsStringAsync();
         Console.WriteLine(result);
-        if (!response.IsSuccessStatusCode)
-        {
-            throw new Exception(result);
-        }
+        if (!response.IsSuccessStatusCode) throw new Exception(result);
 
-        
-        Teacher teacher = JsonSerializer.Deserialize<Teacher>(result, new JsonSerializerOptions
+
+        var teacher = JsonSerializer.Deserialize<Teacher>(result, new JsonSerializerOptions
         {
             PropertyNameCaseInsensitive = true
         })!;
         Console.WriteLine($"{teacher.UserId}, {teacher.Password}, {teacher.Password}");
         return teacher;
     }
-
-
 }

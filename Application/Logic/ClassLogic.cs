@@ -2,15 +2,14 @@ using Application.DaoInterfaces;
 using Application.LogicInterfaces;
 using Domain;
 using Domain.DTOs;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace Application.Logic;
 
 public class ClassLogic : IClassLogic
 {
     private readonly IClassDao classDao;
-    private readonly ITeacherDao teacherDao;
     private readonly IStudentDao studentDao;
+    private readonly ITeacherDao teacherDao;
     private List<string> studentIdList;
 
     public ClassLogic(IClassDao classDao, IStudentDao studentDao, ITeacherDao teacherDao)
@@ -22,14 +21,11 @@ public class ClassLogic : IClassLogic
 
     public async Task<Class> CreateAsyncClass(ClassCreationDto dto)
     {
-        Class? existing = await classDao.GetByIdClassAsync(dto.Id);
-        if (existing != null)
-        {
-            throw new Exception("Id already taken!");
-        }
-        
-        
-        Class toCreate = new Class(dto.Name, dto.TeacherID, dto.Id);
+        var existing = await classDao.GetByIdClassAsync(dto.Id);
+        if (existing != null) throw new Exception("Id already taken!");
+
+
+        var toCreate = new Class(dto.Name, dto.TeacherID, dto.Id);
         //Console.WriteLine($"Student IDs for this class: {studentIdList}");
         await classDao.CreateAsyncClass(toCreate);
 

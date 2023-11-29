@@ -4,11 +4,6 @@ namespace Domain.DTOs;
 
 public class ClassCreationDto
 {
-    public string Name { get; }
-    public int Id { get;}
-    public string TeacherID { get; }
-    public List<string> Students { get; }
-    
     [JsonConstructor]
     public ClassCreationDto(string name, string teacherID, List<string> students)
     {
@@ -16,4 +11,9 @@ public class ClassCreationDto
         TeacherID = teacherID;
         Students = students;
     }
+
+    public string Name { get; }
+    public int Id { get; }
+    public string TeacherID { get; }
+    public List<string> Students { get; }
 }
