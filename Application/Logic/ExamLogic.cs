@@ -25,7 +25,7 @@ public class ExamLogic : IExamLogic
         }*/
 
 
-        var create = new Exam(dto.IdOfExam, dto.NameOfExam, dto.Grade);
+        var create = new Exam(dto.IdOfExam, dto.NameOfExam, dto.Grade, dto.DateTime);
 
         await examDao.CreateAsyncExam(create);
         return create;

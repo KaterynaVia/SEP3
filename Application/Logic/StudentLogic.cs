@@ -23,7 +23,7 @@ public class StudentLogic : IStudentLogic
         ValidateData(dto);
 
 
-        var toCreate = new Student(dto.Id, dto.Password, dto.Name, dto.AssignedClass);
+        var toCreate = new Student(dto.Id, dto.Password, dto.Name);
         await userDao.CreateAsyncStudent(toCreate);
         return toCreate;
     }

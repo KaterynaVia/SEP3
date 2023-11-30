@@ -4,10 +4,10 @@ namespace Domain;
 
 public class Student : User
 {
-    public Student(string id, string password, string name, string assignedToClass) : base(id, password)
+    public Student(string id, string password, string name) : base(id, password)
     {
         Name = name;
-        AssignedClass = assignedToClass;
+        //AssignedClass = assignedToClass;
     }
 
     public Student()
@@ -18,5 +18,5 @@ public class Student : User
 
     public int UserId { get; set; }
 
-    [JsonPropertyName("Class")] public string AssignedClass { get; set; }
+    //[JsonPropertyName("Class")] public string AssignedClass { get; set; }
 }

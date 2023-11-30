@@ -100,51 +100,62 @@
     {
       "Name": "string",
       "UserId": 1,
-      "Class": "string",
       "Id": "string",
       "Password": "string"
     },
     {
       "Name": "dfdsfs",
       "UserId": 2,
-      "Class": "dsdfbsjdhbf",
       "Id": "jhnghg",
       "Password": "fgbfrgvf"
     },
     {
       "Name": "Dominika",
       "UserId": 3,
-      "Class": "CAO1",
       "Id": "VIAID1",
       "Password": "abcdefgh"
     },
     {
       "Name": "katya",
       "UserId": 4,
-      "Class": "sdj3",
       "Id": "viaid4",
       "Password": "sdfgjkgd"
     },
     {
       "Name": "mika",
       "UserId": 5,
-      "Class": "ser4",
       "Id": "777777",
       "Password": "heslo123"
     },
     {
       "Name": "chrumka",
       "UserId": 6,
-      "Class": "1X",
       "Id": "331956",
       "Password": "heslo123"
     },
     {
       "Name": "ghccgh",
       "UserId": 7,
-      "Class": "sep",
       "Id": "jhghhh",
       "Password": "bchcfcfgcfc"
+    },
+    {
+      "Name": "dominikak",
+      "UserId": 8,
+      "Id": "747273",
+      "Password": "heslo123"
+    },
+    {
+      "Name": "mika",
+      "UserId": 9,
+      "Id": "mika27",
+      "Password": "heslo123"
+    },
+    {
+      "Name": "dominikak",
+      "UserId": 10,
+      "Id": "mike56",
+      "Password": "heslo123"
     }
   ],
   "Supervisors": []
