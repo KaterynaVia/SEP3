@@ -7,11 +7,11 @@ namespace WebApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class ExamController : ControllerBase
+public class ExamsController : ControllerBase
 {
     private readonly IExamLogic examLogic;
 
-    public ExamController(IExamLogic examLogic)
+    public ExamsController(IExamLogic examLogic)
     {
         this.examLogic = examLogic;
     }
@@ -21,8 +21,8 @@ public class ExamController : ControllerBase
     {
         try
         {
-            var created = await examLogic.CreateAsyncExam(dto);
-            return Created($"/classes/{created.IdOfExam}", created);
+            var exam = await examLogic.CreateAsyncExam(dto);
+            return Created($"/exams/{exam.IdOfExam}", exam);
         }
         catch (Exception e)
         {

@@ -50,4 +50,50 @@ public class UserHttpClient : IUserService
         Console.WriteLine($"{teacher.UserId}, {teacher.Password}, {teacher.Password}");
         return teacher;
     }
+
+    public async Task<IEnumerable<Teacher>> GetTeachers(string? viaId = null)
+    {
+        string uri = "/teachers";
+        if (!string.IsNullOrEmpty(viaId))
+        {
+            uri += $"?Id={viaId}";
+        }
+
+        HttpResponseMessage response = await client.GetAsync(uri);
+        string result = await response.Content.ReadAsStringAsync();
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new Exception(result);
+        }
+
+        IEnumerable<Teacher> teachers = JsonSerializer.Deserialize<IEnumerable<Teacher>>(result,
+            new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            })!;
+        return teachers;
+    }
+
+    public async Task<IEnumerable<Student>> GetStudents(string? viaId = null)
+    {
+        string uri = "/students";
+        if (!string.IsNullOrEmpty(viaId))
+        {
+            uri += $"?Id={viaId}";
+        }
+
+        HttpResponseMessage response = await client.GetAsync(uri);
+        string result = await response.Content.ReadAsStringAsync();
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new Exception(result);
+        }
+
+        IEnumerable<Student> students = JsonSerializer.Deserialize<IEnumerable<Student>>(result,
+            new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            })!;
+        return students;
+    }
 }

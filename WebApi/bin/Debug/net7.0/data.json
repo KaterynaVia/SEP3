@@ -69,31 +69,33 @@
   "Exams": [
     {
       "NameOfExam": "sep3",
-      "Grade": 0,
-      "Class": {
-        "Name": "sep3",
-        "TeacherId": "jojo",
-        "Id": 3
-      },
-      "IdOfExam": 4
+      "IdOfExam": 4,
+      "DateTime": null
     },
     {
       "NameOfExam": "jjj",
-      "Grade": 0,
-      "Class": null,
-      "IdOfExam": 4
+      "IdOfExam": 4,
+      "DateTime": null
     },
     {
       "NameOfExam": "exam1",
-      "Grade": 10,
-      "Class": null,
-      "IdOfExam": 4
+      "IdOfExam": 4,
+      "DateTime": null
     },
     {
       "NameOfExam": "exam6",
-      "Grade": 12,
-      "Class": null,
-      "IdOfExam": 5
+      "IdOfExam": 5,
+      "DateTime": null
+    },
+    {
+      "NameOfExam": " xcbvxc",
+      "IdOfExam": 6,
+      "DateTime": "xcvbx"
+    },
+    {
+      "NameOfExam": " ANJ",
+      "IdOfExam": 7,
+      "DateTime": "12.1.2024 9:00"
     }
   ],
   "Students": [
@@ -156,6 +158,12 @@
       "UserId": 10,
       "Id": "mike56",
       "Password": "heslo123"
+    },
+    {
+      "Name": "dominai",
+      "UserId": 11,
+      "Id": "747272",
+      "Password": "asdofijaoisjdf"
     }
   ],
   "Supervisors": []

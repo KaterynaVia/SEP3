@@ -1,4 +1,11 @@
 @page "/CreateClass"
+@using Domain
+@using Domain.DTOs
+@using HttpClients.ClientInterfaces
+@inject IUserService userService;
+@inject IClassService classService;
+
+
 <div class="container mt-5">
     <h1 class="text-center mb-4">CREATE CLASS</h1>
     <div class="row">
@@ -8,27 +15,25 @@
                     <form>
                         <div class="mb-3">
                             <label for="className" class="form-label">Name of the class:</label>
-                            <input type="text" class="form-control" id="className">
+                            <input type="text" class="form-control" id="className" @bind="nameOfClass">
                         </div>
                         <div class="mb-3">
                             <label for="teacher" class="form-label">Teacher:</label>
-                            <select class="form-select" id="teacher">
-                                <option value="Allan">Allan</option>
-                                <option value="Jan">Jan</option>
-                                <option value="Mona">Mona</option>
-                                <option value="Lars">Lars</option>
+                            <select class="form-select" id="teacher" @bind="selectedTeacher">
+                                @foreach (Teacher teacher in teachers)
+                                {
+                                    <option value="@teacher.Id">@teacher.Name</option>
+                                }
+                                
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="student" class="form-label">Student:</label>
                             <select class="form-select" id="student">
                                 <option value="ViaId1">333469</option>
-                                <option value="ViaId2">333000</option>
-                                <option value="ViaId3">222222</option>
-                                <option value="ViaId4">111110</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-primary">Create Class</button>
+                        <button @onclick="CreateClassBlazor" type="submit" class="btn btn-primary">Create Class</button>
                     </form>
                 </div>
             </div>
@@ -50,4 +55,54 @@
 
 @code {
 
+    private string nameOfClass = "";
+    private string? selectedTeacher = " ";
+    private string? selectedStudent = " ";
+    private IEnumerable<Teacher>? teachers;
+    private IEnumerable<Student>? students;
+    private string resultMsg = "";
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        resultMsg = "";
+        try
+        {
+            teachers = await userService.GetTeachers();
+            students = await userService.GetStudents();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            resultMsg = "Error retrieving data: " + e.Message;
+        }
+    }
+    
+    private async Task CreateClassBlazor()
+    {
+        resultMsg = "";
+
+        if (selectedTeacher == null)
+        {
+            resultMsg = "You must select a teacher.";
+            return;
+        }
+
+        if (string.IsNullOrEmpty(nameOfClass))
+        {
+            resultMsg = "Name cannot be empty.";
+            return;
+        }
+        
+        try
+        {
+            ClassCreationDto dto = new(nameOfClass, selectedTeacher);
+            await classService.CreateAsyncClass(dto);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            resultMsg = e.Message;
+        }
+    }
 }

@@ -15,6 +15,7 @@ builder.Services.AddScoped(
 );
 builder.Services.AddScoped<IUserService, UserHttpClient>();
 builder.Services.AddScoped<IClassService, ClassHttpClient>();
+builder.Services.AddScoped<IExamService, ExamHttpClient>();
 
 
 var app = builder.Build();
