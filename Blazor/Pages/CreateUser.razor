@@ -135,7 +135,7 @@
         try
         {
     //The Class parameter is required, therefore must be added to the dto and form for student creation. Right now, it is hardcoded to "sep".
-            await userService.CreateStudent(new StudentCreationDto(studentId, studentPassword, studentName, "sep"));
+            await userService.CreateStudent(new StudentCreationDto(studentId, studentPassword, studentName));
             studentId = "";
             studentName = "";
             studentPassword = "";
