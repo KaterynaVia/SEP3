@@ -1,6 +1,4 @@
 using System.Net.Http.Json;
-using System.Text.Json;
-using Domain;
 using Domain.DTOs;
 using HttpClients.ClientInterfaces;
 
@@ -17,10 +15,10 @@ public class ClassHttpClient : IClassService
 
     public async Task CreateAsyncClass(ClassCreationDto dto)
     {
-        HttpResponseMessage response = await client.PostAsJsonAsync("/classes", dto);
+        var response = await client.PostAsJsonAsync("/classes", dto);
         if (!response.IsSuccessStatusCode)
         {
-            string content = await response.Content.ReadAsStringAsync();
+            var content = await response.Content.ReadAsStringAsync();
             throw new Exception(content);
         }
     }

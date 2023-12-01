@@ -11,7 +11,7 @@ public class ClassCreationDto
         TeacherID = teacherID;
         //Students = students;
     }
-    
+
     public ClassCreationDto(string name, string teacherID, string student)
     {
         Name = name;
@@ -21,7 +21,9 @@ public class ClassCreationDto
 
     public string Name { get; }
     public int Id { get; }
+
     public string TeacherID { get; }
+
     //public List<string> Students { get; }
     public string Student { get; }
 }

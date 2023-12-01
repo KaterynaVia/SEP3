@@ -1,30 +1,35 @@
 
-div{
-<!--height: 600px; -->
-<!--width:49%;-->
+div {
+<!-- height: 600 px;
+--> <!-- width: 49 %;
+-->
 }
 
-.create-exam{
+.create-exam {
     background-color: #C2F9D1;
     height: 400px;
     width: 300px;
 
 }
-.date{
+
+.date {
     margin-top: 15px;
 }
-.list-exams{
+
+.list-exams {
     background-color: #87D39C;
     height: 400px;
     width: 300px;
     margin-left: 15px;
 }
-.subject{
+
+.subject {
     margin-top: 15px;
     margin-left: 15px;
     width: 49%;
 }
-.dates{
+
+.dates {
     margin-top: 15px;
 
     width: 49%;
@@ -34,7 +39,8 @@ div{
 .class {
     margin-top: 25px;
 }
-div.create-exam{
+
+div.create-exam {
     padding: 15px;
 }
    

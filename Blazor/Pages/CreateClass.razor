@@ -2,7 +2,6 @@
 @using Domain
 @using Domain.DTOs
 @using HttpClients.ClientInterfaces
-@using System.Reflection.Metadata
 @inject IUserService userService;
 @inject IClassService classService;
 
@@ -33,7 +32,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="student" class="form-label">Student:</label>
-                            
+
                             @* <select class="form-select" id="student" @onchange="HandleStudentSelection" multiple="multiple"> *@
                             @*     @if (students != null) *@
                             @*     { *@
@@ -44,7 +43,7 @@
                             @*     } *@
                             @* </select> *@
                             @* <button @onclick="ClearSelection">Clear Selection</button> *@
-                            
+
                             <div class="mb-3">
                                 <label class="form-label">Students:</label>
                                 <div>
@@ -53,7 +52,7 @@
                                         @foreach (var student in students)
                                         {
                                             <div>
-                                                <input type="checkbox" id="@student.Id" @onchange="HandleStudentSelection" value="@student.Id" />
+                                                <input type="checkbox" id="@student.Id" @onchange="HandleStudentSelection" value="@student.Id"/>
                                                 <label for="@student.Id">@student.Id</label>
                                             </div>
                                         }
@@ -89,7 +88,7 @@
     private string nameOfClass = "";
     private string? selectedTeacher = " ";
     //private string? selectedStudent = " ";
-    private List<string>? selectedStudentIds = new List<string>();
+    private readonly List<string>? selectedStudentIds = new();
     private string selectedStudentsString = "";
     private IEnumerable<Teacher>? teachers;
     private IEnumerable<Student>? students;
@@ -110,7 +109,7 @@
             resultMsg = "Error retrieving data: " + e.Message;
         }
     }
-    
+
     private async Task CreateClassBlazor()
     {
         resultMsg = "";
@@ -126,7 +125,7 @@
             resultMsg = "Name cannot be empty.";
             return;
         }
-        
+
         try
         {
             ClassCreationDto dto = new(nameOfClass, selectedTeacher);
@@ -141,7 +140,7 @@
 
     private void HandleStudentSelection(ChangeEventArgs e)
     {
-        //Line pod tymto returnuje iba True/False, treba ChatGPT donutit aby to upravil tak ze to vracia ID a je to hotovo.
+    //Line pod tymto returnuje iba True/False, treba ChatGPT donutit aby to upravil tak ze to vracia ID a je to hotovo.
         var studentId = e.Value?.ToString();
         if (studentId != null)
         {
@@ -165,6 +164,6 @@
         }
         selectedStudentIds.Clear(); // Clear the selected student IDs
     }
-    
-   
+
+
 }

@@ -1,0 +1,26 @@
+﻿.exam-detail{
+    background-color: #C2F9D1;
+    height: 400px;
+    width: 300px;
+    margin-top: 15px;
+    padding: 15px;
+
+}
+.teacher{
+    margin-top: 15px;
+}
+.student{
+    margin-top: 15px;
+}
+.buttons{
+    background-color: #87D39C;
+    height: 400px;
+    width: 300px;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.back{
+    position: absolute;
+    margin-top: 350px;
+    margin-left: 205px;
+}

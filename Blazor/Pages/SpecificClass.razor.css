@@ -1,0 +1,30 @@
+﻿.specific-class{
+    background-color: #C2F9D1;
+    height: 400px;
+    width: 300px;
+
+}
+.buttons{
+    background-color: #87D39C;
+    height: 400px;
+    width: 300px;
+    margin-left: 15px;
+}
+.back{
+    margin-top: 15px;
+}
+.submit{
+    margin-top: 15px;
+}
+.cancel{
+    margin-top: 15px;
+}
+.student{
+    margin-top: 15px;
+}
+.sdj3{
+    margin-top: 15px;
+}
+.d-flex{
+    padding: 15px;
+}
