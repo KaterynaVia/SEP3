@@ -2,6 +2,7 @@
 @using Domain
 @using Domain.DTOs
 @using HttpClients.ClientInterfaces
+@using System.Reflection.Metadata
 @inject IUserService userService;
 @inject IClassService classService;
 
@@ -20,18 +21,48 @@
                         <div class="mb-3">
                             <label for="teacher" class="form-label">Teacher:</label>
                             <select class="form-select" id="teacher" @bind="selectedTeacher">
-                                @foreach (Teacher teacher in teachers)
+                                <option value="">Select Teacher</option>
+                                @if (teachers != null)
                                 {
-                                    <option value="@teacher.Id">@teacher.Name</option>
+                                    @foreach (var teacher in teachers)
+                                    {
+                                        <option value="@teacher.Name">@teacher.Name</option>
+                                    }
                                 }
-                                
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="student" class="form-label">Student:</label>
-                            <select class="form-select" id="student">
-                                <option value="ViaId1">333469</option>
-                            </select>
+                            
+                            @* <select class="form-select" id="student" @onchange="HandleStudentSelection" multiple="multiple"> *@
+                            @*     @if (students != null) *@
+                            @*     { *@
+                            @*         @foreach (var student in students) *@
+                            @*         { *@
+                            @*             <option value="@student.Id">@student.Id</option> *@
+                            @*         } *@
+                            @*     } *@
+                            @* </select> *@
+                            @* <button @onclick="ClearSelection">Clear Selection</button> *@
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Students:</label>
+                                <div>
+                                    @if (students != null)
+                                    {
+                                        @foreach (var student in students)
+                                        {
+                                            <div>
+                                                <input type="checkbox" id="@student.Id" @onchange="HandleStudentSelection" value="@student.Id" />
+                                                <label for="@student.Id">@student.Id</label>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                                <button @onclick="ClearSelection">Clear Selection</button>
+                            </div>
+
+
                         </div>
                         <button @onclick="CreateClassBlazor" type="submit" class="btn btn-primary">Create Class</button>
                     </form>
@@ -57,7 +88,9 @@
 
     private string nameOfClass = "";
     private string? selectedTeacher = " ";
-    private string? selectedStudent = " ";
+    //private string? selectedStudent = " ";
+    private List<string>? selectedStudentIds = new List<string>();
+    private string selectedStudentsString = "";
     private IEnumerable<Teacher>? teachers;
     private IEnumerable<Student>? students;
     private string resultMsg = "";
@@ -105,4 +138,33 @@
             resultMsg = e.Message;
         }
     }
+
+    private void HandleStudentSelection(ChangeEventArgs e)
+    {
+        //Line pod tymto returnuje iba True/False, treba ChatGPT donutit aby to upravil tak ze to vracia ID a je to hotovo.
+        var studentId = e.Value?.ToString();
+        if (studentId != null)
+        {
+            var isChecked = (bool)e.Value;
+            if (isChecked)
+            {
+                selectedStudentIds.Add(studentId);
+            }
+            else
+            {
+                selectedStudentIds.Remove(studentId);
+            }
+        }
+    }
+
+    private void ClearSelection()
+    {
+        foreach (var studentId in selectedStudentIds)
+        {
+            Console.WriteLine(studentId);
+        }
+        selectedStudentIds.Clear(); // Clear the selected student IDs
+    }
+    
+   
 }

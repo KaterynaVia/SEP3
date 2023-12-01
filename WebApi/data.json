@@ -96,6 +96,11 @@
       "NameOfExam": " ANJ",
       "IdOfExam": 7,
       "DateTime": "12.1.2024 9:00"
+    },
+    {
+      "NameOfExam": " dominika-test",
+      "IdOfExam": 8,
+      "DateTime": "12/5/2023m"
     }
   ],
   "Students": [
@@ -164,6 +169,12 @@
       "UserId": 11,
       "Id": "747272",
       "Password": "asdofijaoisjdf"
+    },
+    {
+      "Name": "denisa",
+      "UserId": 12,
+      "Id": "909090",
+      "Password": "123123123"
     }
   ],
   "Supervisors": []
