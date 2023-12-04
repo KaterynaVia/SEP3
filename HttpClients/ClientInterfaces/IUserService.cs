@@ -9,4 +9,5 @@ public interface IUserService
     Task<Teacher> CreateTeacher(TeacherCreationDto dto);
     Task<IEnumerable<Teacher>> GetTeachers(string? viaId = null);
     Task<IEnumerable<Student>> GetStudents(string? viaId = null);
+
 }

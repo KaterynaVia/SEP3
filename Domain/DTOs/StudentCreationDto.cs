@@ -2,6 +2,8 @@ namespace Domain.DTOs;
 
 public class StudentCreationDto : UserCreationDto
 {
+
+
     public StudentCreationDto(string id, string password, string name) : base(id, password, name)
     {
         Name = name;

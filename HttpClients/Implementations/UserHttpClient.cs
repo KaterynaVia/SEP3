@@ -53,14 +53,20 @@ public class UserHttpClient : IUserService
 
     public async Task<IEnumerable<Teacher>> GetTeachers(string? viaId = null)
     {
-        var uri = "/teachers";
-        if (!string.IsNullOrEmpty(viaId)) uri += $"?Id={viaId}";
+        string uri = "/teachers";
+        if (!string.IsNullOrEmpty(viaId))
+        {
+            uri += $"?Id={viaId}";
+        }
 
-        var response = await client.GetAsync(uri);
-        var result = await response.Content.ReadAsStringAsync();
-        if (!response.IsSuccessStatusCode) throw new Exception(result);
+        HttpResponseMessage response = await client.GetAsync(uri);
+        string result = await response.Content.ReadAsStringAsync();
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new Exception(result);
+        }
 
-        var teachers = JsonSerializer.Deserialize<IEnumerable<Teacher>>(result,
+        IEnumerable<Teacher> teachers = JsonSerializer.Deserialize<IEnumerable<Teacher>>(result,
             new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
@@ -70,14 +76,20 @@ public class UserHttpClient : IUserService
 
     public async Task<IEnumerable<Student>> GetStudents(string? viaId = null)
     {
-        var uri = "/students";
-        if (!string.IsNullOrEmpty(viaId)) uri += $"?Id={viaId}";
+        string uri = "/students";
+        if (!string.IsNullOrEmpty(viaId))
+        {
+            uri += $"?Id={viaId}";
+        }
 
-        var response = await client.GetAsync(uri);
-        var result = await response.Content.ReadAsStringAsync();
-        if (!response.IsSuccessStatusCode) throw new Exception(result);
+        HttpResponseMessage response = await client.GetAsync(uri);
+        string result = await response.Content.ReadAsStringAsync();
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new Exception(result);
+        }
 
-        var students = JsonSerializer.Deserialize<IEnumerable<Student>>(result,
+        IEnumerable<Student> students = JsonSerializer.Deserialize<IEnumerable<Student>>(result,
             new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true

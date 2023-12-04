@@ -12,15 +12,15 @@ public class ExamHttpClient : IExamService
     {
         this.client = client;
     }
-
+    
     public async Task CreateExam(ExamCreationDto dto)
     {
-        var response = await client.PostAsJsonAsync("/exams", dto);
+        HttpResponseMessage response = await client.PostAsJsonAsync("/exams", dto);
         if (!response.IsSuccessStatusCode)
         {
             var statusCode = response.StatusCode;
             Console.WriteLine(statusCode);
-            var content = await response.Content.ReadAsStringAsync();
+            string content = await response.Content.ReadAsStringAsync();
             throw new Exception(content);
         }
     }

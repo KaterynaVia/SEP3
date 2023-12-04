@@ -1,6 +1,7 @@
 @page "/CreateExam"
-@using HttpClients.ClientInterfaces
 @using Domain.DTOs
+@using HttpClients.ClientInterfaces
+@using Domain
 @inject IExamService examService;
 <div class="container mt-5">
     <h1 class="text-center mb-4">CREATE EXAM</h1>
@@ -23,7 +24,7 @@
                                 <option>SDJ3</option>
                             </select>
                         </div>
-                        <button @onclick="CreateClass" type="submit" class="btn btn-primary">Create Exam</button>
+                        <button @onclick="CreateClass" type="submit" class="btn btn-primary" >Create Exam</button>
                     </form>
                 </div>
             </div>
@@ -60,14 +61,14 @@
     private int grade;
     private string resultMsg = "";
     private string color = " ";
-
+    
     private async Task CreateClass()
     {
         resultMsg = "";
 
         try
         {
-            var dto = new ExamCreationDto(name, dateTime);
+            ExamCreationDto dto = new ExamCreationDto(name, dateTime);
             await examService.CreateExam(dto);
             resultMsg = "User successfully created";
             color = "green";
@@ -79,5 +80,4 @@
             color = "red";
         }
     }
-
 }
