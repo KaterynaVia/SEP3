@@ -25,7 +25,7 @@ public class ClassLogic : IClassLogic
         if (existing != null) throw new Exception("Id already taken!");
 
 
-        var toCreate = new Class(dto.Name, dto.TeacherID, dto.Id);
+        var toCreate = new Class(dto.Name, dto.TeacherID, dto.Id, dto.Students);
         //Console.WriteLine($"Student IDs for this class: {studentIdList}");
         await classDao.CreateAsyncClass(toCreate);
 

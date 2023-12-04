@@ -53,17 +53,38 @@
     {
       "Name": "sep",
       "TeacherId": "34567",
+      "Students": null,
       "Id": 1
     },
     {
       "Name": "mnm",
       "TeacherId": "dfghj",
+      "Students": null,
       "Id": 2
     },
     {
       "Name": "sep3",
       "TeacherId": "jojo",
+      "Students": null,
       "Id": 3
+    },
+    {
+      "Name": "skusamwe",
+      "TeacherId": "mika27",
+      "Students": [
+        "7777777"
+      ],
+      "Id": 4
+    },
+    {
+      "Name": "pokus",
+      "TeacherId": "viaid2",
+      "Students": [
+        "viaid4",
+        "747272",
+        "mike56"
+      ],
+      "Id": 5
     }
   ],
   "Exams": [

@@ -7,11 +7,11 @@ namespace WebApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class ClassController : ControllerBase
+public class ClassesController : ControllerBase
 {
     private readonly IClassLogic classLogic;
 
-    public ClassController(IClassLogic classLogic)
+    public ClassesController(IClassLogic classLogic)
     {
         this.classLogic = classLogic;
     }
