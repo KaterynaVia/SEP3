@@ -20,17 +20,22 @@ public class ClassHttpClient : IClassService
             throw new Exception(content);
         }
     }
-    public async Task<IEnumerable<Class>> GetClass(string? name = null)
+    public async Task<IEnumerable<Class>> GetClass(string? name)
     {
+        Console.WriteLine("The program got to the httpclient point");
         string uri = "/classes";
         if (!string.IsNullOrEmpty(name))
         {
-            uri += $"?Name={name}";
+            uri += $"?name={name}";
         }
         HttpResponseMessage response = await client.GetAsync(uri);
+        Console.WriteLine("1");
         string result = await response.Content.ReadAsStringAsync();
+        Console.WriteLine("2");
         if (!response.IsSuccessStatusCode)
         {
+            var statusCode = response.StatusCode;
+            Console.WriteLine(statusCode);
             throw new Exception(result);
         }
         IEnumerable<Class> classes = JsonSerializer.Deserialize<IEnumerable<Class>>(result,

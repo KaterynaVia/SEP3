@@ -34,7 +34,7 @@ public class ClassesController : ControllerBase
 
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Class>>> GetAsync([FromQuery] string? className)
+    public async Task<ActionResult<IEnumerable<Class>>> GetAsync([FromQuery] string? className = null)
     {
         try
         {

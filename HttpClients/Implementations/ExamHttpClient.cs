@@ -1,4 +1,6 @@
 using System.Net.Http.Json;
+using System.Text.Json;
+using Domain;
 using Domain.DTOs;
 using HttpClients.ClientInterfaces;
 
@@ -23,5 +25,26 @@ public class ExamHttpClient : IExamService
             string content = await response.Content.ReadAsStringAsync();
             throw new Exception(content);
         }
+    }
+
+    public async Task<IEnumerable<Exam>> GetExam(string? name = null)
+    {
+        string uri = "/exams";
+        if (!string.IsNullOrEmpty(name))
+        {
+            uri += $"?Name={name}";
+        }
+        HttpResponseMessage response = await client.GetAsync(uri);
+        string result = await response.Content.ReadAsStringAsync();
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new Exception(result);
+        }
+        IEnumerable<Exam> exams = JsonSerializer.Deserialize<IEnumerable<Exam>>(result,
+            new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            })!;
+        return exams;
     }
 }

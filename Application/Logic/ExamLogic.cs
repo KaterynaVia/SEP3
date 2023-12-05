@@ -18,14 +18,7 @@ public class ExamLogic : IExamLogic
 
     public async Task<Exam> CreateAsyncExam(ExamCreationDto dto)
     {
-        /*Exam? exam = await examDao.GetByNameAsyncExam(dto.NameOfExam);
-        if (exam == null)
-        {
-            throw new Exception($"There is no such a class");
-        }*/
-
-
-        var create = new Exam(dto.IdOfExam, dto.NameOfExam,dto.DateTime);
+        var create = new Exam(dto.IdOfExam, dto.NameOfExam, dto.DateTime, dto.Class);
 
         await examDao.CreateAsyncExam(create);
         return create;

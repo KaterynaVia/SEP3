@@ -14,6 +14,14 @@
           "HttpClients.dll": {}
         }
       },
+      "DeserializeJson/1.0.1": {
+        "runtime": {
+          "lib/DeserializeJson.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Microsoft.Extensions.DependencyInjection/7.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
@@ -35,6 +43,7 @@
       },
       "Domain/1.0.0": {
         "dependencies": {
+          "DeserializeJson": "1.0.1",
           "Microsoft.Extensions.DependencyInjection": "7.0.0"
         },
         "runtime": {
@@ -48,6 +57,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "DeserializeJson/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8MMaxxJKf+6Qc7xugo6WScGPJ3JdguAUPkm6p1NiS5gPkvSb5BxBJEc3lLrcGKPQpemclgQryIsOrQFxHbDV+w==",
+      "path": "deserializejson/1.0.1",
+      "hashPath": "deserializejson.1.0.1.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection/7.0.0": {
       "type": "package",

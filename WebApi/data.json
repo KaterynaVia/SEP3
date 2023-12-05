@@ -85,43 +85,92 @@
         "mike56"
       ],
       "Id": 5
+    },
+    {
+      "Name": "zxcvzxcv",
+      "TeacherId": "mama",
+      "Students": [
+        "jhghhh"
+      ],
+      "Id": 6
+    },
+    {
+      "Name": "asdfghjkl",
+      "TeacherId": "mama",
+      "Students": [
+        "331956",
+        "mike56",
+        "string"
+      ],
+      "Id": 7
+    },
+    {
+      "Name": "test",
+      "TeacherId": "mika",
+      "Students": [
+        "viaid4",
+        "777777",
+        "331956"
+      ],
+      "Id": 8
     }
   ],
   "Exams": [
     {
-      "NameOfExam": "sep3",
+      "NameOfExam": "pokusdnes",
+      "Class": {
+        "Name": "pokus",
+        "TeacherId": "viaid2",
+        "Students": [
+          "viaid4",
+          "747272",
+          "mike56"
+        ],
+        "Id": 5
+      },
+      "IdOfExam": 1,
+      "DateTime": "4.3."
+    },
+    {
+      "NameOfExam": "kopok",
+      "Class": {
+        "Name": "pokus",
+        "TeacherId": "viaid2",
+        "Students": [
+          "viaid4",
+          "747272",
+          "mike56"
+        ],
+        "Id": 5
+      },
+      "IdOfExam": 2,
+      "DateTime": "kopok"
+    },
+    {
+      "NameOfExam": " jsahvdjha",
+      "Class": {
+        "Name": "skusamwe",
+        "TeacherId": "mika27",
+        "Students": [
+          "7777777"
+        ],
+        "Id": 4
+      },
+      "IdOfExam": 3,
+      "DateTime": "asdvasjhd"
+    },
+    {
+      "NameOfExam": " pomoc",
+      "Class": {
+        "Name": "skusamwe",
+        "TeacherId": "mika27",
+        "Students": [
+          "7777777"
+        ],
+        "Id": 4
+      },
       "IdOfExam": 4,
-      "DateTime": null
-    },
-    {
-      "NameOfExam": "jjj",
-      "IdOfExam": 4,
-      "DateTime": null
-    },
-    {
-      "NameOfExam": "exam1",
-      "IdOfExam": 4,
-      "DateTime": null
-    },
-    {
-      "NameOfExam": "exam6",
-      "IdOfExam": 5,
-      "DateTime": null
-    },
-    {
-      "NameOfExam": " xcbvxc",
-      "IdOfExam": 6,
-      "DateTime": "xcvbx"
-    },
-    {
-      "NameOfExam": " ANJ",
-      "IdOfExam": 7,
-      "DateTime": "12.1.2024 9:00"
-    },
-    {
-      "NameOfExam": " dominika-test",
-      "IdOfExam": 8,
-      "DateTime": "12/5/2023m"
+      "DateTime": "sadha"
     }
   ],
   "Students": [

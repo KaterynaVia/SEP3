@@ -1,16 +1,20 @@
-namespace Domain.DTOs;
-
-public class ExamCreationDto
+namespace Domain.DTOs
 {
-    public ExamCreationDto(string nameOfExam, string dateTime)
+    public class ExamCreationDto
     {
-        NameOfExam = nameOfExam; 
-        DateTime = dateTime;
-    }
+        public string NameOfExam { get; set; }
+        public int IdOfExam { get; set; }
+        public string DateTime { get; set; }
+        public Class Class { get; set; }
 
-    public string NameOfExam { get; }
-    
-    public int IdOfExam { get; }
-    
-    public string DateTime { get; }
+       
+        public ExamCreationDto() { }
+
+        public ExamCreationDto(string nameOfExam, string dateTime, Class class_)
+        {
+            NameOfExam = nameOfExam;
+            DateTime = dateTime;
+            Class = class_;
+        }
+    }
 }
