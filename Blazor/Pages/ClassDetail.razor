@@ -1,4 +1,4 @@
-@page "/ClassDetail/{ClassId}"
+@page "/ClassDetail/{Name}"
 @using HttpClients.ClientInterfaces
 @using Domain
 @inject IClassService classService;
@@ -10,26 +10,19 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">@ClassName</h5>
-                    <div class="form-group">
-                        <label for="teacher">Teacher</label>
-                        <p>@TeacherName</p>
+                    <h2 class="card-title">@ClassName</h2>
+                    <div class="form-group mb-3">
+                        <label for="teacher" ><strong>Teacher:</strong> @TeacherName</label>
                     </div>
                     <div class="form-group">
-                        <label for="student">Students</label>
-                        <select class="form-select" id="student" @bind="selectedStudent">
-                            @if (Students != null && Students.Any())
+                        <label for="student" class="fw-bold">Students: </label>
+                        @if (Students != null)
+                        {
+                            @foreach (var student in Students)
                             {
-                                @foreach (var student in Students)
-                                {
-                                    <option value="@student">@student</option>
-                                }
+                                <p>@student</p>
                             }
-                            else
-                            {
-                                <option value="">No Students Available</option>
-                            }
-                        </select>
+                        }
                     </div>
                 </div>
             </div>
@@ -39,45 +32,42 @@
 
 @code {
     [Parameter]
-    public string ClassId { get; set; }
+    public string Name { get; set; }
 
-    private Class selectedClass;
+    private IEnumerable<Class> selectedClass;
     private string ClassName = "";
     private string TeacherName = "";
     private List<string> Students;
-    private string selectedStudent = "";
+    
+    
+    
     
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            if (!string.IsNullOrEmpty(ClassId))
+            if (!string.IsNullOrEmpty(Name))
             {
-                // Get class details based on the ClassId
-                IEnumerable<Class> classes = await classService.GetClass(ClassId);
-                selectedClass = classes.FirstOrDefault();
+                selectedClass = await classService.GetClass(Name);
 
-                if (selectedClass != null)
+                if (selectedClass != null && selectedClass.Any())
                 {
-                    // Populate details
-                    ClassName = selectedClass.Name;
+                    var classToDisplay = selectedClass.FirstOrDefault(class_ => 
+                        class_.Name.Equals(Name, StringComparison.OrdinalIgnoreCase));
 
-                    IEnumerable<Teacher> teachers = await userService.GetTeachers();
-                    Teacher teacher = teachers.FirstOrDefault(t => t.Id == selectedClass.TeacherId);
-
-                    if (teacher != null)
+                    if (classToDisplay != null)
                     {
-                        TeacherName = teacher.Name;
+                        ClassName = classToDisplay.Name;
+                        TeacherName = classToDisplay.TeacherId;
+                        Students = classToDisplay.Students;
                     }
-
-                    Students = selectedClass.Students ?? new List<string>();
                 }
             }
         }
         catch (Exception e)
         {
             Console.WriteLine(e.Message);
-            // You can set an error message here if required
+    // Handle exceptions as needed
         }
     }
 }

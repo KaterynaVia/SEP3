@@ -56,7 +56,7 @@
                                     }
                                 }
                             </div>
-                            <button @onclick="ClearSelection">Clear Selection</button>
+                            <button @onclick="ClearSelection" class="mb-3 mt-3 btn btn-danger" type="submit">Clear Selection</button>
                         </div>
                         
                         <button @onclick="CreateClassBlazor" type="submit" class="btn btn-primary">Create Class</button>
@@ -74,8 +74,8 @@
                     {
                         @foreach (var class_ in classes)
                         {
-                            <div>
-                                <a href="/ClassDetail/@class_.Id">@class_.Name</a>
+                            <div class="mb-3">
+                                <a href="/ClassDetail/@class_.Name">@class_.Name</a>
                             </div>
                         }
                     }
