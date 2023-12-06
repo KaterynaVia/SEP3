@@ -52,8 +52,8 @@
                                 {
                                     @foreach (var exam in exams)
                                     {
-                                        <div>
-                                            <p>@exam.NameOfExam</p>
+                                        <div class="mb-3">
+                                            <a href="/ExamDetail/@exam.NameOfExam" >@exam.NameOfExam</a>
                                         </div>
                                     }
                                 }

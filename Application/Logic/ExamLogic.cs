@@ -28,4 +28,10 @@ public class ExamLogic : IExamLogic
     {
         return examDao.GetAsyncExam(searchExamParametersDto);
     }
+    
+
+    public Task<IEnumerable<Exam>> GetByIdAsyncExam(SearchExamParametersDto searchExamParametersDto)
+    {
+        return examDao.GetByIdAsyncExam(searchExamParametersDto);
+    }
 }

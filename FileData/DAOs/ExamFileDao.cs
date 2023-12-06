@@ -41,10 +41,14 @@ public class ExamFileDao : IExamDao
         return Task.FromResult(exams);
     }
 
-    public Task<Exam?> GetByNameAsyncExam(string name)
+    public Task<IEnumerable<Exam>> GetByIdAsyncExam(SearchExamParametersDto searchExamParameters)
     {
-        var existing = context.Exams.FirstOrDefault(e =>
-            e.NameOfExam.Equals(name, StringComparison.OrdinalIgnoreCase));
+        throw new NotImplementedException();
+    }
+
+    public Task<Exam?> GetByIdAsyncExam(int id)
+    {
+        var existing = context.Exams.FirstOrDefault(e => e.IdOfExam == id);
         return Task.FromResult(existing);
     }
 }

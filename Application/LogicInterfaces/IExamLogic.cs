@@ -7,4 +7,6 @@ public interface IExamLogic
 {
     Task<Exam> CreateAsyncExam(ExamCreationDto dto);
     Task<IEnumerable<Exam>> GetAsyncExam(SearchExamParametersDto searchExamParametersDto);
+    Task<IEnumerable<Exam>> GetByIdAsyncExam(SearchExamParametersDto searchExamParametersDto);
+
 }

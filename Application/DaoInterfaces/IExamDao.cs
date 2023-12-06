@@ -7,5 +7,6 @@ public interface IExamDao
 {
     Task<Exam> CreateAsyncExam(Exam exam);
     Task<IEnumerable<Exam>> GetAsyncExam(SearchExamParametersDto searchExamParameters);
-    Task<Exam?> GetByNameAsyncExam(string name);
+    Task<IEnumerable<Exam>> GetByIdAsyncExam(SearchExamParametersDto searchExamParameters);
+
 }

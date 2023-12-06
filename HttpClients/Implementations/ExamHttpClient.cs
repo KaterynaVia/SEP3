@@ -47,4 +47,26 @@ public class ExamHttpClient : IExamService
             })!;
         return exams;
     }
+
+    public async Task<IEnumerable<Exam>> GetExamById(int id)
+    {
+        string uri = "/exams";
+        if (id != 0)
+        {
+            uri += $"?Id={id}";
+        }
+        HttpResponseMessage response = await client.GetAsync(uri);
+        string result = await response.Content.ReadAsStringAsync();
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new Exception(result);
+        }
+        IEnumerable<Exam> exams = JsonSerializer.Deserialize<IEnumerable<Exam>>(result,
+            new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            })!;
+        return exams;
+    }
+
 }

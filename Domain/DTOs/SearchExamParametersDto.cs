@@ -7,6 +7,12 @@ public class SearchExamParametersDto
         ExamName = examName;
     }
 
+    public SearchExamParametersDto(int? examId)
+    {
+        ExamId = examId;
+    }
+
 
     public string? ExamName { get; }
+    public int? ExamId { get; }
 }

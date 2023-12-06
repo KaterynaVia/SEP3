@@ -31,7 +31,7 @@ public class ExamsController : ControllerBase
         }
     }
 
-
+    
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Exam>>> GetAsyncExam([FromQuery] string? examName)
     {
@@ -47,4 +47,6 @@ public class ExamsController : ControllerBase
             return StatusCode(500, e.Message);
         }
     }
+    
+
 }

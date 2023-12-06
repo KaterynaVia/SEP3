@@ -1,0 +1,83 @@
+@page "/ClassDetail/{ClassId}"
+@using HttpClients.ClientInterfaces
+@using Domain
+@inject IClassService classService;
+@inject IUserService userService;
+
+<h1>CLASS DETAIL</h1>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@ClassName</h5>
+                    <div class="form-group">
+                        <label for="teacher">Teacher</label>
+                        <p>@TeacherName</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="student">Students</label>
+                        <select class="form-select" id="student" @bind="selectedStudent">
+                            @if (Students != null && Students.Any())
+                            {
+                                @foreach (var student in Students)
+                                {
+                                    <option value="@student">@student</option>
+                                }
+                            }
+                            else
+                            {
+                                <option value="">No Students Available</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string ClassId { get; set; }
+
+    private Class selectedClass;
+    private string ClassName = "";
+    private string TeacherName = "";
+    private List<string> Students;
+    private string selectedStudent = "";
+    
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            if (!string.IsNullOrEmpty(ClassId))
+            {
+                // Get class details based on the ClassId
+                IEnumerable<Class> classes = await classService.GetClass(ClassId);
+                selectedClass = classes.FirstOrDefault();
+
+                if (selectedClass != null)
+                {
+                    // Populate details
+                    ClassName = selectedClass.Name;
+
+                    IEnumerable<Teacher> teachers = await userService.GetTeachers();
+                    Teacher teacher = teachers.FirstOrDefault(t => t.Id == selectedClass.TeacherId);
+
+                    if (teacher != null)
+                    {
+                        TeacherName = teacher.Name;
+                    }
+
+                    Students = selectedClass.Students ?? new List<string>();
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            // You can set an error message here if required
+        }
+    }
+}
