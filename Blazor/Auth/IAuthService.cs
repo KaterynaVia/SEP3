@@ -5,11 +5,11 @@ namespace Blazor.Auth;
 
 public interface IAuthService
 {
-    public Action<ClaimsPrincipal> OnAuthStateChanged { get; set; }
+    public Task LoginAsyncStudent(string id, string password);
+    public Task LoginAsyncTeacher(string id, string password);
 
-    public string? Jwt { get; }
-    public Task LoginAsync(string id, string password);
     public Task LogoutAsync();
-    public Task RegisterAsync(User user);
+    
+    public Action<ClaimsPrincipal> OnAuthStateChanged { get; set; }
     public Task<ClaimsPrincipal> GetAuthAsync();
 }

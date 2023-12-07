@@ -4,7 +4,8 @@ namespace WebApi.Services;
 
 public interface IAuthService
 {
-    Task<User> GetUser(string id, string password);
-    Task<User> ValidateUser(string id, string password);
-    Task RegisterUser(User user);
+    Task<Student> GetStudent(string id, string password);
+    Task<Teacher> GetTeacher(string id, string password);
+    Task<Student> ValidateStudent(string id, string password);
+    Task<Teacher> ValidateTeacher(string id, string password);
 }

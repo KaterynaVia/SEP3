@@ -6,6 +6,7 @@ public class SearchUserParametersDto
     {
         IdContains = idContains;
     }
+    
 
     public string? IdContains { get; }
 }

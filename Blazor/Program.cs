@@ -1,5 +1,8 @@
+using Blazor.Auth;
 using HttpClients.ClientInterfaces;
 using HttpClients.Implementations;
+using Microsoft.AspNetCore.Components.Authorization;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +19,9 @@ builder.Services.AddScoped(
 builder.Services.AddScoped<IUserService, UserHttpClient>();
 builder.Services.AddScoped<IClassService, ClassHttpClient>();
 builder.Services.AddScoped<IExamService, ExamHttpClient>();
-
+builder.Services.AddScoped<IAuthService, JwtAuthService>();
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthProvider>();
+AuthorizationPolicies.AddPolicies(builder.Services);
 
 var app = builder.Build();
 

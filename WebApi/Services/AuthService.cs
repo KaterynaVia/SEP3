@@ -7,52 +7,86 @@ namespace WebApi.Services;
 
 public class AuthService : IAuthService
 {
-    private readonly IUserLogic userLogic;
-
-    private readonly IList<User> users = new List<User>
+    private readonly IStudentLogic studentLogic;
+    private readonly ITeacherLogic teacherLogic;
+    
+    public AuthService(IStudentLogic studentLogic, ITeacherLogic teacherLogic)
     {
-        new("112233", "password"),
-        new("332211", "password1")
-    };
-
-    public AuthService(IUserLogic userLogic)
+        this.studentLogic = studentLogic ?? throw new ArgumentNullException(nameof(studentLogic));
+        this.teacherLogic = teacherLogic ?? throw new ArgumentNullException(nameof(teacherLogic));
+    }
+    
+    
+    public async Task<Student> GetStudent(string id, string password)
     {
-        this.userLogic = userLogic;
+        SearchUserParametersDto parameters = new(id);
+        IEnumerable<Student> students = await studentLogic.GetAsyncStudent(parameters);
+        Student? student = students.FirstOrDefault(s => s.Id.Equals(id, StringComparison.OrdinalIgnoreCase));
+        if (student != null)
+        {
+            return student;
+        }
+        else
+        {
+            throw new Exception("List of users empty.");
+        }
     }
 
-    public Task<User> ValidateUser(string id, string password)
+
+    public async Task<Teacher> GetTeacher(string id, string password)
     {
-        var existingUser = users.FirstOrDefault(u => u.Id.Equals(id, StringComparison.OrdinalIgnoreCase));
-        if (existingUser == null) throw new Exception("User not found");
-
-        if (!existingUser.Password.Equals(password)) throw new Exception("Password mismatch");
-
-        return Task.FromResult(existingUser);
+        SearchUserParametersDto parameters = new(id);
+        IEnumerable<Teacher> teachers = await teacherLogic.GetAsyncTeacher(parameters);
+        Teacher? teacher = teachers.FirstOrDefault(t => t.Id.Equals(id, StringComparison.OrdinalIgnoreCase));
+        if (teacher != null)
+        {
+            return teacher;
+        }
+        else
+        {
+            throw new Exception("List of users empty.");
+        }
     }
-
-    public async Task<User> GetUser(string id, string password)
+    
+    public async Task<Student> ValidateStudent(string id, string password)
     {
-        UserParametersDto parameters = new(id);
-        Console.WriteLine("a");
-        var users = await userLogic.GetAsync(parameters);
-        Console.WriteLine("b");
-        var user = users.FirstOrDefault(u => u.Id == id);
-        if (user != null)
-            return user;
-        throw new Exception("List of users empty.");
+        SearchUserParametersDto parameters = new(id);
+        IEnumerable<Student> students = await studentLogic.GetAsyncStudent(parameters);
+        Student? existingStudent = students.FirstOrDefault(s => 
+            s.Id.Equals(id, StringComparison.OrdinalIgnoreCase));
+        Console.WriteLine($"Username: {existingStudent.Id}, Password: {existingStudent.Password}");
+
+        if (existingStudent == null)
+        {
+            throw new Exception("User not found");
+        }
+
+        if (!existingStudent.Password.Equals(password))
+        {
+            throw new Exception("Password mismatch");
+        }
+
+        return existingStudent;
     }
-
-    public Task RegisterUser(User user)
+    
+    public async Task<Teacher> ValidateTeacher(string id, string password)
     {
-        if (user.Id.Equals(null)) throw new ValidationException("ID cannot be null");
+        SearchUserParametersDto parameters = new(id);
+        IEnumerable<Teacher> teachers = await teacherLogic.GetAsyncTeacher(parameters);
+        Teacher? existingTeacher = teachers.FirstOrDefault(t => 
+            t.Id.Equals(id, StringComparison.OrdinalIgnoreCase));
+        Console.WriteLine($"Username: {existingTeacher.Id}, Password: {existingTeacher.Password}");
 
-        if (string.IsNullOrEmpty(user.Password)) throw new ValidationException("Password cannot be null");
-        // Do more user info validation here
+        if (existingTeacher == null)
+        {
+            throw new Exception("User not found");
+        }
 
-        // save to persistence instead of list
+        if (!existingTeacher.Password.Equals(password))
+        {
+            throw new Exception("Password mismatch");
+        }
 
-        users.Add(user);
-
-        return Task.CompletedTask;
+        return existingTeacher;
     }
 }
