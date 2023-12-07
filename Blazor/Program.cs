@@ -2,6 +2,8 @@ using Blazor.Auth;
 using HttpClients.ClientInterfaces;
 using HttpClients.Implementations;
 using Microsoft.AspNetCore.Components.Authorization;
+using WebApi.Services;
+using IAuthService = Blazor.Auth.IAuthService;
 
 
 var builder = WebApplication.CreateBuilder(args);

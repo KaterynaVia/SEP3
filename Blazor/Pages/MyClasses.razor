@@ -1,0 +1,88 @@
+@page "/MyClasses/{Id}"
+@using Domain
+@using System.Linq
+@using System.Text.Json
+@inject HttpClient client
+
+<h1 class="mt-4 mb-3">My Classes</h1>
+
+@if (classes == null)
+{
+    <p>Loading...</p>
+}
+else if (classes.Any())
+{
+    <div class="list-group">
+        @foreach (var cls in classes)
+        {
+            if (cls.Students.Contains(Id))
+            {
+                <a href="/ClassDetail/@cls.Name" class="list-group-item list-group-item-action">@cls.Name</a>
+            }
+        }
+    </div>
+}
+else
+{
+    <p>No classes found for this student.</p>
+}
+
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+
+    public IEnumerable<Class> classes;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            Console.WriteLine("Getting classes...");
+            classes = await GetClassesForStudent(Id);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exception: {ex.Message}");
+            // Handle the exception here
+        }
+    }
+
+    private async Task<IEnumerable<Class>> GetClassesForStudent(string studentId)
+    {
+        try
+        {
+            HttpResponseMessage response = await client.GetAsync("/classes");
+            string result = await response.Content.ReadAsStringAsync();
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception(result);
+            }
+
+            var allClasses = JsonSerializer.Deserialize<IEnumerable<Class>>(result, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+
+    // Check if allClasses is null
+            if (allClasses != null)
+            {
+    // Filter the classes where the student is present
+                return allClasses.Where(c => c.Students != null && c.Students.Contains(studentId)).ToList();
+            }
+            else
+            {
+    // Handle the case where allClasses is null
+                throw new Exception("Classes data is null");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exception: {ex.Message}");
+            throw; // Re-throw the exception to handle it in OnInitializedAsync()
+        }
+    }
+
+
+}

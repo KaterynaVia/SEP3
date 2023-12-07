@@ -113,6 +113,16 @@
         "331956"
       ],
       "Id": 8
+    },
+    {
+      "Name": "test-4.12.2023",
+      "TeacherId": "mama",
+      "Students": [
+        "string",
+        "viaid4",
+        "331956"
+      ],
+      "Id": 9
     }
   ],
   "Exams": [
@@ -171,6 +181,34 @@
       },
       "IdOfExam": 4,
       "DateTime": "sadha"
+    },
+    {
+      "NameOfExam": " jhgfds",
+      "Class": {
+        "Name": "pokus",
+        "TeacherId": "viaid2",
+        "Students": [
+          "viaid4",
+          "747272",
+          "mike56"
+        ],
+        "Id": 5
+      },
+      "IdOfExam": 5,
+      "DateTime": "lkjhgfd"
+    },
+    {
+      "NameOfExam": " skusam67",
+      "Class": {
+        "Name": "zxcvzxcv",
+        "TeacherId": "mama",
+        "Students": [
+          "jhghhh"
+        ],
+        "Id": 6
+      },
+      "IdOfExam": 6,
+      "DateTime": "zajtra"
     }
   ],
   "Students": [

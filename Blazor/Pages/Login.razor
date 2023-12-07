@@ -53,7 +53,7 @@
         try
         {
             await authService.LoginAsyncStudent(idStudent, passwordStudent);
-            navMgr.NavigateTo("/CreateClass");
+            navMgr.NavigateTo($"/MyClasses/{idStudent}"); // Pass student ID to the URL
         }
         catch (Exception e)
         {
@@ -69,7 +69,7 @@
         try
         {
             await authService.LoginAsyncTeacher(idTeacher, passwordTeacher);
-            navMgr.NavigateTo("/CreateExam");
+            navMgr.NavigateTo($"/MyClasses/{idTeacher}");
         }
         catch (Exception e)
         {

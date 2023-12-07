@@ -33,7 +33,7 @@ public class AccessController : ControllerBase
 
     // manual checking
     [HttpGet("manualcheck")]
-    public ActionResult GetWithManualCheck()
+    public ActionResult GetWithManualCheckTeacher()
     {
         var claim = User.Claims.FirstOrDefault(claim => claim.Type.Equals(ClaimTypes.Role));
         if (claim == null) return StatusCode(403, "You have no role");
