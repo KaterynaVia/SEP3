@@ -16,7 +16,6 @@ public class ClassesController : ControllerBase
         this.classLogic = classLogic;
     }
 
-
     [HttpPost]
     public async Task<ActionResult<Class>> CreateAsyncClass([FromBody] ClassCreationDto dto)
     {

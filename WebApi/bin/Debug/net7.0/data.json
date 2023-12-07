@@ -75,6 +75,16 @@
         "7777777"
       ],
       "Id": 4
+    },
+    {
+      "Name": "pokus",
+      "TeacherId": "viaid2",
+      "Students": [
+        "viaid4",
+        "747272",
+        "mike56"
+      ],
+      "Id": 5
     }
   ],
   "Exams": [

@@ -30,6 +30,37 @@ public class AuthService : IAuthService
         return Task.FromResult(existingUser);
     }
 
+    // This method would be used for the role separation to grant access to what each role should have access to
+    public Task<IEnumerable<string>> GetUserRoles(string id)
+    {
+        // Retrieve the user from the list based on the provided Id
+        var user = users.FirstOrDefault(u => u.Id.Equals(id, StringComparison.OrdinalIgnoreCase));
+
+        if (user == null)
+        {
+            throw new Exception("User not found");
+        }
+
+        // Logic to determine user roles based on the user Id
+        var roles = new List<string>();
+
+        // Assign role based on the user ID
+        if (id.Equals(user.Id, StringComparison.OrdinalIgnoreCase))
+        {
+            roles.Add("Teacher");
+        }
+        else if (id.Equals(user.Id, StringComparison.OrdinalIgnoreCase))
+        {
+            roles.Add("Student");
+        }
+        else if (id.Equals(user.Id, StringComparison.OrdinalIgnoreCase))
+        {
+            roles.Add("Supervisor");
+        }
+
+        return Task.FromResult<IEnumerable<string>>(roles);
+    }
+
     public async Task<User> GetUser(string id, string password)
     {
         UserParametersDto parameters = new(id);

@@ -1,12 +1,14 @@
 using Application.LogicInterfaces;
 using Domain;
 using Domain.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[Authorize(Roles = "Teacher")]
 public class TeachersController : ControllerBase
 {
     private readonly ITeacherLogic teacherLogic;

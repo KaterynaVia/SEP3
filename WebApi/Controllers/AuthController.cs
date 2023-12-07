@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using Domain;
 using Domain.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using WebApi.Services;
@@ -30,13 +31,15 @@ public class AuthController : ControllerBase
         return Ok();
     }
 
-    [HttpPost]
-    [Route("login")]
+    [HttpPost, Route("login")]
+    [Authorize]
     public async Task<ActionResult> Login([FromBody] UserLoginDto userLoginDto)
     {
         try
         {
-            var user = await authService.ValidateUser(userLoginDto.Id, userLoginDto.Password);
+            User user = await authService.GetUser(userLoginDto.Id, userLoginDto.Password);
+            
+            await authService.ValidateUser(user.Id, user.Password);
             var token = GenerateJwt(user);
 
             return Ok(token);
@@ -68,7 +71,7 @@ public class AuthController : ControllerBase
         var serializedToken = new JwtSecurityTokenHandler().WriteToken(token);
         return serializedToken;
     }
-
+    
     private List<Claim> GenerateClaims(User user)
     {
         var claims = new[]

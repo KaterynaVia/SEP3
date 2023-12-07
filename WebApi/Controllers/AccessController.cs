@@ -9,20 +9,6 @@ namespace WebApi.Controllers;
 [Authorize]
 public class AccessController : ControllerBase
 {
-    [HttpGet("allowanon")]
-    [AllowAnonymous]
-    public ActionResult GetAsAnon()
-    {
-        return Ok("This was accepted as anonymous");
-    }
-
-    // role
-    [HttpGet("authorized")]
-    public ActionResult GetAsAuthorized()
-    {
-        return Ok("This was accepted as authorized");
-    }
-
     // policy MustBeVia
     [HttpGet("mustbevia")]
     [Authorize("MustBeVia")]
@@ -30,16 +16,23 @@ public class AccessController : ControllerBase
     {
         return Ok("This was accepted as via domain");
     }
-
+    
     // manual checking
     [HttpGet("manualcheck")]
     public ActionResult GetWithManualCheck()
     {
         var claim = User.Claims.FirstOrDefault(claim => claim.Type.Equals(ClaimTypes.Role));
         if (claim == null) return StatusCode(403, "You have no role");
+        
+        string role = claim.Value;
 
-        if (!claim.Value.Equals("Teacher")) return StatusCode(403, "You are not a teacher");
-
-        return Ok("You are a teacher, you may proceed");
+        return role switch
+        {
+            // Check for the three different roles
+            "Teacher" => Ok("You are a teacher, you may proceed"),
+            "Student" => Ok("You are a student, you may proceed"),
+           // "Supervisor" => Ok("You are a supervisor, you may proceed"),
+            _ => StatusCode(403, "Invalid role")
+        };
     }
 }

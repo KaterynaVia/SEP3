@@ -1,26 +1,66 @@
 @page "/"
-<div class="container mt-5">
-    <h1 class="text-center">LOGIN</h1>
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-6">
-            <form>
-                <div class="mb-4">
-                    <label for="viaId" class="form-label">VIA ID:</label>
-                    <input type="text" class="form-control" id="viaId">
+@using Blazor.Auth
+@inject IAuthService authService
+@inject NavigationManager navMgr
+
+<AuthorizeView>
+    <NotAuthorized>
+        <div class="container mt-5">
+            <h1 class="text-center">LOGIN</h1>
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-4">
+                            <label for="viaId" class="form-label">VIA ID:</label>
+                            <input type="text" class="form-control" id="viaId" @bind="id">
+                        </div>
+                        <div class="mb-4">
+                            <label for="password" class="form-label">Password:</label>
+                            <input type="password" class="form-control" id="password" @bind="password">
+                        </div>
+                        @if (!string.IsNullOrEmpty(errorLabel))
+                        {
+                            <div class="field">
+                                <label style="color: red">
+                                    @errorLabel
+                                </label>
+                            </div>
+                        }
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg fw-bold" @onclick="LoginAsync">LOGIN</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="mb-4">
-                    <label for="password" class="form-label">Password:</label>
-                    <input type="password" class="form-control" id="password">
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary btn-lg fw-bold">LOGIN</button>
-                </div>
-            </form>
+            </div>
         </div>
-    </div>
-</div>
+    </NotAuthorized>
+    
+    <Authorized>
+        <div class="card">
+            <h3>Hello, @context.User.Identity.Name</h3>
+        </div>
+    </Authorized>
+</AuthorizeView>
 
 
 @code {
+    private string id;
+    private string password;
+    private string errorLabel;
+    
+    private async Task LoginAsync()
+    {
+        errorLabel = "";
+        try
+        {
+            await authService.LoginAsync(id, password);
+            navMgr.NavigateTo("/");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            errorLabel = $"Error: {e.Message}";
+        }
+    }
 
 }

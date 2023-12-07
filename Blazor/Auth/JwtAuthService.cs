@@ -17,7 +17,7 @@ public class JwtAuthService : IAuthService
 
     public async Task LoginAsync(string id, string password)
     {
-        UserLoginDto userLoginDto = new()
+        User userLoginDto = new()
         {
             Id = id,
             Password = password
@@ -26,7 +26,7 @@ public class JwtAuthService : IAuthService
         var userAsJson = JsonSerializer.Serialize(userLoginDto);
         StringContent content = new(userAsJson, Encoding.UTF8, "application/json");
 
-        var response = await client.PostAsync("https://localhost:7130/auth/login", content);
+        var response = await client.PostAsync("https://localhost:7097/auth/login", content);
         var responseContent = await response.Content.ReadAsStringAsync();
 
         if (!response.IsSuccessStatusCode) throw new Exception(responseContent);
@@ -51,7 +51,7 @@ public class JwtAuthService : IAuthService
     {
         var userAsJson = JsonSerializer.Serialize(user);
         StringContent content = new(userAsJson, Encoding.UTF8, "application/json");
-        var response = await client.PostAsync("https://localhost:7130/auth/register", content);
+        var response = await client.PostAsync("https://localhost:7097/auth/register", content);
         var responseContent = await response.Content.ReadAsStringAsync();
 
         if (!response.IsSuccessStatusCode) throw new Exception(responseContent);
