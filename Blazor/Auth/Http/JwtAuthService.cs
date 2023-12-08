@@ -9,6 +9,12 @@ namespace Blazor.Auth;
 public class JwtAuthService : IAuthService
 {
     private readonly HttpClient client = new();
+    public enum UserType
+    {
+        Student,
+        Teacher,
+        Supervisor
+    }
     
     public string? Jwt { get; private set; } = "";
 
@@ -27,6 +33,7 @@ public class JwtAuthService : IAuthService
         return Task.FromResult(principal);
     }
 
+    public UserType LoggedInUserType { get; set; } = UserType.Student; // Set a default value
 
     public async Task LoginAsyncStudent(string id, string password)
     {
@@ -49,9 +56,9 @@ public class JwtAuthService : IAuthService
 
         string token = responseContent;
         Jwt = token;
+        LoggedInUserType = UserType.Student; // Set the user type for student login
 
         ClaimsPrincipal principal = CreateClaimsPrincipal();
-
         OnAuthStateChanged.Invoke(principal);
     }
     
@@ -78,9 +85,9 @@ public class JwtAuthService : IAuthService
 
         string token = responseContent;
         Jwt = token;
+        LoggedInUserType = UserType.Teacher; // Set the user type for teacher login
 
         ClaimsPrincipal principal = CreateClaimsPrincipal();
-
         OnAuthStateChanged.Invoke(principal);
     }
 

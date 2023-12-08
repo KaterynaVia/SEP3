@@ -47,6 +47,12 @@
       "Name": "ajsbdjhabd",
       "Id": "qwerty",
       "Password": "asdbasdj"
+    },
+    {
+      "UserId": 9,
+      "Name": "dominika",
+      "Id": "ucitel",
+      "Password": "heslo123"
     }
   ],
   "Classes": [
@@ -123,6 +129,24 @@
         "331956"
       ],
       "Id": 9
+    },
+    {
+      "Name": "8.12.",
+      "TeacherId": "dominika",
+      "Students": [
+        "jhnghg",
+        "331956",
+        "747272"
+      ],
+      "Id": 10
+    },
+    {
+      "Name": "8.12.nr2",
+      "TeacherId": "ucitel",
+      "Students": [
+        "777777"
+      ],
+      "Id": 11
     }
   ],
   "Exams": [

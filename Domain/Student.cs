@@ -17,6 +17,7 @@ public class Student : User
     [JsonPropertyName("Name")] public string Name { get; set; }
 
     public int UserId { get; set; }
+    public string UserType = "Student";
 
     //[JsonPropertyName("Class")] public string AssignedClass { get; set; }
 }

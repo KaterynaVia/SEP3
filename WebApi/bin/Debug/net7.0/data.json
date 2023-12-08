@@ -47,6 +47,12 @@
       "Name": "ajsbdjhabd",
       "Id": "qwerty",
       "Password": "asdbasdj"
+    },
+    {
+      "UserId": 9,
+      "Name": "dominika",
+      "Id": "ucitel",
+      "Password": "heslo123"
     }
   ],
   "Classes": [
@@ -113,6 +119,34 @@
         "331956"
       ],
       "Id": 8
+    },
+    {
+      "Name": "test-4.12.2023",
+      "TeacherId": "mama",
+      "Students": [
+        "string",
+        "viaid4",
+        "331956"
+      ],
+      "Id": 9
+    },
+    {
+      "Name": "8.12.",
+      "TeacherId": "dominika",
+      "Students": [
+        "jhnghg",
+        "331956",
+        "747272"
+      ],
+      "Id": 10
+    },
+    {
+      "Name": "8.12.nr2",
+      "TeacherId": "ucitel",
+      "Students": [
+        "777777"
+      ],
+      "Id": 11
     }
   ],
   "Exams": [
@@ -171,6 +205,34 @@
       },
       "IdOfExam": 4,
       "DateTime": "sadha"
+    },
+    {
+      "NameOfExam": " jhgfds",
+      "Class": {
+        "Name": "pokus",
+        "TeacherId": "viaid2",
+        "Students": [
+          "viaid4",
+          "747272",
+          "mike56"
+        ],
+        "Id": 5
+      },
+      "IdOfExam": 5,
+      "DateTime": "lkjhgfd"
+    },
+    {
+      "NameOfExam": " skusam67",
+      "Class": {
+        "Name": "zxcvzxcv",
+        "TeacherId": "mama",
+        "Students": [
+          "jhghhh"
+        ],
+        "Id": 6
+      },
+      "IdOfExam": 6,
+      "DateTime": "zajtra"
     }
   ],
   "Students": [

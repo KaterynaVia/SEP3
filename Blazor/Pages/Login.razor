@@ -3,6 +3,7 @@
 @inject IAuthService authService
 @inject NavigationManager navMgr
 
+
 <div class="container mt-4">
     <div class="row">
         <div class="col-md-6">
@@ -23,18 +24,19 @@
             <div class="card p-4">
                 <h1>Login Teacher</h1>
                 <div class="mb-3">
-                    <label for="teacherId" class="form-label" @bind="idTeacher">VIA ID:</label>
-                    <input type="text" class="form-control" id="teacherId">
+                    <label class="form-label" for="teacherId">VIA ID:</label>
+                    <input type="text" class="form-control" id="teacherId" @bind="idTeacher">
                 </div>
                 <div class="mb-3">
-                    <label for="teacherPassword" class="form-label" @bind="passwordTeacher">PASSWORD:</label>
-                    <input type="password" class="form-control" id="teacherPassword">
+                    <label class="form-label" for="teacherPassword">PASSWORD:</label>
+                    <input type="password" class="form-control" id="teacherPassword" @bind="passwordTeacher">
                 </div>
                 <button @onclick="LoginAsyncTeacher" class="btn btn-primary">Login</button>
             </div>
         </div>
     </div>
 </div>
+
 
   
 
@@ -46,6 +48,9 @@
     private string idTeacher;
     private string passwordTeacher;
     private string errorLabel;
+    
+    
+
     
     private async Task LoginAsyncStudent()
     {

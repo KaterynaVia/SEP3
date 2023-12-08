@@ -2,31 +2,67 @@
 @using Domain
 @using System.Linq
 @using System.Text.Json
+@using Blazor.Auth
 @inject HttpClient client
+@inject IAuthService authService
 
 <h1 class="mt-4 mb-3">My Classes</h1>
 
-@if (classes == null)
+@if (authService is JwtAuthService jwtAuthService)
 {
-    <p>Loading...</p>
-}
-else if (classes.Any())
-{
-    <div class="list-group">
-        @foreach (var cls in classes)
+    @if (jwtAuthService.LoggedInUserType == JwtAuthService.UserType.Student)
+    {
+        @if (classes == null)
         {
-            if (cls.Students.Contains(Id))
-            {
-                <a href="/ClassDetail/@cls.Name" class="list-group-item list-group-item-action">@cls.Name</a>
-            }
+            <p>Loading...</p>
         }
-    </div>
+        else if (classes.Any())
+        {
+            @if (classes != null)
+            {
+                <div class="list-group">
+                    @foreach (var cls in classes.Where(c => c.Students != null && c.Students.Contains(Id)))
+                    {
+                        <a href="/ClassDetail/@cls.Name" class="list-group-item list-group-item-action">@cls.Name</a>
+                    }
+                </div>
+            }
+
+        }
+        else
+        {
+            <p>No classes found for this student.</p>
+        }
+    }
+    else if (jwtAuthService.LoggedInUserType == JwtAuthService.UserType.Teacher)
+    {
+        @if (classes == null)
+        {
+            <p>Loading...</p>
+        }
+        else if (classes.Any())
+        {
+            <div class="list-group">
+                @foreach (var cls in classes.Where(c => c.TeacherId.Contains(Id)))
+                {
+                    <a href="/ClassDetail/@cls.Name" class="list-group-item list-group-item-action">@cls.Name</a>
+                }
+            </div>
+        }
+        else
+        {
+            <p>No classes found for this teacher.</p>
+        }
+    }
+    else
+    {
+        <p>Other user-specific content</p>
+    }
 }
 else
 {
-    <p>No classes found for this student.</p>
+    <p>Unable to access the LoggedInUserType property.</p>
 }
-
 
 @code {
     [Parameter]
@@ -39,7 +75,7 @@ else
         try
         {
             Console.WriteLine("Getting classes...");
-            classes = await GetClassesForStudent(Id);
+            classes = await GetClasses();
         }
         catch (Exception ex)
         {
@@ -48,7 +84,7 @@ else
         }
     }
 
-    private async Task<IEnumerable<Class>> GetClassesForStudent(string studentId)
+    private async Task<IEnumerable<Class>> GetClasses()
     {
         try
         {
@@ -60,22 +96,10 @@ else
                 throw new Exception(result);
             }
 
-            var allClasses = JsonSerializer.Deserialize<IEnumerable<Class>>(result, new JsonSerializerOptions
+            return JsonSerializer.Deserialize<IEnumerable<Class>>(result, new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
             });
-
-    // Check if allClasses is null
-            if (allClasses != null)
-            {
-    // Filter the classes where the student is present
-                return allClasses.Where(c => c.Students != null && c.Students.Contains(studentId)).ToList();
-            }
-            else
-            {
-    // Handle the case where allClasses is null
-                throw new Exception("Classes data is null");
-            }
         }
         catch (Exception ex)
         {
@@ -83,6 +107,4 @@ else
             throw; // Re-throw the exception to handle it in OnInitializedAsync()
         }
     }
-
-
 }
