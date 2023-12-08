@@ -1,11 +1,25 @@
-button {
-    background-color: #C2F9D1;
-    width: 120px;
-    height: 40px;
-    border-radius: 5px;
-    border-color: #87D39C;
+/* Add your custom styles here */
+/* Example */
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
 }
 
-input {
-    border-bottom-color: grey;
+.container {
+    padding-top: 50px;
+}
+
+.btn-primary {
+    background-color: #87d39c;
+    border-color: #87d39c;
+}
+
+.btn-primary:hover {
+    background-color: #7bb58b;
+    border-color: #7bb58b;
+}
+
+h1 {
+    color: #87d39c;
 }

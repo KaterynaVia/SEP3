@@ -1,0 +1,73 @@
+@page "/MyExams/{Id}"
+@using Domain
+@using System.Linq
+@using Blazor.Auth
+@using HttpClients.ClientInterfaces
+@inject IAuthService authService
+@inject IExamService examService
+
+<h1 class="mt-4 mb-3">My Exams</h1>
+
+@if (authService is JwtAuthService jwtAuthService)
+{
+    if (jwtAuthService.LoggedInUserType == JwtAuthService.UserType.Student)
+    {
+        @if (exams == null)
+        {
+            <p>Loading...</p>
+        }
+        else if (exams.Any())
+        {
+            <div class="list-group">
+                <p>Logged-in Student ID: @Id</p> <!-- Output to check the passed ID -->
+                @foreach (var exam in exams.Where(e => e.Class.Students.Contains(Id)))
+                {
+                    <a href="/ExamDetail/@exam.NameOfExam" class="list-group-item list-group-item-action">@exam.NameOfExam</a>
+                }
+            </div>
+        }
+        else
+        {
+            <p>No exams found for this student.</p>
+        }
+    }
+    else if (jwtAuthService.LoggedInUserType == JwtAuthService.UserType.Teacher)
+    {
+        // Logic for fetching teacher's exams if needed
+    }
+    else
+    {
+        <p>Other user-specific content</p>
+    }
+}
+else
+{
+    <p>Unable to access the LoggedInUserType property.</p>
+}
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+
+    private IEnumerable<Exam> exams;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            if (authService is JwtAuthService jwtAuthService &&
+                jwtAuthService.LoggedInUserType == JwtAuthService.UserType.Student)
+            {
+    // Fetch all exams
+                var allExams = await examService.GetExam();
+
+    // Filter exams by the student ID
+                exams = allExams.Where(e => e.Class.Students.Contains(Id));
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+}

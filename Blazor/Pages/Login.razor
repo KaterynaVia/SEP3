@@ -1,14 +1,16 @@
 @page "/"
+@layout LoginLayout
 @using Blazor.Auth
 @inject IAuthService authService
 @inject NavigationManager navMgr
 
+<link href="css/style.css" rel="stylesheet" />
 
-<div class="container mt-4">
+<div class="container">
     <div class="row">
         <div class="col-md-6">
-            <div class="card p-4">
-                <h1>Login Student</h1>
+            <div class="card p-4 mb-4">
+                <h1 class="mb-4">Login Student</h1>
                 <div class="mb-3">
                     <label for="studentId" class="form-label">VIA ID:</label>
                     <input type="text" class="form-control" id="studentId" @bind="idStudent">
@@ -21,8 +23,8 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="card p-4">
-                <h1>Login Teacher</h1>
+            <div class="card p-4 mb-4">
+                <h1 class="mb-4">Login Teacher</h1>
                 <div class="mb-3">
                     <label class="form-label" for="teacherId">VIA ID:</label>
                     <input type="text" class="form-control" id="teacherId" @bind="idTeacher">
@@ -34,13 +36,22 @@
                 <button @onclick="LoginAsyncTeacher" class="btn btn-primary">Login</button>
             </div>
         </div>
+        <div class="col-md-12">
+            <div class="card p-4 mb-4">
+                <h1 class="mb-4">Login Supervisor</h1>
+                <div class="mb-3">
+                    <label class="form-label" for="supervisorId">VIA ID:</label>
+                    <input type="text" class="form-control" id="supervisorId">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="supervisorPassword">PASSWORD:</label>
+                    <input type="password" class="form-control" id="supervisorPassword">
+                </div>
+                <button @onclick="LoginAsyncSupervisor" class="btn btn-primary">Login</button>
+            </div>
+        </div>
     </div>
 </div>
-
-
-  
-
-
 
 @code {
     private string idStudent;
@@ -48,9 +59,6 @@
     private string idTeacher;
     private string passwordTeacher;
     private string errorLabel;
-    
-    
-
     
     private async Task LoginAsyncStudent()
     {
@@ -67,7 +75,6 @@
         }
     }
     
-    
     private async Task LoginAsyncTeacher()
     {
         errorLabel = "";
@@ -83,5 +90,17 @@
         }
     }
     
+    private async Task LoginAsyncSupervisor()
+    {
+        errorLabel = "";
+        try
+        {
+            // Implement login logic for supervisor
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            errorLabel = $"Error: {e.Message}";
+        }
+    }
 }
-
