@@ -7,6 +7,7 @@
 @inject IAuthService authService;
 @inject AuthenticationStateProvider StateProvider;
 @inject IExamService examService;
+@inject IGradeService gradeService;
 @inject HttpClient client
 
 <h1 class="text-center">Student Index</h1>
@@ -64,6 +65,14 @@
                 <div class="col-md-12">
                     <h2>Needs to Finish</h2>
                     <p>Placeholder for content related to tasks that need to be completed.</p>
+                    @if (grades != null)
+                    {
+                        @foreach (var grade in grades)
+                        {
+                            <p>@grade.Id | @grade.ExamId | @grade.StudentGrade</p>
+                        }
+                    }
+                   
                 </div>
             </div>
         </div>
@@ -77,6 +86,7 @@
 
     private IEnumerable<Exam> exams;
     public IEnumerable<Class> classes;
+    private IEnumerable<Grade> grades;
 
 
     protected override async Task OnInitializedAsync()
@@ -93,6 +103,7 @@
             }
             allExams = await examService.GetExam();
             exams = allExams.Where(e => e.Class.Students.Contains(Id));
+            grades = await gradeService.GetGradesByStudentId(Id);
 
 
             //Classes part

@@ -1,13 +1,12 @@
 @using Blazor.Auth
 @inject IAuthService authService;
 @inject NavigationManager navMgr
-@namespace Pages.Login
+@namespace Login
 
-<AuthorizeView>
-    <Authorized>
-        <img class="icon" src="Logout.png" @onclick="Logout"/>
-    </Authorized>
-</AuthorizeView>
+
+<img class="icon" src="Logout.png" @onclick="Logout"/>
+
+
 @code {
     private async Task Logout()
     {

@@ -351,5 +351,25 @@
       "Id": "tester",
       "Password": "password"
     }
+  ],
+  "Grades": [
+    {
+      "Id": 1,
+      "ExamId": "kopok",
+      "StudentId": "mike56",
+      "StudentGrade": 1
+    },
+    {
+      "Id": 2,
+      "ExamId": "kopok",
+      "StudentId": "mike56",
+      "StudentGrade": 1
+    },
+    {
+      "Id": 3,
+      "ExamId": "jhgfds",
+      "StudentId": "mike56",
+      "StudentGrade": 0
+    }
   ]
 }

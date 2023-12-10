@@ -22,13 +22,14 @@
                     <p class="card-text">
                         <strong>Teacher:</strong> @ClassTeacher
                     </p>
-                    <div>
+                    <div class="row-col-6">
                         <p class="fw-bold">Students:</p>
                         @if (ClassStudents != null)
                         {
                             @foreach (var classStudent in ClassStudents)
                             {
                                 <p>@classStudent</p>
+                                <a href="/PushGrade/@ExamName/@classStudent"><button>Grade</button></a>
                             }
                         }
                     </div>

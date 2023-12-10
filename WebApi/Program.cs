@@ -33,6 +33,8 @@ builder.Services.AddScoped<IClassDao, ClassFileDao>();
 builder.Services.AddScoped<IExamLogic, ExamLogic>();
 builder.Services.AddScoped<IExamDao, ExamFileDao>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IGradeLogic, GradeLogic>();
+builder.Services.AddScoped<IGradeDao, GradeDao>();
 
 AuthorizationPolicies.AddPolicies(builder.Services);
 

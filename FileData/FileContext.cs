@@ -16,6 +16,14 @@ public class FileContext
             return dataContainer!.Teachers;
         }
     }
+    public ICollection<Grade> Grades
+    {
+        get
+        {
+            LoadData();
+            return dataContainer!.Grades;
+        }
+    }
 
     public ICollection<Student> Students
     {
