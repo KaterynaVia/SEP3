@@ -66,7 +66,7 @@
         try
         {
             await authService.LoginAsyncStudent(idStudent, passwordStudent);
-            navMgr.NavigateTo($"/MyClasses/{idStudent}"); // Pass student ID to the URL
+            navMgr.NavigateTo($"/StudentIndex/{idStudent}"); // Pass student ID to the URL
         }
         catch (Exception e)
         {

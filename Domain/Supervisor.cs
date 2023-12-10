@@ -1,13 +1,22 @@
-﻿namespace Domain;
+﻿using System.Text.Json.Serialization;
+
+namespace Domain;
 
 public class Supervisor : User
 {
-    public string UserType = "Supervisor";
-    public Supervisor(string password, string id, int userId) : base(id, password)
+    [JsonConstructor]
+    public Supervisor(string id, string password, string name) : base(id, password)
     {
+        Name = name;
     }
 
     public Supervisor()
     {
     }
+    
+    
+    public int UserId { get; set; }
+    public string Name { get; set; }
+
+
 }

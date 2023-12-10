@@ -4,7 +4,7 @@ using Domain.DTOs;
 
 namespace FileData.DAOs;
 
-public class UserFileDao : IStudentDao, ITeacherDao
+public class UserFileDao : IStudentDao, ITeacherDao, ISupervisorDao
 {
     private readonly FileContext context;
 
@@ -80,5 +80,44 @@ public class UserFileDao : IStudentDao, ITeacherDao
                 u.Id.Contains(searchParameters.IdContains, StringComparison.OrdinalIgnoreCase));
 
         return Task.FromResult(teachers);
+    }
+
+    public Task<Supervisor> CreateAsyncSupervisor(Supervisor supervisor)
+    {
+        var userId = 1;
+        if (context.Supervisors.Any())
+        {
+            userId = context.Supervisors.Max(s => s.UserId);
+            userId++;
+        }
+
+        supervisor.UserId = userId;
+
+        context.Supervisors.Add(supervisor);
+        context.SaveChanges();
+
+        return Task.FromResult(supervisor);
+        
+        
+    }
+
+    public Task<Supervisor?> GetByIdAsyncSupervisor(string id)
+    {
+        var existing = context.Supervisors.FirstOrDefault(s =>
+            s.Id.Equals(id, StringComparison.OrdinalIgnoreCase));
+        return Task.FromResult(existing);
+    }
+
+    public Task<IEnumerable<Supervisor>> GetAsyncSupervisor(SearchUserParametersDto searchParameters)
+    {
+        var supervisors = context.Supervisors.AsEnumerable();
+        if (searchParameters.IdContains != null)
+            supervisors = context.Supervisors.Where(s =>
+                s.Id.Contains(searchParameters.IdContains, StringComparison.OrdinalIgnoreCase));
+
+        return Task.FromResult(supervisors);
+        
+        
+        
     }
 }

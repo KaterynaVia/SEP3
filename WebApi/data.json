@@ -309,5 +309,12 @@
       "Password": "123123123"
     }
   ],
-  "Supervisors": []
+  "Supervisors": [
+    {
+      "UserId": 1,
+      "Name": "mika",
+      "Id": "tester",
+      "Password": "password"
+    }
+  ]
 }

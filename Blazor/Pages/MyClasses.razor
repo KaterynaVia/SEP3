@@ -4,6 +4,7 @@
 @using System.Text.Json
 @using Blazor.Auth
 @inject HttpClient client
+@inject AuthenticationStateProvider StateProvider;
 @inject IAuthService authService
 
 <h1 class="mt-4 mb-3">My Classes</h1>
@@ -74,6 +75,7 @@ else
     {
         try
         {
+            await GetLoggedInUserId();
             Console.WriteLine("Getting classes...");
             classes = await GetClasses();
         }
@@ -107,4 +109,34 @@ else
             throw; // Re-throw the exception to handle it in OnInitializedAsync()
         }
     }
+    
+    private async Task<string> GetLoggedInUserId()
+    {
+        AuthenticationState state = await StateProvider.GetAuthenticationStateAsync();
+
+    // Check if the user is authenticated
+        if (state != null && state.User.Identity.IsAuthenticated)
+        {
+            var usernameClaim = state.User.Claims.FirstOrDefault(claim => claim.Type.Equals("username"));
+
+    // Check if the claim is found and has a non-null value
+            if (usernameClaim != null && !string.IsNullOrEmpty(usernameClaim.Value))
+            {
+                return usernameClaim.Value;
+            }
+            else
+            {
+    // Handle the case where the username claim is not found or has an empty value
+    // You can log or return a default value or throw an exception here
+                return "DefaultUsername"; // Replace with appropriate handling
+            }
+        }
+        else
+        {
+    // Handle the case where the user is not authenticated
+    // You can log, return a default value, or throw an exception here
+            return "UserNotAuthenticated"; // Replace with appropriate handling
+        }
+    }
+
 }

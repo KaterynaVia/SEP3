@@ -3,8 +3,10 @@
 @using System.Linq
 @using Blazor.Auth
 @using HttpClients.ClientInterfaces
+@inject AuthenticationStateProvider StateProvider;
 @inject IAuthService authService
 @inject IExamService examService
+@attribute [Authorize]
 
 <h1 class="mt-4 mb-3">My Exams</h1>
 
@@ -20,7 +22,7 @@
         {
             <div class="list-group">
                 <p>Logged-in Student ID: @Id</p> <!-- Output to check the passed ID -->
-                @foreach (var exam in exams.Where(e => e.Class.Students.Contains(Id)))
+                @foreach (var exam in exams.Where(e => e.Class != null && e.Class.Students.Contains(Id)))
                 {
                     <a href="/ExamDetail/@exam.NameOfExam" class="list-group-item list-group-item-action">@exam.NameOfExam</a>
                 }
@@ -30,6 +32,9 @@
         {
             <p>No exams found for this student.</p>
         }
+
+
+
     }
     else if (jwtAuthService.LoggedInUserType == JwtAuthService.UserType.Teacher)
     {
@@ -44,10 +49,29 @@ else
 {
     <p>Unable to access the LoggedInUserType property.</p>
 }
+@if (exams == null)
+        {
+            <p>Loading...</p>
+        }
+        else if (exams.Any())
+        {
+            <div class="list-group">
+                <p>Logged-in Student ID: @Id</p> <!-- Output to check the passed ID -->
+                @foreach (var exam in exams.Where(e => e.Class != null && e.Class.Students.Contains(Id)))
+                {
+                    <a href="/ExamDetail/@exam.NameOfExam" class="list-group-item list-group-item-action">@exam.NameOfExam</a>
+                }
+            </div>
+        }
+        else
+        {
+            <p>No exams found for this student.</p>
+        }
+
 
 @code {
     [Parameter]
-    public string Id { get; set; }
+    public string? Id { get; set; }
 
     private IEnumerable<Exam> exams;
 
@@ -55,19 +79,55 @@ else
     {
         try
         {
+            await GetLoggedInUserId();
+            IEnumerable<Exam>? allExams;
             if (authService is JwtAuthService jwtAuthService &&
                 jwtAuthService.LoggedInUserType == JwtAuthService.UserType.Student)
             {
     // Fetch all exams
-                var allExams = await examService.GetExam();
+                allExams = await examService.GetExam();
 
     // Filter exams by the student ID
                 exams = allExams.Where(e => e.Class.Students.Contains(Id));
             }
+            allExams = await examService.GetExam();
+
+    // Filter exams by the student ID
+            exams = allExams.Where(e => e.Class.Students.Contains(Id));
         }
         catch (Exception e)
         {
             Console.WriteLine(e.Message);
         }
     }
+
+    private async Task<string> GetLoggedInUserId()
+    {
+        AuthenticationState state = await StateProvider.GetAuthenticationStateAsync();
+
+    // Check if the user is authenticated
+        if (state != null && state.User.Identity.IsAuthenticated)
+        {
+            var usernameClaim = state.User.Claims.FirstOrDefault(claim => claim.Type.Equals("username"));
+
+    // Check if the claim is found and has a non-null value
+            if (usernameClaim != null && !string.IsNullOrEmpty(usernameClaim.Value))
+            {
+                return usernameClaim.Value;
+            }
+            else
+            {
+    // Handle the case where the username claim is not found or has an empty value
+    // You can log or return a default value or throw an exception here
+                return "DefaultUsername"; // Replace with appropriate handling
+            }
+        }
+        else
+        {
+    // Handle the case where the user is not authenticated
+    // You can log, return a default value, or throw an exception here
+            return "UserNotAuthenticated"; // Replace with appropriate handling
+        }
+    }
+    
 }

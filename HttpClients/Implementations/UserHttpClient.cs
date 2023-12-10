@@ -1,4 +1,6 @@
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using System.Security.Claims;
 using System.Text.Json;
 using Domain;
 using Domain.DTOs;
@@ -9,10 +11,23 @@ namespace HttpClients.Implementations;
 public class UserHttpClient : IUserService
 {
     private readonly HttpClient client;
+    public Task<AuthenticationResponse> ValidateUser(string viaId, string password)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Action<ClaimsPrincipal> OnAuthStateChanged { get; set; } = null!;
+    public Task<ClaimsPrincipal> GetAuthAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    public static string? Jwt { get; private set; } = "";
 
     public UserHttpClient(HttpClient client)
     {
         this.client = client;
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Jwt);
     }
 
     public async Task<Student> CreateStudent(StudentCreationDto dto)

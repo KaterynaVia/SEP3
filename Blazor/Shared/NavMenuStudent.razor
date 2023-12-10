@@ -9,15 +9,18 @@
 </div>
 <div class="sidebar" style="width: 250px;">
             <nav class="nav flex-column">
-                <NavLink class="nav-link py-3" href="/MyClasses/{Id}">
-                    <span class="oi oi-home" aria-hidden="true"></span> My classes
+                @* <NavLink class="nav-link py-3" href="/MyClasses"> *@
+                @*     <span class="oi oi-home" aria-hidden="true"></span> My classes *@
+                @* </NavLink> *@
+                @* <NavLink class="nav-link py-3" href="/MyExams"> *@
+                @*     <span class="oi oi-list-rich" aria-hidden="true"></span> My exams *@
+                @* </NavLink> *@
+                @* <NavLink class="nav-link py-3" href="/MyExams"> *@
+                @*     <span class="oi oi-list-rich" aria-hidden="true"></span> My grades *@
+                @* </NavLink> *@
+                <NavLink class="nav-link py-3" href="/StudentIndex">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Index
                 </NavLink>
-                <NavLink class="nav-link py-3" href="/MyExams/{Id}">
-                    <span class="oi oi-list-rich" aria-hidden="true"></span> My exams
-                </NavLink>
-                <NavLink class="nav-link py-3" href="/MyExams/{Id}">
-                    <span class="oi oi-list-rich" aria-hidden="true"></span> My grades
-                    </NavLink>
             </nav>
         </div>
 @code {

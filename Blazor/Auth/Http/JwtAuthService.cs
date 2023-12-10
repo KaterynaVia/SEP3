@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.Net.Http.Headers;
+using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
 using Domain;
@@ -8,7 +9,8 @@ namespace Blazor.Auth;
 
 public class JwtAuthService : IAuthService
 {
-    private readonly HttpClient client = new();
+    private readonly HttpClient client;
+    public Action<ClaimsPrincipal> OnAuthStateChanged { get; set; } = null!;
     public enum UserType
     {
         Student,
@@ -16,7 +18,13 @@ public class JwtAuthService : IAuthService
         Supervisor
     }
     
-    public string? Jwt { get; private set; } = "";
+    public static string? Jwt { get; private set; } = "";
+
+    public JwtAuthService(HttpClient client)
+    {
+        this.client = client;
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Jwt);
+    }
 
     public Task LogoutAsync()
     {
@@ -26,7 +34,6 @@ public class JwtAuthService : IAuthService
         return Task.CompletedTask;
     }
 
-    public Action<ClaimsPrincipal> OnAuthStateChanged { get; set; } = null!;
     public Task<ClaimsPrincipal> GetAuthAsync()
     {
         ClaimsPrincipal principal = CreateClaimsPrincipal();
@@ -35,7 +42,7 @@ public class JwtAuthService : IAuthService
 
     public UserType LoggedInUserType { get; set; } = UserType.Student; // Set a default value
 
-    public async Task LoginAsyncStudent(string id, string password)
+    public async Task<AuthenticationResponse> LoginAsyncStudent(string id, string password)
     {
         StudentLoginDto studentLoginDto = new()
         {
@@ -43,23 +50,29 @@ public class JwtAuthService : IAuthService
             Password = password
         };
 
-        string userAsJson = JsonSerializer.Serialize(studentLoginDto);
-        StringContent content = new(userAsJson, Encoding.UTF8, "application/json");
+        // string userAsJson = JsonSerializer.Serialize(studentLoginDto);
+        // StringContent content = new(userAsJson, Encoding.UTF8, "application/json");
 
-        HttpResponseMessage response = await client.PostAsync("https://localhost:7097/auth/loginStudent", content);
+        HttpResponseMessage response = await client.PostAsJsonAsync("https://localhost:7097/auth/loginStudent", studentLoginDto);
         string responseContent = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(responseContent);
 
         if (!response.IsSuccessStatusCode)
         {
             throw new Exception(responseContent);
         }
 
-        string token = responseContent;
-        Jwt = token;
+        AuthenticationResponse authenticationResponse = new AuthenticationResponse
+        {
+            token = responseContent
+        };
+
+        Jwt = authenticationResponse.token;
         LoggedInUserType = UserType.Student; // Set the user type for student login
 
         ClaimsPrincipal principal = CreateClaimsPrincipal();
         OnAuthStateChanged.Invoke(principal);
+        return authenticationResponse;
     }
     
     

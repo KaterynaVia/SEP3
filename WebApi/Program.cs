@@ -3,6 +3,7 @@ using System.Text.Json;
 using Application.DaoInterfaces;
 using Application.Logic;
 using Application.LogicInterfaces;
+using Domain;
 using FileData;
 using FileData.DAOs;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -22,6 +23,8 @@ builder.Services.AddScoped<IStudentDao, UserFileDao>();
 builder.Services.AddScoped<IStudentLogic, StudentLogic>();
 builder.Services.AddScoped<ITeacherDao, UserFileDao>();
 builder.Services.AddScoped<ITeacherLogic, TeacherLogic>();
+builder.Services.AddScoped<ISupervisorDao, UserFileDao>();
+builder.Services.AddScoped<ISupervisorLogic, SupervisorLogic>();
 builder.Services.AddScoped<IUserLogic, UserLogic>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserDao, UserDao>();
@@ -30,6 +33,7 @@ builder.Services.AddScoped<IClassDao, ClassFileDao>();
 builder.Services.AddScoped<IExamLogic, ExamLogic>();
 builder.Services.AddScoped<IExamDao, ExamFileDao>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+
 AuthorizationPolicies.AddPolicies(builder.Services);
 
 
