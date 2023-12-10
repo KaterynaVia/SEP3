@@ -1,31 +1,15 @@
-﻿@using Blazor.Auth
-@inherits LayoutComponentBase
-@inject IAuthService authService
+﻿@inherits LayoutComponentBase
 
 <PageTitle>Blazor</PageTitle>
 
 <div class="page">
     <div class="sidebar">
-        @if (authService is JwtAuthService jwtAuthService)
-        {
-            if (jwtAuthService.LoggedInUserType == JwtAuthService.UserType.Student)
-            {
-                <NavMenuStudent />
-            }
-            else if (jwtAuthService.LoggedInUserType == JwtAuthService.UserType.Teacher)
-            {
-                <NavMenuTeacher />
-            }
-        }
-        else
-        {
-            <p>Unable to access the LoggedInUserType property.</p>
-        }
+        <NavMenu/>
     </div>
 
     <main>
         <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+            <LoginButtons/>
         </div>
 
         <article class="content px-4">

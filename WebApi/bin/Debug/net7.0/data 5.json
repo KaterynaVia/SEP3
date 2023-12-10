@@ -53,12 +53,6 @@
       "Name": "dominika",
       "Id": "ucitel",
       "Password": "heslo123"
-    },
-    {
-      "UserId": 10,
-      "Name": "dominika",
-      "Id": "000000",
-      "Password": "password"
     }
   ],
   "Classes": [
@@ -153,18 +147,6 @@
         "777777"
       ],
       "Id": 11
-    },
-    {
-      "Name": "10.12",
-      "TeacherId": "000000",
-      "Students": [
-        "777777",
-        "747273",
-        "747272",
-        "909090",
-        "331956"
-      ],
-      "Id": 12
     }
   ],
   "Exams": [
@@ -251,23 +233,6 @@
       },
       "IdOfExam": 6,
       "DateTime": "zajtra"
-    },
-    {
-      "NameOfExam": " 10.12.",
-      "Class": {
-        "Name": "10.12",
-        "TeacherId": "000000",
-        "Students": [
-          "777777",
-          "747273",
-          "747272",
-          "909090",
-          "331956"
-        ],
-        "Id": 12
-      },
-      "IdOfExam": 7,
-      "DateTime": "zajtra"
     }
   ],
   "Students": [
@@ -344,12 +309,5 @@
       "Password": "123123123"
     }
   ],
-  "Supervisors": [
-    {
-      "UserId": 1,
-      "Name": "mika",
-      "Id": "tester",
-      "Password": "password"
-    }
-  ]
+  "Supervisors": []
 }

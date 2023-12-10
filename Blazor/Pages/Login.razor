@@ -83,7 +83,7 @@
         try
         {
             await authService.LoginAsyncTeacher(idTeacher, passwordTeacher);
-            navMgr.NavigateTo($"/MyClasses/{idTeacher}");
+            navMgr.NavigateTo($"/TeacherIndex/{idTeacher}");
         }
         catch (Exception e)
         {

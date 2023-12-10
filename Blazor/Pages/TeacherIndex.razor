@@ -1,0 +1,207 @@
+@page "/TeacherIndex/{Id}"
+@layout StudentLayout
+@using Blazor.Auth
+@using Domain
+@using HttpClients.ClientInterfaces
+@using System.Text.Json
+@inject IAuthService authService;
+@inject AuthenticationStateProvider StateProvider;
+@inject IExamService examService;
+@inject HttpClient client
+
+<h1 class="text-center">Teacher Index</h1>
+
+@if (authService is JwtAuthService jwtAuthService)
+{
+    @if (jwtAuthService.LoggedInUserType == JwtAuthService.UserType.Teacher)
+    {
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>My Exams</h2>
+                    @if (exams == null)
+                    {
+                        <p>Loading...</p>
+                    }
+                    else if (exams.Any())
+                    {
+                        <div class="list-group">
+                            @foreach (var exam in exams)
+                            {
+                                <a href="/ExamDetail/@exam.NameOfExam" class="list-group-item list-group-item-action">@exam.NameOfExam</a>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <p>No exams found for this teacher.</p>
+                    }
+                </div>
+        
+                <div class="col-md-6">
+                    <h2>My Classes</h2>
+                    @if (classes == null)
+                    {
+                        <p>Loading...</p>
+                    }
+                    else if (classes.Any())
+                    {
+                        <div class="list-group">
+                            @foreach (var cls in classes.Where(c => c.TeacherId == Id))
+                            {
+                                <a href="/ClassDetail/@cls.Name" class="list-group-item list-group-item-action">@cls.Name</a>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <p>No classes found for this teacher.</p>
+                    }
+                </div>
+            </div>
+        <div class="row mt-4">
+            <h2 class="col-md-12">Push in grade</h2>
+            <div class="col-md-12 d-flex">
+                <div class="col-md-6">
+                    <h3>Name of the exam</h3>
+                    @if (exams == null)
+                    {
+                        <p>Loading...</p>
+                    }
+                    else if (exams.Any())
+                    {
+                        <div class="list-group">
+                            @foreach (var exam in exams.Where(e => e.Class != null && e.Class.TeacherId.Equals(Id)))
+                            {
+                                <a href="/ExamDetail/@exam.NameOfExam" class="list-group-item list-group-item-action">@exam.NameOfExam</a>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <p>No exams found for this teacher.</p>
+                    }
+                </div>
+                <div class="col-md-6">
+                    <h3>Grade</h3>
+                    <input class="form-control" type="text" placeholder="Enter grade"/>
+                </div>
+            </div>
+        </div>
+
+        </div>
+}
+
+
+@code {
+
+    [Parameter]
+    public string? Id { get; set; }
+
+    private IEnumerable<Exam> exams;
+    public IEnumerable<Class> classes;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            await GetLoggedInUserId();
+            var allExams = await GetExams();
+            exams = allExams.Where(e => e.Class != null && e.Class.TeacherId == Id);
+
+
+    //Classes part
+
+            Console.WriteLine("Getting classes...");
+            classes = await GetClasses();
+            await GetLoggedInUserId();
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+
+
+    private async Task<IEnumerable<Class>> GetClasses()
+    {
+        try
+        {
+            HttpResponseMessage response = await client.GetAsync("/classes");
+            string result = await response.Content.ReadAsStringAsync();
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception(result);
+            }
+
+            return JsonSerializer.Deserialize<IEnumerable<Class>>(result, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exception: {ex.Message}");
+            throw; // Re-throw the exception to handle it in OnInitializedAsync()
+        }
+    }
+    
+    
+    private async Task<IEnumerable<Exam>> GetExams()
+    {
+        try
+        {
+            HttpResponseMessage response = await client.GetAsync("/exams");
+            string result = await response.Content.ReadAsStringAsync();
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception(result);
+            }
+
+            return JsonSerializer.Deserialize<IEnumerable<Exam>>(result, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exception: {ex.Message}");
+            throw; // Re-throw the exception to handle it in OnInitializedAsync()
+        }
+    }
+
+    private async Task<string> GetLoggedInUserId()
+    {
+        AuthenticationState state = await StateProvider.GetAuthenticationStateAsync();
+
+    // Check if the user is authenticated
+        if (state != null && state.User.Identity.IsAuthenticated)
+        {
+            var usernameClaim = state.User.Claims.FirstOrDefault(claim => claim.Type.Equals("username"));
+
+    // Check if the claim is found and has a non-null value
+            if (usernameClaim != null && !string.IsNullOrEmpty(usernameClaim.Value))
+            {
+                return usernameClaim.Value;
+            }
+            else
+            {
+    // Handle the case where the username claim is not found or has an empty value
+    // You can log or return a default value or throw an exception here
+                return "DefaultUsername"; // Replace with appropriate handling
+            }
+        }
+        else
+        {
+    // Handle the case where the user is not authenticated
+    // You can log, return a default value, or throw an exception here
+            return "UserNotAuthenticated"; // Replace with appropriate handling
+        }
+    }
+
+}
+}
