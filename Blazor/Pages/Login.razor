@@ -41,11 +41,11 @@
                 <h1 class="mb-4">Login Supervisor</h1>
                 <div class="mb-3">
                     <label class="form-label" for="supervisorId">VIA ID:</label>
-                    <input type="text" class="form-control" id="supervisorId">
+                    <input type="text" class="form-control" id="supervisorId" @bind="idSupervisor">
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="supervisorPassword">PASSWORD:</label>
-                    <input type="password" class="form-control" id="supervisorPassword">
+                    <label class="form-label" for="supervisorPassword" >PASSWORD:</label>
+                    <input type="password" class="form-control" @bind="passwordSupervisor" id="supervisorPassword">
                 </div>
                 <button @onclick="LoginAsyncSupervisor" class="btn btn-primary">Login</button>
             </div>
@@ -58,6 +58,8 @@
     private string passwordStudent;
     private string idTeacher;
     private string passwordTeacher;
+    private string idSupervisor;
+    private string passwordSupervisor;
     private string errorLabel;
     
     private async Task LoginAsyncStudent()
@@ -95,7 +97,8 @@
         errorLabel = "";
         try
         {
-            // Implement login logic for supervisor
+            await authService.LoginAsyncSupervisor(idSupervisor, passwordSupervisor);
+            navMgr.NavigateTo($"/CreateUser");
         }
         catch (Exception e)
         {
@@ -103,4 +106,6 @@
             errorLabel = $"Error: {e.Message}";
         }
     }
+    
+   
 }

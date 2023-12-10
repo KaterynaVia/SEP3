@@ -9,11 +9,15 @@ public class AuthService : IAuthService
 {
     private readonly IStudentLogic studentLogic;
     private readonly ITeacherLogic teacherLogic;
+    private readonly ISupervisorLogic supervisorLogic;
+
     
-    public AuthService(IStudentLogic studentLogic, ITeacherLogic teacherLogic)
+    public AuthService(IStudentLogic studentLogic, ITeacherLogic teacherLogic, ISupervisorLogic supervisorLogic)
     {
         this.studentLogic = studentLogic ?? throw new ArgumentNullException(nameof(studentLogic));
         this.teacherLogic = teacherLogic ?? throw new ArgumentNullException(nameof(teacherLogic));
+        this.supervisorLogic = supervisorLogic ?? throw new ArgumentNullException(nameof(supervisorLogic));
+
     }
     
     
@@ -47,7 +51,22 @@ public class AuthService : IAuthService
             throw new Exception("List of users empty.");
         }
     }
-    
+
+    public async Task<Supervisor> GetSupervisor(string id, string password)
+    {
+        SearchUserParametersDto parameters = new(id);
+        IEnumerable<Supervisor> supervisors = await supervisorLogic.GetAsyncSupervisor(parameters);
+        Supervisor? supervisor = supervisors.FirstOrDefault(s => s.Id.Equals(id, StringComparison.OrdinalIgnoreCase));
+        if (supervisor != null)
+        {
+            return supervisor;
+        }
+        else
+        {
+            throw new Exception("List of users empty.");
+        }
+    }
+
     public async Task<Student> ValidateStudent(string id, string password)
     {
         SearchUserParametersDto parameters = new(id);
@@ -88,5 +107,26 @@ public class AuthService : IAuthService
         }
 
         return existingTeacher;
+    }
+
+    public async Task<Supervisor> ValidateSupervisor(string id, string password)
+    {
+        SearchUserParametersDto parameters = new(id);
+        IEnumerable<Supervisor> supervisors = await supervisorLogic.GetAsyncSupervisor(parameters);
+        Supervisor? existingSupervisor = supervisors.FirstOrDefault(s => 
+            s.Id.Equals(id, StringComparison.OrdinalIgnoreCase));
+        Console.WriteLine($"Username: {existingSupervisor.Id}, Password: {existingSupervisor.Password}");
+
+        if (existingSupervisor == null)
+        {
+            throw new Exception("User not found");
+        }
+
+        if (!existingSupervisor.Password.Equals(password))
+        {
+            throw new Exception("Password mismatch");
+        }
+
+        return existingSupervisor;
     }
 }

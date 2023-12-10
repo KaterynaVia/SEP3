@@ -26,6 +26,40 @@ public class JwtAuthService : IAuthService
         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Jwt);
     }
 
+    public async Task<AuthenticationResponse> LoginAsyncSupervisor(string id, string password)
+    {
+        SupervisorLoginDto supervisorLoginDto = new()
+        {
+            Id = id,
+            Password = password
+        };
+
+        string userAsJson = JsonSerializer.Serialize(supervisorLoginDto);
+        StringContent content = new(userAsJson, Encoding.UTF8, "application/json");
+
+        HttpResponseMessage response = await client.PostAsJsonAsync("https://localhost:7097/auth/loginSupervisor", supervisorLoginDto);
+        string responseContent = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(responseContent);
+
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new Exception(responseContent);
+        }
+
+        AuthenticationResponse authenticationResponse = new AuthenticationResponse
+        {
+            token = responseContent
+        };
+
+        Jwt = authenticationResponse.token;
+        LoggedInUserType = UserType.Supervisor; // Set the user type for student login
+
+        ClaimsPrincipal principal = CreateClaimsPrincipal();
+        OnAuthStateChanged.Invoke(principal);
+        return authenticationResponse;
+    }
+    
+
     public Task LogoutAsync()
     {
         Jwt = null;
@@ -77,7 +111,7 @@ public class JwtAuthService : IAuthService
     
     
     
-    public async Task LoginAsyncTeacher(string id, string password)
+    public async Task<AuthenticationResponse> LoginAsyncTeacher(string id, string password)
     {
         TeacherLoginDto teacherLoginDto = new()
         {
@@ -99,9 +133,16 @@ public class JwtAuthService : IAuthService
         string token = responseContent;
         Jwt = token;
         LoggedInUserType = UserType.Teacher; // Set the user type for teacher login
+        
+        AuthenticationResponse authenticationResponse = new AuthenticationResponse
+        {
+            token = responseContent
+        };
 
         ClaimsPrincipal principal = CreateClaimsPrincipal();
         OnAuthStateChanged.Invoke(principal);
+        return authenticationResponse;
+
     }
 
     private static IEnumerable<Claim> ParseClaimsFromJwt(string jwt)
