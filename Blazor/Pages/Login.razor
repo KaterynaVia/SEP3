@@ -18,6 +18,7 @@
                     <label for="studentPassword" class="form-label">PASSWORD:</label>
                     <input type="password" class="form-control" id="studentPassword" @bind="passwordStudent">
                 </div>
+                <p style="color: red;">@errorLabelStudent</p>
                 <button @onclick="LoginAsyncStudent" class="btn btn-primary">Login</button>
             </div>
         </div>
@@ -34,6 +35,7 @@
                     <label class="form-label" for="teacherPassword">PASSWORD:</label>
                     <input type="password" class="form-control" id="teacherPassword" @bind="passwordTeacher">
                 </div>
+                <p style="color: red;">@errorLabelTeacher</p>
                 <button @onclick="LoginAsyncTeacher" class="btn btn-primary">Login</button>
             </div>
         </div>
@@ -50,6 +52,7 @@
                     <label class="form-label" for="supervisorPassword" >PASSWORD:</label>
                     <input type="password" class="form-control" @bind="passwordSupervisor" id="supervisorPassword">
                 </div>
+                <p style="color: red;">@errorLabelSupervisor</p>
                 <button @onclick="LoginAsyncSupervisor" class="btn btn-primary">Login</button>
             </div>
         </div>
@@ -70,11 +73,14 @@
     private string passwordTeacher;
     private string idSupervisor;
     private string passwordSupervisor;
-    private string errorLabel;
+    private string errorLabelStudent;
+    private string errorLabelTeacher;
+    private string errorLabelSupervisor;
+
     
     private async Task LoginAsyncStudent()
     {
-        errorLabel = "";
+        errorLabelStudent = "";
         try
         {
             await authService.LoginAsyncStudent(idStudent, passwordStudent);
@@ -83,13 +89,13 @@
         catch (Exception e)
         {
             Console.WriteLine(e);
-            errorLabel = $"Error: {e.Message}";
+            errorLabelStudent = "Password or VIA ID is incorrect.";
         }
     }
     
     private async Task LoginAsyncTeacher()
     {
-        errorLabel = "";
+        errorLabelTeacher = "";
         try
         {
             await authService.LoginAsyncTeacher(idTeacher, passwordTeacher);
@@ -98,13 +104,13 @@
         catch (Exception e)
         {
             Console.WriteLine(e);
-            errorLabel = $"Error: {e.Message}";
+            errorLabelTeacher = "Password or VIA ID is incorrect.";
         }
     }
     
     private async Task LoginAsyncSupervisor()
     {
-        errorLabel = "";
+        errorLabelSupervisor = "";
         try
         {
             await authService.LoginAsyncSupervisor(idSupervisor, passwordSupervisor);
@@ -113,7 +119,7 @@
         catch (Exception e)
         {
             Console.WriteLine(e);
-            errorLabel = $"Error: {e.Message}";
+            errorLabelSupervisor = "Password or VIA ID is incorrect.";
         }
     }
     
