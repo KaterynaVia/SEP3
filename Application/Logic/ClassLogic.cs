@@ -19,20 +19,20 @@ public class ClassLogic : IClassLogic
         this.studentDao = studentDao;
     }
 
-    public async Task<Class> CreateAsyncClass(ClassCreationDto dto)
+    public async Task<SchoolClass> CreateAsyncClass(ClassCreationDto dto)
     {
         var existing = await classDao.GetByIdClassAsync(dto.Id);
         if (existing != null) throw new Exception("Id already taken!");
 
 
-        var toCreate = new Class(dto.Name, dto.TeacherID, dto.Id, dto.Students);
+        var toCreate = new SchoolClass(dto.Name, dto.TeacherID, dto.Id, dto.Students);
         //Console.WriteLine($"Student IDs for this class: {studentIdList}");
         await classDao.CreateAsyncClass(toCreate);
 
         return toCreate;
     }
 
-    public Task<IEnumerable<Class>> GetAsyncClass(SearchClassParametersDto searchClassParameters)
+    public Task<IEnumerable<SchoolClass>> GetAsyncClass(SearchClassParametersDto searchClassParameters)
     {
         return classDao.GetAsyncClass(searchClassParameters);
     }

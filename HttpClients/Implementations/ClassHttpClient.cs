@@ -20,7 +20,7 @@ public class ClassHttpClient : IClassService
             throw new Exception(content);
         }
     }
-    public async Task<IEnumerable<Class>> GetClass(string? name)
+    public async Task<IEnumerable<SchoolClass>> GetClass(string? name)
     {
         Console.WriteLine("The program got to the httpclient point");
         string uri = "/classes";
@@ -38,7 +38,7 @@ public class ClassHttpClient : IClassService
             Console.WriteLine(statusCode);
             throw new Exception(result);
         }
-        IEnumerable<Class> classes = JsonSerializer.Deserialize<IEnumerable<Class>>(result,
+        IEnumerable<SchoolClass> classes = JsonSerializer.Deserialize<IEnumerable<SchoolClass>>(result,
             new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true

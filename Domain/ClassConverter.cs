@@ -25,7 +25,7 @@ namespace Domain
                     !string.IsNullOrWhiteSpace(parts[1]))
                 {
                     var students = parts[3].Split(',').ToList();
-                    Class classObject = new Class
+                    SchoolClass schoolClassObject = new SchoolClass
                     {
                         Name = parts[0],
                         Id = id,
@@ -33,7 +33,7 @@ namespace Domain
                         Students = students
                     };
 
-                    return classObject;
+                    return schoolClassObject;
                 }
                 else
                 {
@@ -51,7 +51,7 @@ namespace Domain
 
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
-            if (destinationType == typeof(string) && value is Class classObject)
+            if (destinationType == typeof(string) && value is SchoolClass classObject)
             {
                 if (!string.IsNullOrWhiteSpace(classObject.Name) && !string.IsNullOrWhiteSpace(classObject.TeacherId))
                 {

@@ -9,26 +9,26 @@
 @inject IExamService examService;
 @inject HttpClient client
 
-<h1 class="text-center">Teacher Index</h1>
+<h1>Teacher Index</h1>
 
 @if (authService is JwtAuthService jwtAuthService)
 {
     @if (jwtAuthService.LoggedInUserType == JwtAuthService.UserType.Teacher)
     {
-        <div class="container mt-4">
-            <div class="row">
-                <div class="col-md-6">
+        <div class=" mt-4">
+
                     <h2>My Exams</h2>
+                <div class="col-md-6 card p-5">
                     @if (exams == null)
                     {
                         <p>Loading...</p>
                     }
                     else if (exams.Any())
                     {
-                        <div class="list-group">
+                        <div >
                             @foreach (var exam in exams)
                             {
-                                <a href="/ExamDetail/@exam.NameOfExam" class="list-group-item list-group-item-action">@exam.NameOfExam</a>
+                                <a href="/ExamDetail/@exam.NameOfExam">@exam.NameOfExam</a>
                             }
                         </div>
                     }
@@ -38,18 +38,18 @@
                     }
                 </div>
         
-                <div class="col-md-6">
-                    <h2>My Classes</h2>
+                    <h2 class="mt-5">My Classes</h2>
+                <div class="col-md-6 card p-5">
                     @if (classes == null)
                     {
                         <p>Loading...</p>
                     }
                     else if (classes.Any())
                     {
-                        <div class="list-group">
+                        <div>
                             @foreach (var cls in classes.Where(c => c.TeacherId == Id))
                             {
-                                <a href="/ClassDetail/@cls.Name" class="list-group-item list-group-item-action">@cls.Name</a>
+                                <a href="/ClassDetail/@cls.Name">@cls.Name</a>
                             }
                         </div>
                     }
@@ -59,37 +59,13 @@
                     }
                 </div>
             </div>
-        <div class="row mt-4">
-            <h2 class="col-md-12">Push in grade</h2>
-            <div class="col-md-12 d-flex">
-                <div class="col-md-6">
-                    <h3>Name of the exam</h3>
-                    @if (exams == null)
-                    {
-                        <p>Loading...</p>
-                    }
-                    else if (exams.Any())
-                    {
-                        <div class="list-group">
-                            @foreach (var exam in exams.Where(e => e.Class != null && e.Class.TeacherId.Equals(Id)))
-                            {
-                                <a href="/ExamDetail/@exam.NameOfExam" class="list-group-item list-group-item-action">@exam.NameOfExam</a>
-                            }
-                        </div>
-                    }
-                    else
-                    {
-                        <p>No exams found for this teacher.</p>
-                    }
-                </div>
-                <div class="col-md-6">
-                    <h3>Grade</h3>
-                    <input class="form-control" type="text" placeholder="Enter grade"/>
-                </div>
-            </div>
-        </div>
+           
 
+        <div class="blue-container">
+            <h1 class="container-text">Welcome, @Id!</h1>
+            <p> These are you exams and classes that you are teaching. If you want to push in grade, click on the name of the exam.</p>
         </div>
+        
 }
 
 
@@ -99,7 +75,7 @@
     public string? Id { get; set; }
 
     private IEnumerable<Exam> exams;
-    public IEnumerable<Class> classes;
+    public IEnumerable<SchoolClass> classes;
 
 
     protected override async Task OnInitializedAsync()
@@ -125,7 +101,7 @@
     }
 
 
-    private async Task<IEnumerable<Class>> GetClasses()
+    private async Task<IEnumerable<SchoolClass>> GetClasses()
     {
         try
         {
@@ -137,7 +113,7 @@
                 throw new Exception(result);
             }
 
-            return JsonSerializer.Deserialize<IEnumerable<Class>>(result, new JsonSerializerOptions
+            return JsonSerializer.Deserialize<IEnumerable<SchoolClass>>(result, new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
             });

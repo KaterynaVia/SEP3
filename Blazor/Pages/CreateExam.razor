@@ -52,7 +52,7 @@
                                     @foreach (var exam in exams)
                                     {
                                         <div class="mb-3">
-                                            <a href="/ExamDetail/@exam.NameOfExam" >@exam.NameOfExam</a>
+                                            <a href="/ExamDetailStudent/@exam.NameOfExam" >@exam.NameOfExam</a>
                                         </div>
                                     }
                                 }
@@ -85,7 +85,7 @@
     private string resultMsg = "";
     private string color = " ";
     private IEnumerable<Exam>? exams;
-    private IEnumerable<Class>? classes;
+    private IEnumerable<SchoolClass>? classes;
 
 
     protected override async Task OnInitializedAsync()
@@ -107,9 +107,9 @@
     
     private string? selectedClass;
 
-    private async Task<IEnumerable<Class>> GetClasses()
+    private async Task<IEnumerable<SchoolClass>> GetClasses()
     {
-        IEnumerable<Class> retrievedClasses = await classService.GetClass();
+        IEnumerable<SchoolClass> retrievedClasses = await classService.GetClass();
         if (retrievedClasses.Any() == false)
         {
             throw new Exception("No classes found");
@@ -136,9 +136,9 @@
         {
             if (selectedClass != null)
             {
-                IEnumerable<Class> _class = await classService.GetClass(selectedClass);
-                Class singularClass = _class.FirstOrDefault(c => c.Name.Equals(selectedClass));
-                ExamCreationDto dto = new ExamCreationDto(name, dateTime, singularClass);
+                IEnumerable<SchoolClass> _class = await classService.GetClass(selectedClass);
+                SchoolClass singularSchoolClass = _class.FirstOrDefault(c => c.Name.Equals(selectedClass));
+                ExamCreationDto dto = new ExamCreationDto(name, dateTime, singularSchoolClass);
                 await examService.CreateExam(dto);
                 resultMsg = "Exam successfully created";
                 color = "green";

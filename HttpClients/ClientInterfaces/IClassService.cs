@@ -4,5 +4,5 @@ namespace HttpClients.ClientInterfaces;
 public interface IClassService
 {
     Task CreateAsyncClass(ClassCreationDto dto);
-    Task<IEnumerable<Class>> GetClass(string? name = null);
+    Task<IEnumerable<SchoolClass>> GetClass(string? name = null);
 } 

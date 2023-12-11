@@ -1,4 +1,4 @@
-@page "/ExamDetail/{NameOfExam}"
+@page "/ExamDetailStudent/{NameOfExam}"
 @using Domain
 @using HttpClients.ClientInterfaces
 @inject IExamService examService;
@@ -7,42 +7,38 @@
 <AuthorizeView>
     
 </AuthorizeView>
-<div class=" mt-4">
+<div class="mt-4">
     <h1 class="mt-4">EXAM DETAIL</h1>
-    <div class="col-md-6 mt-5">
-        <div class="card">
-            <div class="card-body">
-                <h2 class="card-title">@ExamName</h2>
-                <p class="card-text">
-                    <strong>Date & Time:</strong> @ExamDateTime
-                </p>
-                <p class="card-text">
-                    <strong>Class:</strong> @ClassName
-                </p>
-                <p class="card-text">
-                    <strong>Teacher:</strong> @ClassTeacher
-                </p>
-                <div class="row-col-6">
-                    <p class="fw-bold">Students:</p>
-                    @if (ClassStudents != null)
-                    {
-                        @foreach (var classStudent in ClassStudents)
+    
+        <div class="col-md-6 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">@ExamName</h1>
+                    <p class="card-text">
+                        <strong>Date & Time:</strong> @ExamDateTime
+                    </p>
+                    <p class="card-text">
+                        <strong>Class:</strong> @ClassName
+                    </p>
+                    <p class="card-text">
+                        <strong>Teacher:</strong> @ClassTeacher
+                    </p>
+                    <div class="row-col-6">
+                        <p class="fw-bold">Students:</p>
+                        @if (ClassStudents != null)
                         {
-                            <div class="d-flex">
-                                 <p class="mr-5">@classStudent</p>
-                                <a href="/PushGrade/@ExamName/@classStudent" class="ml-4">Grade</a>
-                            </div>
-                           
+                            @foreach (var classStudent in ClassStudents)
+                            {
+                                <p>@classStudent</p>
+                            }
                         }
-                    }
+                    </div>
                 </div>
             </div>
-        </div>
+            <button class="btn btn-primary mt-5" href="/StudentIndex/{Id}">Back</button>
+        <div class="blue-container"></div>
     </div>
-    <div class="blue-container"></div>
-    
-    </div>
-
+</div>
 
 
 

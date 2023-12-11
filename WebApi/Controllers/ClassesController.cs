@@ -18,7 +18,7 @@ public class ClassesController : ControllerBase
 
 
     [HttpPost]
-    public async Task<ActionResult<Class>> CreateAsyncClass([FromBody] ClassCreationDto dto)
+    public async Task<ActionResult<SchoolClass>> CreateAsyncClass([FromBody] ClassCreationDto dto)
     {
         try
         {
@@ -34,7 +34,7 @@ public class ClassesController : ControllerBase
 
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Class>>> GetAsync([FromQuery] string? className = null)
+    public async Task<ActionResult<IEnumerable<SchoolClass>>> GetAsync([FromQuery] string? className = null)
     {
         try
         {

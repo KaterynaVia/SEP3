@@ -4,17 +4,23 @@
 @using HttpClients.ClientInterfaces
 @inject IUserService userService;
 @inject IGradeService gradeService;
-<h3>PushGrade</h3>
+@layout LoginLayout;
+
+<h1>PushGrade</h1>
 
 @if (currentStudent != null)
 {
-    <p>@currentStudent.Name</p>
-    <p>@currentStudent.Id</p>
-    <div>
-        <label>Input grade</label>
-        <input bind="@grade" type="number" id="grade"/>
-        <button @onclick="Grade">Grade</button>
+    <div class="card col-md-6 p-5">
+        <h1>Student id: @currentStudent.Name</h1>
+        <p>Name of student: @currentStudent.Id</p>
+        <div>
+            <label>Input grade</label>
+            <input bind="@grade" type="number" id="grade"/>
+            <button @onclick="Grade" class="btn btn-primary">Grade</button>
+        </div>
     </div>
+    <div class="blue-container"></div>
+    
 }
 
 

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace Domain
 {
     [TypeConverter(typeof(ClassConverter))] // Apply the TypeConverterAttribute
-    public class Class
+    public class SchoolClass
     {
         public string Name { get; set; }
 
@@ -18,9 +18,9 @@ namespace Domain
         // Other properties and constructors...
 
         // Ensure you have a parameterless constructor for deserialization
-        public Class() { }
+        public SchoolClass() { }
 
-        public Class(string name, string teacherId, int id, List<string?> students)
+        public SchoolClass(string name, string teacherId, int id, List<string?> students)
         {
             Name = name;
             Id = id;

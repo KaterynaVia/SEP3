@@ -43,7 +43,7 @@ public class FileContext
         }
     }
 
-    public ICollection<Class> Classes
+    public ICollection<SchoolClass> Classes
     {
         get
         {
@@ -73,7 +73,7 @@ public class FileContext
                 Students = new List<Student>(),
                 Supervisors = new List<Supervisor>(),
                 Exams = new List<Exam>(),
-                Classes = new List<Class>()
+                Classes = new List<SchoolClass>()
             };
             return;
         }

@@ -5,7 +5,7 @@ namespace Application.DaoInterfaces;
 
 public interface IClassDao
 {
-    Task<Class> CreateAsyncClass(Class class_);
-    Task<IEnumerable<Class>> GetAsyncClass(SearchClassParametersDto searchClassParameters);
-    Task<Class?> GetByIdClassAsync(int id);
+    Task<SchoolClass> CreateAsyncClass(SchoolClass schoolClass);
+    Task<IEnumerable<SchoolClass>> GetAsyncClass(SearchClassParametersDto searchClassParameters);
+    Task<SchoolClass?> GetByIdClassAsync(int id);
 }

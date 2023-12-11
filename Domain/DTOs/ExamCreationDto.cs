@@ -5,16 +5,16 @@ namespace Domain.DTOs
         public string NameOfExam { get; set; }
         public int IdOfExam { get; set; }
         public string DateTime { get; set; }
-        public Class Class { get; set; }
+        public SchoolClass SchoolClass { get; set; }
 
        
         public ExamCreationDto() { }
 
-        public ExamCreationDto(string nameOfExam, string dateTime, Class class_)
+        public ExamCreationDto(string nameOfExam, string dateTime, SchoolClass schoolClass)
         {
             NameOfExam = nameOfExam;
             DateTime = dateTime;
-            Class = class_;
+            SchoolClass = schoolClass;
         }
     }
 }

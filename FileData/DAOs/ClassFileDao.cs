@@ -13,7 +13,7 @@ public class ClassFileDao : IClassDao
         this.context = context;
     }
 
-    public Task<Class> CreateAsyncClass(Class class_)
+    public Task<SchoolClass> CreateAsyncClass(SchoolClass schoolClass)
     {
         var id = 1;
         if (context.Classes.Any())
@@ -22,15 +22,15 @@ public class ClassFileDao : IClassDao
             id++;
         }
 
-        class_.Id = id;
+        schoolClass.Id = id;
 
-        context.Classes.Add(class_);
+        context.Classes.Add(schoolClass);
         context.SaveChanges();
 
-        return Task.FromResult(class_);
+        return Task.FromResult(schoolClass);
     }
 
-    public Task<IEnumerable<Class>> GetAsyncClass(SearchClassParametersDto searchClassParameters)
+    public Task<IEnumerable<SchoolClass>> GetAsyncClass(SearchClassParametersDto searchClassParameters)
     {
         var classes = context.Classes.AsEnumerable();
         if (searchClassParameters.ClassName != null)
@@ -40,7 +40,7 @@ public class ClassFileDao : IClassDao
         return Task.FromResult(classes);
     }
 
-    public Task<Class?> GetByIdClassAsync(int id)
+    public Task<SchoolClass?> GetByIdClassAsync(int id)
     {
         var existing = context.Classes.FirstOrDefault(c => c.Id == id);
         return Task.FromResult(existing);

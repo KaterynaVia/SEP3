@@ -6,11 +6,10 @@
 
 <link href="css/style.css" rel="stylesheet" />
 
-<div class="container">
-    <div class="row">
+<div class="overflow-hidden">
         <div class="col-md-6">
             <div class="card p-4 mb-4">
-                <h1 class="mb-4">Login Student</h1>
+                <h5 class="mb-4">Login Student</h5>
                 <div class="mb-3">
                     <label for="studentId" class="form-label">VIA ID:</label>
                     <input type="text" class="form-control" id="studentId" @bind="idStudent">
@@ -22,9 +21,11 @@
                 <button @onclick="LoginAsyncStudent" class="btn btn-primary">Login</button>
             </div>
         </div>
+        
+    <div>
         <div class="col-md-6">
             <div class="card p-4 mb-4">
-                <h1 class="mb-4">Login Teacher</h1>
+                <h5 class="mb-4">Login Teacher</h5>
                 <div class="mb-3">
                     <label class="form-label" for="teacherId">VIA ID:</label>
                     <input type="text" class="form-control" id="teacherId" @bind="idTeacher">
@@ -36,9 +37,11 @@
                 <button @onclick="LoginAsyncTeacher" class="btn btn-primary">Login</button>
             </div>
         </div>
-        <div class="col-md-12">
+    </div>
+    <div>
+        <div class="col-md-6">
             <div class="card p-4 mb-4">
-                <h1 class="mb-4">Login Supervisor</h1>
+                <h5 class="mb-4">Login Supervisor</h5>
                 <div class="mb-3">
                     <label class="form-label" for="supervisorId">VIA ID:</label>
                     <input type="text" class="form-control" id="supervisorId" @bind="idSupervisor">
@@ -50,6 +53,13 @@
                 <button @onclick="LoginAsyncSupervisor" class="btn btn-primary">Login</button>
             </div>
         </div>
+    </div>
+    <div class="blue-container">
+        <div class="mx-5">
+            <h1 class="fw-bold container-text">Grading and examination management system</h1>
+            <p>Welcome to our new system!</p>
+        </div>
+        
     </div>
 </div>
 
